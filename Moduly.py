@@ -2,7 +2,6 @@
 import logging
 import os
 import re
-import sys
 
 import Menu
 
@@ -10,6 +9,9 @@ class Moduly:
 
     __zaladowane_obiekty = []
     __zaladowane_pluginy = []
+
+    def __init__(self):
+        pass
 
     def wczytaj_moduly(self):
         """dynamiczne wczytywanie i szukanie pluginow"""

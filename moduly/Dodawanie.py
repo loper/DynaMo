@@ -2,18 +2,19 @@
 class Dodawanie:
 
     __wersja = '0.1'
+    __info = "Plugin do dodawania liczb calkowitych"
 
     def __init__(self):
         pass
 
-    def do_menu(self):
-        return (1, 'dodaj')
-
     def info(self):
-        print "Plugin do dodawania liczb calkowitych"
+        return self.__info
 
     def wersja(self):
         return self.__wersja
+
+    def do_menu(self):
+        return (1, 'dodaj')
 
     def menu(self):
         # os.system("clear")
@@ -31,12 +32,13 @@ class Dodawanie:
             if opcja == 0:
                 return
             elif opcja == 1:
-                self.__wypisz_zaladowane()
+                pass
             elif opcja == 2:
-                self.wczytaj_moduly()
-                #TODO: menu nie jest przekazywane do uruchom.py
-                print "Moduły zostały przeładowane"
+                pass
             else:
                 print "Bledna opcja"
                 continue
             self.menu()
+
+    def __pobierz_liczby(self):
+        liczba1=
