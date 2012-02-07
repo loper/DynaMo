@@ -4,6 +4,8 @@ class Dodawanie:
     __wersja = '0.1'
     __info = "Plugin do dodawania liczb calkowitych"
 
+    __liczby=[]
+
     def __init__(self):
         pass
 
@@ -27,15 +29,14 @@ class Dodawanie:
         self.__wybor_menu()
 
     def __wybor_menu(self):
-        liczby=[]
         while(1):
             opcja = input('opcja > ')
             if opcja == 0:
-                return
+                break
             elif opcja == 1:
-                liczby = self.__pobierz_liczby()
+                self.__liczby = self.__pobierz_liczby()
             elif opcja == 2:
-                pass
+                self.__oblicz_wynik(self.__liczby)
             else:
                 print "Bledna opcja"
                 continue
@@ -51,7 +52,14 @@ class Dodawanie:
                 print "Błędna liczba"
                 self.__pobierz_liczby()
             liczby.append(liczba)
-        print "Liczby zostały zapisane w pamięci"
+        print "Liczby %s zostały zapisane w pamięci" % liczby
         return liczby
 
-    #def __
+    def __oblicz_wynik(self, liczby):
+        if liczby == []:
+            print "Nie wprowadzono liczb"
+            return
+        wynik = liczby[0] + liczby[1]
+        print "Wynik działania: %d" % wynik
+
+    #TODO: problem z cofaniem się po menu
