@@ -2,7 +2,6 @@
 import logging
 import os
 import re
-import sys
 
 import Menu
 
@@ -35,6 +34,7 @@ class Moduly:
             self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] %s plugin loaded", 'modules', i)
+        menu.dodaj_wyjscie()
         return menu
         
     
@@ -47,7 +47,6 @@ class Moduly:
             print '   - ' + i
         print "\n"
 
-
     def menu(self):
         # os.system("clear")
         print "MODULY:"
@@ -59,7 +58,12 @@ class Moduly:
 
     def __wybor_menu(self):
         while(1):
-            opcja = input('opcja > ')
+            opcja = raw_input('opcja > ')
+            try:
+                opcja = int(opcja)
+            except Exception:
+                print "Błędna opcja"
+                continue
             if opcja == 0:
                 return
             elif opcja == 1:

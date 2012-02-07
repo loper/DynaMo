@@ -31,11 +31,7 @@ class Dodawanie:
             if opcja == 0:
                 return
             elif opcja == 1:
-                self.__wypisz_zaladowane()
-            elif opcja == 2:
-                self.wczytaj_moduly()
-                #TODO: menu nie jest przekazywane do uruchom.py
-                print "Moduły zostały przeładowane"
+                pass
             else:
                 print "Bledna opcja"
                 continue
