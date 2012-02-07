@@ -4,13 +4,18 @@ import os
 import re
 import sys
 
+import Menu
+
 class Moduly:
 
     __zaladowane_obiekty = []
     __zaladowane_pluginy = []
 
-    def wczytaj_moduly(self, menu):
-        #dynamiczne wczytywanie i szukanie pluginow
+    def wczytaj_moduly(self):
+        """dynamiczne wczytywanie i szukanie pluginow"""
+        menu = Menu.Menu()
+        logging.debug("[%s] %s loaded", 'program', 'Menu')
+
         lista_plikow = os.listdir('moduly')
         py = re.compile("\.py$")
         pliki = filter(py.search, lista_plikow)
@@ -30,9 +35,12 @@ class Moduly:
             self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] %s plugin loaded", 'modules', i)
-
-        return self.__zaladowane_obiekty
+        return menu
+        
     
+    def podaj_zaladowane(self):
+        return self.__zaladowane_obiekty
+
     def __wypisz_zaladowane(self):
         print "ZAŁADOWANE MODULY:"
         for i in self.__zaladowane_pluginy:
@@ -58,6 +66,8 @@ class Moduly:
                 self.__wypisz_zaladowane()
             elif opcja == 2:
                 self.wczytaj_moduly()
+                #TODO: menu nie jest przekazywane do uruchom.py
+                print "Moduły zostały przeładowane"
             else:
                 print "Bledna opcja"
                 continue

@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 """pokazuje główne menu"""
 
-import os
 import sys
 
 class Menu:

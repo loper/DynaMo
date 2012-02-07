@@ -2,7 +2,6 @@
 """główny moduł uruchomieniowy"""
 import logging
 
-import Menu
 import Moduly
 
 #tutaj jakies getopts
@@ -10,13 +9,10 @@ import Moduly
 #    level=logging.DEBUG)
 logging.basicConfig(level=logging.WARNING)
 
-if __name__ == "__main__":
-    MENU = Menu.Menu()
-    logging.debug("[%s] %s loaded", 'program', 'Menu')
+logging.debug("[%s] %s loaded", 'program', 'Moduly')
+MODULY = Moduly.Moduly()
 
-    logging.debug("[%s] %s loaded", 'program', 'Moduly')
-    MODULY = Moduly.Moduly()
-
-    ZALADOWANE = MODULY.wczytaj_moduly(MENU)
-    MENU.przekaz_zaladowane_obiekty(ZALADOWANE)
-    MENU.pokaz_menu(MODULY)
+MENU = MODULY.wczytaj_moduly()
+ZALADOWANE = MODULY.podaj_zaladowane()
+MENU.przekaz_zaladowane_obiekty(ZALADOWANE)
+MENU.pokaz_menu(MODULY)
