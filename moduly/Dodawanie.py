@@ -63,5 +63,9 @@ class Dodawanie:
         if liczby == []:
             print "Nie wprowadzono liczb"
             return
-        wynik = liczby[0] + liczby[1]
+        wynik=self.dodaj(liczby)
         print "Wynik działania: %d" % wynik
+
+    def dodaj(self,liczby):
+        wynik = liczby[0] + liczby[1]
+        return wynik
