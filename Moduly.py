@@ -1,7 +1,9 @@
 #-*- coding: utf-8 -*-
+
 import logging
 import os
 import re
+import sys
 
 import Menu
 
@@ -41,10 +43,9 @@ class Moduly:
                 assert(obiekt.wersja != None)
                 assert(obiekt.menu != None)
                 assert(obiekt.do_menu() != None)
-                print obiekt.zaleznosci()
             except Exception, e:
                 logging.error("[%s] Error: %s", i, e)
-                continue
+                del(sys.modules[nazwa])
 
             """dodawanie do menu głównego"""
             do_menu = obiekt.do_menu()
@@ -54,8 +55,8 @@ class Moduly:
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] plugin loaded", i)
         menu.dodaj_wyjscie()
-        #TODO: zaleznosci miedzy modulami
         #TODO: konflikty w numeracji w menu
+        self.__sprawdz_zaleznosci()
         return menu
         
     
@@ -98,6 +99,21 @@ class Moduly:
                 continue
             self.menu()
 
-        
+    def __sprawdz_zaleznosci(self):     
+        tmp = dict(self.__zaladowane_obiekty)
+        for i in tmp:
+            obiekt = tmp[i]
+            zal = obiekt.zaleznosci()
+            for j in zal:
+                nazwa = 'moduly.' + j
+                if obiekt.zaleznosci() == '': continue
+                try:
+                    assert(sys.modules.get(nazwa) != None)
+                except Exception:
+                    wadliwy_modul = str(obiekt).split('.')[1]
+                    logging.error("[%s] Dependency error: \'%s\'. Module disabled", wadliwy_modul, j)
+                    del(sys.modules['moduly.' + wadliwy_modul])
+
+        sys.exit(-1)
         
 
