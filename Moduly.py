@@ -23,18 +23,35 @@ class Moduly:
 
         for i in nazwy_modulow:
             if i == '__init__': continue
+            """pluginy"""
             mod = __import__('moduly.%s' % i)
+            """modul"""
             mod = getattr(mod, i)
             nazwa = mod.__name__
+            """obiekt"""
             mod = getattr(mod, i)
             obiekt = mod()
+            """sprawdzanie poprawności modułu -
+               obowiązkowe funkcje: info, wersja, menu, do_menu"""
+            try:
+                assert(obiekt.info != None)
+                assert(obiekt.wersja != None)
+                assert(obiekt.menu != None)
+                assert(obiekt.do_menu() != None)
+            except Exception, e:
+                logging.error("[%s] Error loading \"%s\": %s", 'module', i, e)
+                continue
+
+            """dodawanie do menu głównego"""
             do_menu = obiekt.do_menu()
-            nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
+            #nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
             menu.dodaj_do_menu(do_menu)
             self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] %s plugin loaded", 'modules', i)
         menu.dodaj_wyjscie()
+        #TODO: zaleznosci miedzy modulami
+        #TODO: konflikty w numeracji w menu
         return menu
         
     
