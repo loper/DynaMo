@@ -50,18 +50,18 @@ class Moduly:
 
     def menu(self):
         # os.system("clear")
-            print "MODULY:"
-            print "1. Lista modulów"
-            print "2. Przeladuj moduly"
-            print "9. WYJŚCIE"
+        print "MODULY:"
+        print "1. Lista modulów"
+        print "2. Przeladuj moduly"
+        print "9. POWRÓT"
 
-            self.__wybor_menu()
+        self.__wybor_menu()
 
     def __wybor_menu(self):
         while(1):
             opcja = input('opcja > ')
             if opcja == 9:
-                sys.exit(0)
+                return
             elif opcja == 1:
                 self.__wypisz_zaladowane()
             elif opcja == 2:

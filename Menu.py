@@ -27,15 +27,28 @@ class Menu:
             elif opcja == 8:
                 moduly.menu()
             else:
-                print "Błędna opcja"
-                continue
+                obj = self.__szukaj_modul(opcja)
+                if obj==None:
+                    print "Błędna opcja"
+                    continue
+                obj.menu()
             self.pokaz_menu(moduly)
 
 
     def dodaj_do_menu(self, element):
         self.__pozycje.append(element)
         self.__pozycje.sort()
+        #self.__pozycje.append((0,"WYJŚCIE"))
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         self.__zaladowane_obiekty = zaladowane
+
+    def __szukaj_modul(self, numer):
+        tmp = dict(self.__zaladowane_obiekty)
+        try:
+            return tmp[numer]
+        except KeyError:
+            return None
+        
+        
 
