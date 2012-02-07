@@ -5,9 +5,9 @@ import logging
 import Moduly
 
 #tutaj jakies getopts
-#logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
+logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
 #    level=logging.DEBUG)
-logging.basicConfig(level=logging.WARNING)
+     level=logging.WARNING)
 
 logging.debug("[%s] %s loaded", 'program', 'Moduly')
 MODULY = Moduly.Moduly()
