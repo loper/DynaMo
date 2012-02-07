@@ -16,7 +16,7 @@ class Moduly:
     def wczytaj_moduly(self):
         """dynamiczne wczytywanie i szukanie pluginow"""
         menu = Menu.Menu()
-        logging.debug("[%s] %s loaded", 'program', 'Menu')
+        logging.debug("[%s] loaded", 'Menu')
 
         lista_plikow = os.listdir('moduly')
         py = re.compile("\.py$")
@@ -43,7 +43,7 @@ class Moduly:
                 assert(obiekt.do_menu() != None)
                 print obiekt.zaleznosci()
             except Exception, e:
-                logging.error("[%s] Error loading \"%s\": %s", 'module', i, e)
+                logging.error("[%s] Error: %s", i, e)
                 continue
 
             """dodawanie do menu głównego"""
@@ -52,7 +52,7 @@ class Moduly:
             menu.dodaj_do_menu(do_menu)
             self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
-            logging.debug("[%s] %s plugin loaded", 'modules', i)
+            logging.debug("[%s] plugin loaded", i)
         menu.dodaj_wyjscie()
         #TODO: zaleznosci miedzy modulami
         #TODO: konflikty w numeracji w menu
