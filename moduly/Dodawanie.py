@@ -15,6 +15,9 @@ class Dodawanie:
     def wersja(self):
         return self.__wersja
 
+    def zaleznosci(self):
+        pass
+
     def do_menu(self):
         return (1, 'dodaj')
 
@@ -26,13 +29,14 @@ class Dodawanie:
         print "3. Solver"
         print "0. POWRÓT"
 
+        #to nie moze tu byc
         self.__wybor_menu()
 
     def __wybor_menu(self):
         while(1):
             opcja = input('opcja > ')
             if opcja == 0:
-                break
+                return
             elif opcja == 1:
                 self.__liczby = self.__pobierz_liczby()
             elif opcja == 2:
@@ -40,7 +44,7 @@ class Dodawanie:
             else:
                 print "Bledna opcja"
                 continue
-            self.menu()
+        self.menu()
 
     def __pobierz_liczby(self):
         liczby = []
@@ -61,5 +65,3 @@ class Dodawanie:
             return
         wynik = liczby[0] + liczby[1]
         print "Wynik działania: %d" % wynik
-
-    #TODO: problem z cofaniem się po menu
