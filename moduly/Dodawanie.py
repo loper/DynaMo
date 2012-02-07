@@ -3,8 +3,9 @@ class Dodawanie:
 
     __wersja = '0.1'
     __info = "Plugin do dodawania liczb calkowitych"
+    __zaleznosci = ("Odejmowanie.odejmij")
 
-    __liczby=[]
+    __liczby = []
 
     def __init__(self):
         pass
@@ -16,7 +17,7 @@ class Dodawanie:
         return self.__wersja
 
     def zaleznosci(self):
-        pass
+        print self.__zaleznosci
 
     def do_menu(self):
         return (1, 'dodaj')
@@ -63,9 +64,9 @@ class Dodawanie:
         if liczby == []:
             print "Nie wprowadzono liczb"
             return
-        wynik=self.dodaj(liczby)
+        wynik = self.dodaj(liczby)
         print "Wynik działania: %d" % wynik
 
-    def dodaj(self,liczby):
+    def dodaj(self, liczby):
         wynik = liczby[0] + liczby[1]
         return wynik

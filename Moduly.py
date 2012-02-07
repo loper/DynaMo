@@ -41,6 +41,7 @@ class Moduly:
                 assert(obiekt.wersja != None)
                 assert(obiekt.menu != None)
                 assert(obiekt.do_menu() != None)
+                print obiekt.zaleznosci()
             except Exception, e:
                 logging.error("[%s] Error loading \"%s\": %s", 'module', i, e)
                 continue

@@ -1,6 +1,8 @@
 class Odejmowanie:
     
+    __info = "Plugin do odejmowania liczb calkowitych"
     __wersja = '0.1'
+    __zaleznosci = ("Odejmowanie.odejmij")
 
     def __init__(self):
         pass
@@ -9,8 +11,7 @@ class Odejmowanie:
         return (2, 'odejmij')
 
     def info(self):
-        print "Plugin do odejmowania liczb calkowitych"
-        print self.__wersja
+        return self.__info
 
     def wersja(self):
         return self.__wersja
