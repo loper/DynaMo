@@ -21,7 +21,13 @@ class Menu:
         
     def __wybor_menu(self, moduly):
         while(1):
-            opcja = input('opcja > ')
+            opcja = raw_input('opcja > ')
+            try:
+                opcja=int(opcja)
+            except Exception:
+                print "Błędna opcja"
+                continue
+                
             if opcja == 0:
                 sys.exit(0)
             elif opcja == 8:
@@ -38,6 +44,8 @@ class Menu:
     def dodaj_do_menu(self, element):
         self.__pozycje.append(element)
         self.__pozycje.sort()
+
+    def dodaj_wyjscie(self):
         self.__pozycje.append((0,"WYJŚCIE"))
 
     def przekaz_zaladowane_obiekty(self, zaladowane):

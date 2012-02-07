@@ -27,12 +27,13 @@ class Dodawanie:
         self.__wybor_menu()
 
     def __wybor_menu(self):
+        liczby=[]
         while(1):
             opcja = input('opcja > ')
             if opcja == 0:
                 return
             elif opcja == 1:
-                pass
+                liczby = self.__pobierz_liczby()
             elif opcja == 2:
                 pass
             else:
@@ -41,4 +42,16 @@ class Dodawanie:
             self.menu()
 
     def __pobierz_liczby(self):
-        liczba1=
+        liczby = []
+        for i in range(1, 3):
+            liczba = raw_input('Podaj liczbę nr %d: ' % i)
+            try:
+                liczba = int(liczba)
+            except Exception:
+                print "Błędna liczba"
+                self.__pobierz_liczby()
+            liczby.append(liczba)
+        print "Liczby zostały zapisane w pamięci"
+        return liczby
+
+    #def __

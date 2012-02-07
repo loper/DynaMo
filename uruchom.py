@@ -5,12 +5,12 @@ import logging
 import Moduly
 
 #tutaj jakies getopts
-#logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
-#    level=logging.DEBUG)
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
+                    #    level=logging.DEBUG)
+                    level=logging.WARNING)
 
-logging.debug("[%s] %s loaded", 'program', 'Moduly')
 MODULY = Moduly.Moduly()
+logging.debug("[%s] %s loaded", 'program', 'Moduly')
 
 MENU = MODULY.wczytaj_moduly()
 ZALADOWANE = MODULY.podaj_zaladowane()
