@@ -5,7 +5,7 @@ import sys
 
 class Menu:
 
-    __pozycje = [(9, 'WYJŚCIE'), (8, 'Moduly')]
+    __pozycje = [(8, 'Moduly')]
     __zaladowane_obiekty = None
 
     def __init__(self):
@@ -22,7 +22,7 @@ class Menu:
     def __wybor_menu(self, moduly):
         while(1):
             opcja = input('opcja > ')
-            if opcja == 9:
+            if opcja == 0:
                 sys.exit(0)
             elif opcja == 8:
                 moduly.menu()
@@ -38,7 +38,7 @@ class Menu:
     def dodaj_do_menu(self, element):
         self.__pozycje.append(element)
         self.__pozycje.sort()
-        #self.__pozycje.append((0,"WYJŚCIE"))
+        self.__pozycje.append((0,"WYJŚCIE"))
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         self.__zaladowane_obiekty = zaladowane

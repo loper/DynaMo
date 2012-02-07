@@ -53,14 +53,14 @@ class Moduly:
         print "MODULY:"
         print "1. Lista modulów"
         print "2. Przeladuj moduly"
-        print "9. POWRÓT"
+        print "0. POWRÓT"
 
         self.__wybor_menu()
 
     def __wybor_menu(self):
         while(1):
             opcja = input('opcja > ')
-            if opcja == 9:
+            if opcja == 0:
                 return
             elif opcja == 1:
                 self.__wypisz_zaladowane()
