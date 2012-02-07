@@ -56,7 +56,7 @@ class Moduly:
             logging.debug("[%s] plugin loaded", i)
         menu.dodaj_wyjscie()
         #TODO: konflikty w numeracji w menu
-        self.__sprawdz_zaleznosci()
+        self.__sprawdz_zaleznosci(menu)
         return menu
         
     
@@ -99,13 +99,16 @@ class Moduly:
                 continue
             self.menu()
 
-    def __sprawdz_zaleznosci(self):     
+    def __sprawdz_zaleznosci(self, menu):
         tmp = dict(self.__zaladowane_obiekty)
+        c = 0
         for i in tmp:
+            c += 1
             obiekt = tmp[i]
             zal = obiekt.zaleznosci()
             for j in zal:
                 nazwa = 'moduly.' + j
+                """pustych nie sprawdzaj"""
                 if obiekt.zaleznosci() == '': continue
                 try:
                     assert(sys.modules.get(nazwa) != None)
@@ -113,7 +116,8 @@ class Moduly:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error("[%s] Dependency error: \'%s\'. Module disabled", wadliwy_modul, j)
                     del(sys.modules['moduly.' + wadliwy_modul])
-
-        sys.exit(-1)
-        
-
+                    del obiekt
+                    del zal
+                    self.__zaladowane_obiekty.pop(c)
+                    self.__zaladowane_pluginy.pop(c)
+                    menu.usun_pozycje(i)

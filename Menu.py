@@ -57,6 +57,11 @@ class Menu:
             return tmp[numer]
         except KeyError:
             return None
+
+    def usun_pozycje(self,nr):
+        for k,v in self.__pozycje:
+            if k==nr:
+                self.__pozycje.pop(self.__pozycje.index((k,v)))
         
         
 
