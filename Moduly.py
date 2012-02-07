@@ -1,7 +1,8 @@
+#-*- coding: utf-8 -*-
 import logging
 import os
-import os.path
 import re
+import sys
 
 class Moduly:
 
@@ -20,18 +21,48 @@ class Moduly:
             if i == '__init__': continue
             mod = __import__('moduly.%s' % i)
             mod = getattr(mod, i)
-            self.__zaladowane_pluginy.append(mod.__name__)
+            nazwa = mod.__name__
             mod = getattr(mod, i)
             obiekt = mod()
             do_menu = obiekt.do_menu()
+            nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
             menu.dodaj_do_menu(do_menu)
+            self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] %s plugin loaded", 'modules', i)
 
         return self.__zaladowane_obiekty
     
-    def wypisz_zaladowane(self):
-        print "ZALADOWANE MODULY:"
+    def __wypisz_zaladowane(self):
+        print "ZAŁADOWANE MODULY:"
         for i in self.__zaladowane_pluginy:
             print '   - ' + i
+        print "\n"
+
+
+    def menu(self):
+        # os.system("clear")
+            print "MODULY:"
+            print "1. Lista modulów"
+            print "2. Przeladuj moduly"
+            print "9. WYJŚCIE"
+
+            self.__wybor_menu()
+
+    def __wybor_menu(self):
+        while(1):
+            opcja = input('opcja > ')
+            if opcja == 9:
+                sys.exit(0)
+            elif opcja == 1:
+                self.__wypisz_zaladowane()
+            elif opcja == 2:
+                self.wczytaj_moduly()
+            else:
+                print "Bledna opcja"
+                continue
+            self.menu()
+
+        
+        
 

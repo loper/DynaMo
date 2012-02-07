@@ -1,4 +1,7 @@
 class Dodawanie:
+
+    __wersja='0.1'
+
     def __init__(self):
         pass
 
@@ -7,3 +10,6 @@ class Dodawanie:
 
     def info(self):
         print "Plugin do dodawania liczb calkowitych"
+
+    def wersja(self):
+        return self.__wersja
