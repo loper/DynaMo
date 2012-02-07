@@ -2,10 +2,13 @@ class Odejmowanie:
     
     __info = "Plugin do odejmowania liczb calkowitych"
     __wersja = '0.1'
-    __zaleznosci = ("Odejmowanie.odejmij")
+    __zaleznosci = []
 
     def __init__(self):
         pass
+
+    def zaleznosci(self):
+        return self.__zaleznosci
 
     def do_menu(self):
         return (2, 'odejmij')
