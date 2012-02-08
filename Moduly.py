@@ -27,7 +27,8 @@ class Moduly:
         nazwy_modulow = map(nazwa_na_modul, pliki)
 
         for i in nazwy_modulow:
-            if i == '__init__': continue
+            if i == '__init__' or i == 'blank': continue
+
             """pluginy"""
             mod = __import__('moduly.%s' % i)
             """modul"""

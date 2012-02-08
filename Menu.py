@@ -24,7 +24,7 @@ class Menu:
         while(1):
             opcja = raw_input('opcja > ')
             try:
-                opcja=int(opcja)
+                opcja = int(opcja)
             except Exception:
                 print "Błędna opcja"
                 continue
@@ -35,7 +35,7 @@ class Menu:
                 moduly.menu()
             else:
                 obj = self.__szukaj_modul(opcja)
-                if obj==None:
+                if obj == None:
                     print "Błędna opcja"
                     continue
                 obj.menu(moduly.podaj_zaladowane())
@@ -59,10 +59,11 @@ class Menu:
         except KeyError:
             return None
 
-    def usun_pozycje(self,nr):
-        for k,v in self.__pozycje:
-            if k==nr:
-                self.__pozycje.pop(self.__pozycje.index((k,v)))
+    def usun_pozycje(self, nr):
+        for k, v in self.__pozycje:
+            if k == nr:
+                self.__pozycje.pop(self.__pozycje.index((k, v)))
         
         
 
+#TODO: testy, czy moduly poprawnie sie wczytuja

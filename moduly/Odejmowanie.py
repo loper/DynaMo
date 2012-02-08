@@ -19,7 +19,7 @@ class Odejmowanie:
     def wersja(self):
         return self.__wersja
 
-    def menu(self):
+    def menu(self, zaladowane):
         print "odejmowanie menu..."
 
     def odejmij(self, liczby):
