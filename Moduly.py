@@ -101,6 +101,7 @@ class Moduly:
 
     def __sprawdz_zaleznosci(self, menu):
         tmp = dict(self.__zaladowane_obiekty)
+        #to c moze kiedys nie dzialac
         c = 0
         for i in tmp:
             c += 1

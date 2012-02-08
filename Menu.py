@@ -37,7 +37,7 @@ class Menu:
                 if obj==None:
                     print "Błędna opcja"
                     continue
-                obj.menu()
+                obj.menu(moduly.podaj_zaladowane())
             self.pokaz_menu(moduly)
 
 

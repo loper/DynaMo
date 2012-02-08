@@ -23,5 +23,5 @@ class Odejmowanie:
         pass
 
     def odejmij(self, liczby):
-        wynik = liczby[1]-liczby[0]
+        wynik = liczby[0]-liczby[1]
         return wynik

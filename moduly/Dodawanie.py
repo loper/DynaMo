@@ -3,7 +3,7 @@ class Dodawanie:
 
     __wersja = '0.1'
     __info = "Plugin do dodawania liczb calkowitych"
-    __zaleznosci = ["Odejmowanie","All"]
+    __zaleznosci = ["Odejmowanie"]
 
     __liczby = []
 
@@ -22,7 +22,7 @@ class Dodawanie:
     def do_menu(self):
         return (1, 'dodaj')
 
-    def menu(self):
+    def menu(self, zaladowane):
         # os.system("clear")
         print "DODAWANIE:"
         print "1. Wprowadz liczby"
@@ -30,10 +30,9 @@ class Dodawanie:
         print "3. Solver"
         print "0. POWRÓT"
 
-        #to nie moze tu byc
-        self.__wybor_menu()
+        self.__wybor_menu(zaladowane)
 
-    def __wybor_menu(self):
+    def __wybor_menu(self, zaladowane):
         while(1):
             opcja = input('opcja > ')
             if opcja == 0:
@@ -42,6 +41,8 @@ class Dodawanie:
                 self.__liczby = self.__pobierz_liczby()
             elif opcja == 2:
                 self.__oblicz_wynik(self.__liczby)
+            elif opcja == 3:
+                self.__solver(zaladowane)
             else:
                 print "Bledna opcja"
                 continue
@@ -70,3 +71,21 @@ class Dodawanie:
     def dodaj(self, liczby):
         wynik = liczby[0] + liczby[1]
         return wynik
+
+    def __solver(self, zaladowane):
+        #malo eleganckie...
+        for k, v in zaladowane:
+            print str(v).split('.')[1]
+            if str(v).split('.')[1] == 'Odejmowanie':
+                break
+        wynik = raw_input('Podaj wynik: ')
+        try:
+            wynik = int(wynik)
+        except Exception:
+            print "Błędna liczba"
+        odj = raw_input('Podaj odjemną: ')
+        try:
+            odj = int(odj)
+        except Exception:
+            print "Błędna liczba"
+        print 'Wynik działania: ' + str(v.odejmij([wynik,odj]))
