@@ -57,6 +57,7 @@ class Moduly:
         menu.dodaj_wyjscie()
         #TODO: konflikty w numeracji w menu
         self.__sprawdz_zaleznosci(menu)
+        self.__sprawdzanie_numeracji(menu)
         return menu
         
     
@@ -122,3 +123,16 @@ class Moduly:
                     self.__zaladowane_obiekty.pop(c)
                     self.__zaladowane_pluginy.pop(c)
                     menu.usun_pozycje(i)
+
+    def __sprawdzanie_numeracji(self, menu):
+        pozycje = menu.przekaz_pozycje()
+        ost = 0
+        do_zamiany = []
+        wolne = range(0, 10 + 1)
+        for k, v in pozycje:
+            print k
+            if k == ost:
+                do_zamiany.append((k, v))
+            ost = k
+
+        sys.exit(-1)

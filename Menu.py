@@ -51,6 +51,9 @@ class Menu:
     def przekaz_zaladowane_obiekty(self, zaladowane):
         self.__zaladowane_obiekty = zaladowane
 
+    def przekaz_pozycje(self):
+        return self.__pozycje
+
     def __szukaj_modul(self, numer):
         tmp = dict(self.__zaladowane_obiekty)
         try:
