@@ -52,7 +52,7 @@ class Moduly:
             #nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
             menu.dodaj_do_menu(do_menu)
             self.__zaladowane_pluginy.append(nazwa)
-            self.__zaladowane_obiekty.append((do_menu[0], obiekt, nazwa))
+            self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] plugin loaded", i)
         self.__sprawdz_zaleznosci(menu)
         self.__sprawdzanie_numeracji(menu)
@@ -99,13 +99,12 @@ class Moduly:
             self.menu()
 
     def __sprawdz_zaleznosci(self, menu):
-        tmp = dict(self.__zaladowane_obiekty)
-        #tmp=self.__zaladowane_obiekty
+        tmp=self.__zaladowane_obiekty
         #to c moze kiedys nie dzialac
         c = 0
         for i in tmp:
             c += 1
-            obiekt = tmp[i]
+            obiekt = i[1]
             zal = obiekt.zaleznosci()
             for j in zal:
                 nazwa = 'moduly.' + j
@@ -141,4 +140,5 @@ class Moduly:
             pozycje.append((wolne.pop(1), v))
         pozycje.sort()
         print self.__zaladowane_obiekty
+        sys.exit(1)
         return menu
