@@ -99,7 +99,8 @@ class Moduly:
             self.menu()
 
     def __sprawdz_zaleznosci(self, menu):
-        tmp=self.__zaladowane_obiekty
+        #tu kiedys byla zamiana na dict
+        tmp = self.__zaladowane_obiekty
         #to c moze kiedys nie dzialac
         c = 0
         for i in tmp:
@@ -126,6 +127,7 @@ class Moduly:
         pozycje = menu.przekaz_pozycje()
         ost = 0
         do_zamiany = []
+        oim = self.__obiekty_i_menu()
         wolne = range(0, 9 + 1)
         for k, v in pozycje:
             if k == ost:
@@ -137,8 +139,26 @@ class Moduly:
         do_zamiany.sort()
         #TODO:obiekt pozostal niezmieniony
         for v in do_zamiany:
-            pozycje.append((wolne.pop(1), v))
+            nr = wolne.pop(1)
+            pozycje.append((nr, v))
+            self.__zmien_obiekt(oim.get(v), nr)
+            print self.__zaladowane_obiekty
         pozycje.sort()
-        print self.__zaladowane_obiekty
         sys.exit(1)
         return menu
+
+    def __obiekty_i_menu(self):
+        obj = {}
+        for i in self.__zaladowane_obiekty:
+            obiekt = i[1]
+            do_menu = obiekt.do_menu()[1]
+            obj.update({do_menu:obiekt})
+        return obj
+
+    def __zmien_obiekt(self, obiekt, nr):
+        for i in self.__zaladowane_obiekty:
+            print i[1]
+            if i[1] == obiekt:
+                #self.__zaladowane_obiekty.pop(self.__zaladowane_obiekty.index(()))
+                i[0] == nr
+                return
