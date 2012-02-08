@@ -11,7 +11,7 @@ class Odejmowanie:
         return self.__zaleznosci
 
     def do_menu(self):
-        return (2, 'odejmij')
+        return (1, 'odejmij')
 
     def info(self):
         return self.__info
@@ -20,7 +20,7 @@ class Odejmowanie:
         return self.__wersja
 
     def menu(self):
-        pass
+        print "odejmowanie menu..."
 
     def odejmij(self, liczby):
         wynik = liczby[0]-liczby[1]

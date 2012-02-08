@@ -16,6 +16,7 @@ class Menu:
         print "MENU:"
         for i in self.__pozycje:
             print "%d: %s" % (i[0], i[1])
+        print "0: WYJŚCIE"
         print "\n"
         self.__wybor_menu(moduly)
         
@@ -44,9 +45,6 @@ class Menu:
     def dodaj_do_menu(self, element):
         self.__pozycje.append(element)
         self.__pozycje.sort()
-
-    def dodaj_wyjscie(self):
-        self.__pozycje.append((0,"WYJŚCIE"))
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         self.__zaladowane_obiekty = zaladowane

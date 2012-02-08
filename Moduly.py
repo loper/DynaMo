@@ -54,8 +54,6 @@ class Moduly:
             self.__zaladowane_pluginy.append(nazwa)
             self.__zaladowane_obiekty.append((do_menu[0], obiekt))
             logging.debug("[%s] plugin loaded", i)
-        menu.dodaj_wyjscie()
-        #TODO: konflikty w numeracji w menu
         self.__sprawdz_zaleznosci(menu)
         self.__sprawdzanie_numeracji(menu)
         return menu
@@ -128,11 +126,18 @@ class Moduly:
         pozycje = menu.przekaz_pozycje()
         ost = 0
         do_zamiany = []
-        wolne = range(0, 10 + 1)
+        wolne = range(0, 9 + 1)
         for k, v in pozycje:
-            print k
             if k == ost:
-                do_zamiany.append((k, v))
+                do_zamiany.append(v)
+                pozycje.pop(pozycje.index((k, v)))
+            else:
+                wolne.pop(wolne.index(k))
             ost = k
-
-        sys.exit(-1)
+        do_zamiany.sort()
+        #TODO:obiekt pozostal niezmieniony
+        for v in do_zamiany:
+            pozycje.append((wolne.pop(1), v))
+        pozycje.sort()
+        print self.__zaladowane_obiekty
+        return menu

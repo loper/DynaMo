@@ -20,7 +20,7 @@ class Dodawanie:
         return self.__zaleznosci
 
     def do_menu(self):
-        return (2, 'dodaj')
+        return (1, 'dodaj')
 
     def menu(self, zaladowane):
         # os.system("clear")
