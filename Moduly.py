@@ -1,11 +1,11 @@
 #-*- coding: utf-8 -*-
 
-import logging
-import os
-import re
 import sys
 
 import Menu
+import logging
+import os
+import re
 
 class Moduly:
 
@@ -49,10 +49,10 @@ class Moduly:
 
             """dodawanie do menu głównego"""
             do_menu = obiekt.do_menu()
-            #nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
+            nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
             menu.dodaj_do_menu(do_menu)
             self.__zaladowane_pluginy.append(nazwa)
-            self.__zaladowane_obiekty.append((do_menu[0], obiekt))
+            self.__zaladowane_obiekty.append([do_menu[0], obiekt])
             logging.debug("[%s] plugin loaded", i)
         self.__sprawdz_zaleznosci(menu)
         self.__sprawdzanie_numeracji(menu)
@@ -96,7 +96,8 @@ class Moduly:
             else:
                 print "Bledna opcja"
                 continue
-            self.menu()
+        self.menu()
+        #TODO:problem z wyswietlaniem - albo sie cofa 50 razy albo nie wypisuje menu
 
     def __sprawdz_zaleznosci(self, menu):
         #tu kiedys byla zamiana na dict
@@ -142,9 +143,7 @@ class Moduly:
             nr = wolne.pop(1)
             pozycje.append((nr, v))
             self.__zmien_obiekt(oim.get(v), nr)
-            print self.__zaladowane_obiekty
         pozycje.sort()
-        sys.exit(1)
         return menu
 
     def __obiekty_i_menu(self):
@@ -157,8 +156,6 @@ class Moduly:
 
     def __zmien_obiekt(self, obiekt, nr):
         for i in self.__zaladowane_obiekty:
-            print i[1]
             if i[1] == obiekt:
-                #self.__zaladowane_obiekty.pop(self.__zaladowane_obiekty.index(()))
-                i[0] == nr
+                i[0] = nr
                 return
