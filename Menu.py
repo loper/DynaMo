@@ -9,6 +9,7 @@ import logging
 import sys
 
 class Menu:
+    '''klasa Menu'''
 
     __pozycje = [(8, 'Moduly')]
     __zaladowane_obiekty = None
@@ -32,7 +33,7 @@ class Menu:
             opcja = raw_input('opcja > ')
             try:
                 opcja = int(opcja)
-            except Exception:
+            except ValueError:
                 print "Błędna opcja"
                 continue
                 
@@ -70,10 +71,10 @@ class Menu:
         except KeyError:
             return None
 
-    def usun_pozycje(self, nr):
+    def usun_pozycje(self, numer):
         '''wyszukuje i usuwa pozycję o podanym numerze z menu'''
-        for k, v in self.__pozycje:
-            if k == nr:
-                logging.debug("[%s] deleting from menu: %s", 'Menu', v)
-                self.__pozycje.pop(self.__pozycje.index((k, v)))
+        for k, wartosc in self.__pozycje:
+            if k == numer:
+                logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
+                self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
         
