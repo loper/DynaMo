@@ -68,6 +68,7 @@ class Moduly:
         return self.__zaladowane_obiekty
 
     def __wypisz_zaladowane(self):
+        #blad - wypisuje ten wywalony
         print "ZAŁADOWANE MODULY:"
         for i in self.__zaladowane_pluginy:
             print '   - ' + i
@@ -110,7 +111,6 @@ class Moduly:
         #to c moze kiedys nie dzialac
         c = 0
         for i in tmp:
-            c += 1
             obiekt = i[1]
             zal = obiekt.zaleznosci()
             for j in zal:
@@ -128,7 +128,7 @@ class Moduly:
                     self.__zaladowane_obiekty.pop(c)
                     self.__zaladowane_pluginy.pop(c)
                     menu.usun_pozycje(i[0])
-        # wczytalo modul, mimo ze zostal wywalony
+            c += 1
 
     def __sprawdzanie_numeracji(self, menu):
         pozycje = menu.przekaz_pozycje()
