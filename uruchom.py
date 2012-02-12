@@ -25,7 +25,3 @@ MENU = MODULY.wczytaj_moduly()
 ZALADOWANE = MODULY.podaj_zaladowane()
 MENU.przekaz_zaladowane_obiekty(ZALADOWANE)
 MENU.pokaz_menu(MODULY)
-
-#TODO: dokumentacja
-#TODO: getopts
-#TODO: przetestować 'clear'
