@@ -1,5 +1,8 @@
 #-*- coding: utf-8 -*-
-class Dodawanie:
+
+import os
+
+class Nazwa_modulu:
 
     __wersja = '0.1'
     __info = "opis"
@@ -29,7 +32,12 @@ class Dodawanie:
 
     def __wybor_menu(self, zaladowane):
         while(1):
-            opcja = input('opcja > ')
+            opcja = raw_input('opcja > ')
+            try:
+                opcja = int(opcja)
+            except Exception:
+                print "Błędna opcja"
+                continue
             if opcja == 0:
                 return
             elif opcja == 1:

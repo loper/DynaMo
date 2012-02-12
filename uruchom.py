@@ -6,8 +6,8 @@ import Moduly
 
 #tutaj jakies getopts
 logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
-                    #level=logging.DEBUG)
-                    level=logging.WARNING)
+                    level=logging.DEBUG)
+                    #level=logging.WARNING)
 
 MODULY = Moduly.Moduly()
 logging.debug("[%s] loaded", 'Moduly')
@@ -16,3 +16,6 @@ MENU = MODULY.wczytaj_moduly()
 ZALADOWANE = MODULY.podaj_zaladowane()
 MENU.przekaz_zaladowane_obiekty(ZALADOWANE)
 MENU.pokaz_menu(MODULY)
+
+#TODO: dokumentacja
+#TODO: getopts

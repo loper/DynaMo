@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 """pokazuje główne menu"""
 
+import logging
 import sys
 
 class Menu:
@@ -60,8 +61,10 @@ class Menu:
             return None
 
     def usun_pozycje(self, nr):
+        print nr
         for k, v in self.__pozycje:
             if k == nr:
+                logging.debug("[%s] deleting from menu: %s", 'Menu', v)
                 self.__pozycje.pop(self.__pozycje.index((k, v)))
         
         

@@ -1,11 +1,11 @@
 #-*- coding: utf-8 -*-
 
-import sys
-
-import Menu
 import logging
 import os
 import re
+import sys
+
+import Menu
 
 class Moduly:
 
@@ -35,7 +35,11 @@ class Moduly:
             mod = getattr(mod, i)
             nazwa = mod.__name__
             """obiekt"""
-            mod = getattr(mod, i)
+            try:
+                mod = getattr(mod, i)
+            except Exception, e:
+                logging.error("[%s] Error: %s", i, e)
+                continue
             obiekt = mod()
             """sprawdzanie poprawności modułu -
                obowiązkowe funkcje: info, wersja, menu, do_menu"""
@@ -47,7 +51,7 @@ class Moduly:
             except Exception, e:
                 logging.error("[%s] Error: %s", i, e)
                 del(sys.modules[nazwa])
-
+                continue
             """dodawanie do menu głównego"""
             do_menu = obiekt.do_menu()
             nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
@@ -117,13 +121,14 @@ class Moduly:
                     assert(sys.modules.get(nazwa) != None)
                 except Exception:
                     wadliwy_modul = str(obiekt).split('.')[1]
-                    logging.error("[%s] Dependency error: \'%s\'. Module disabled", wadliwy_modul, j)
+                    logging.error("[%s] dependency error: \'%s\'. Module disabled", wadliwy_modul, j)
                     del(sys.modules['moduly.' + wadliwy_modul])
                     del obiekt
                     del zal
                     self.__zaladowane_obiekty.pop(c)
                     self.__zaladowane_pluginy.pop(c)
-                    menu.usun_pozycje(i)
+                    menu.usun_pozycje(i[0])
+        # wczytalo modul, mimo ze zostal wywalony
 
     def __sprawdzanie_numeracji(self, menu):
         pozycje = menu.przekaz_pozycje()
