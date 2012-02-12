@@ -26,3 +26,4 @@ MENU.pokaz_menu(MODULY)
 
 #TODO: dokumentacja
 #TODO: getopts
+#TODO: przetestować 'clear'

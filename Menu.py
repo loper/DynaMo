@@ -1,5 +1,9 @@
 #-*- coding: utf-8 -*-
-"""pokazuje główne menu"""
+"""pokazuje główne menu
+
+Pozycje w menu są dodawane dynamicznie, oprócz tych, wymienionych w '__pozycje'.
+Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
+(lista w '__zaladowane_obiekty')."""
 
 import logging
 import sys
@@ -13,6 +17,7 @@ class Menu:
         pass
 
     def pokaz_menu(self, moduly):
+        '''pokazuje pozycje z menu'''
         #os.system("clear")
         print "MENU:"
         for i in self.__pozycje:
@@ -22,6 +27,7 @@ class Menu:
         self.__wybor_menu(moduly)
         
     def __wybor_menu(self, moduly):
+        '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
             opcja = raw_input('opcja > ')
             try:
@@ -44,16 +50,20 @@ class Menu:
 
 
     def dodaj_do_menu(self, element):
+        '''dodaje pozycję do menu, następnie je sortuje'''
         self.__pozycje.append(element)
         self.__pozycje.sort()
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
+        '''zwraca listę załadowanych obiektów'''
         self.__zaladowane_obiekty = zaladowane
 
     def przekaz_pozycje(self):
+        '''zwraca pozycje z menu'''
         return self.__pozycje
 
     def __szukaj_modul(self, numer):
+        '''zwraca obiekt dla podanego numeru'''
         tmp = dict(self.__zaladowane_obiekty)
         try:
             return tmp[numer]
@@ -61,11 +71,9 @@ class Menu:
             return None
 
     def usun_pozycje(self, nr):
+        '''wyszukuje i usuwa pozycję o podanym numerze z menu'''
         for k, v in self.__pozycje:
             if k == nr:
                 logging.debug("[%s] deleting from menu: %s", 'Menu', v)
                 self.__pozycje.pop(self.__pozycje.index((k, v)))
         
-        
-
-#TODO: testy, czy moduly poprawnie sie wczytuja
