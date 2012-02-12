@@ -45,7 +45,6 @@ class Moduly:
             nazwa = mod.__name__
             """obiekt"""
             try:
-                #źle, że nazwa pliku musi być taka sama, jak klasy
                 mod = getattr(mod, i)
             except AttributeError, err:
                 logging.error("[%s] Error: %s", i, err)

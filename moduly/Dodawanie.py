@@ -1,6 +1,8 @@
 #-*- coding: utf-8 -*-
 class Dodawanie:
 
+    __pozycja_w_menu=1
+    __nazwa_w_menu='dodaj'
     __wersja = '0.3'
     __info = "Plugin do dodawania liczb calkowitych"
     __zaleznosci = ["Odejmowanie"]
@@ -20,7 +22,8 @@ class Dodawanie:
         return self.__zaleznosci
 
     def do_menu(self):
-        return (1, 'dodaj')
+        '''lista opcji, które idą do menu'''
+        return (self.__pozycja_w_menu, self.__nazwa_w_menu)
 
     def menu(self, zaladowane):
         # os.system("clear")
