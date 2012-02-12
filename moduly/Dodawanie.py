@@ -1,8 +1,11 @@
 #-*- coding: utf-8 -*-
+
+import os
+
 class Dodawanie:
 
-    __pozycja_w_menu=1
-    __nazwa_w_menu='dodaj'
+    __pozycja_w_menu = 1
+    __nazwa_w_menu = 'dodaj'
     __wersja = '0.3'
     __info = "Plugin do dodawania liczb calkowitych"
     __zaleznosci = ["Odejmowanie"]
@@ -26,7 +29,7 @@ class Dodawanie:
         return (self.__pozycja_w_menu, self.__nazwa_w_menu)
 
     def menu(self, zaladowane):
-        # os.system("clear")
+        os.system("clear")
         print "DODAWANIE:"
         print "1. Wprowadz liczby"
         print "2. Podaj wynik"
@@ -78,7 +81,6 @@ class Dodawanie:
     def __solver(self, zaladowane):
         #malo eleganckie...
         for k, v in zaladowane:
-            print str(v).split('.')[1]
             if str(v).split('.')[1] == 'Odejmowanie':
                 break
         wynik = raw_input('Podaj wynik: ')
@@ -91,4 +93,4 @@ class Dodawanie:
             odj = int(odj)
         except Exception:
             print "Błędna liczba"
-        print 'Wynik działania: ' + str(v.odejmij([wynik,odj]))
+        print 'Wynik działania: ' + str(v.odejmij([wynik, odj]))

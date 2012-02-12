@@ -52,7 +52,6 @@ class Moduly:
             obiekt = mod()
             """sprawdzanie poprawności modułu -
                obowiązkowe funkcje: info, wersja, menu, do_menu"""
-            #assert(obiekt.do_menu() != None)
             try:
                 assert(obiekt.info != None)
                 assert(obiekt.wersja != None)
@@ -80,14 +79,13 @@ class Moduly:
 
     def __wypisz_zaladowane(self):
         '''wypisuje listę załadowanych i ich wersje'''
-        print "ZAŁADOWANE MODULY:"
+        print "\nZAŁADOWANE MODULY:"
         for i in self.__zaladowane_pluginy:
             print '   - ' + i
-        print "\n"
 
     def menu(self):
         '''pokazuje pozycje z menu'''
-        # os.system("clear")
+        os.system("clear")
         print "MODUŁY:"
         print "1. Lista modułów"
         print "2. Przeładuj moduły"
@@ -110,15 +108,15 @@ class Moduly:
             elif opcja == 1:
                 self.__wypisz_zaladowane()
             elif opcja == 2:
+                self.__zaladowane_obiekty = []
+                self.__zaladowane_pluginy = []
                 self.wczytaj_moduly()
-                #menu nie jest przekazywane do uruchom.py, ale może nie trzeba
+                #menu nie jest przekazywane do uruchom.py - BŁĄD!!!!!!!!!!!!!!!!!!!!!!!!!!
                 print "Moduły zostały przeładowane"
             else:
                 print "Błędna opcja"
                 continue
         self.menu()
-        #TODO:problem z wyswietlaniem - albo sie cofa 50 razy
-        #albo nie wypisuje menu
 
     def __sprawdz_zaleznosci(self, menu):
         '''sprawdza, czy spełnione są zależności między modułami
@@ -172,7 +170,11 @@ class Moduly:
 
         '''i ich zamiana na pierwszy wolny numer'''
         for wartosc in do_zamiany:
-            numer = wolne.pop(1)
+            try:
+                numer = wolne.pop(1)
+            except IndexError:
+                logging.error("[%s] Error: %s",'Moduly','no free space in menu')
+                return
             pozycje.append((numer, wartosc))
             self.__zmien_obiekt(oim.get(wartosc), numer)
         pozycje.sort()

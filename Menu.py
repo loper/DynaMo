@@ -6,6 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
 (lista w '__zaladowane_obiekty')."""
 
 import logging
+import os
 import sys
 
 class Menu:
@@ -19,7 +20,7 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        #os.system("clear")
+        os.system("clear")
         print "MENU:"
         for i in self.__pozycje:
             print "%d: %s" % (i[0], i[1])
@@ -38,6 +39,7 @@ class Menu:
                 continue
                 
             if opcja == 0:
+                os.system("clear")
                 sys.exit(0)
             elif opcja == 8:
                 moduly.menu()
@@ -63,9 +65,9 @@ class Menu:
         '''zwraca pozycje z menu'''
         return self.__pozycje
 
-    def zapisz_pozycje(self,pozycje):
+    def zapisz_pozycje(self, pozycje):
         '''zapisuje nową listę pozycji'''
-        self.__pozycje=pozycje
+        self.__pozycje = pozycje
 
     def __szukaj_modul(self, numer):
         '''zwraca obiekt dla podanego numeru'''
