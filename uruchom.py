@@ -6,15 +6,17 @@ from sys import argv
 
 import Moduly
 
-opcje, argumenty = getopt.getopt(argv[1:], 'v', 'verbose')
+OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
-for op, arg in opcje:
+for op, arg in OPCJE:
     if op in ('-v', '--verbose'):
-        logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
-                            level=logging.DEBUG)
+        logging.basicConfig(
+                        format='%(message)s (in %(funcName)s at %(lineno)d)',
+                        level=logging.DEBUG)
     else:
-        logging.basicConfig(format='%(message)s (in %(funcName)s at %(lineno)d)',
-                            level=logging.WARNING)
+        logging.basicConfig(
+                        format='%(message)s (in %(funcName)s at %(lineno)d)',
+                        level=logging.WARNING)
 
 MODULY = Moduly.Moduly()
 logging.debug("[%s] loaded", 'Moduly')
