@@ -11,7 +11,7 @@ class Odejmowanie:
         return self.__zaleznosci
 
     def do_menu(self):
-        return (1, 'odejmij')
+        return (2, 'odejmij')
 
     def info(self):
         return self.__info

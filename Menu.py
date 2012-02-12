@@ -63,6 +63,10 @@ class Menu:
         '''zwraca pozycje z menu'''
         return self.__pozycje
 
+    def zapisz_pozycje(self,pozycje):
+        '''zapisuje nową listę pozycji'''
+        self.__pozycje=pozycje
+
     def __szukaj_modul(self, numer):
         '''zwraca obiekt dla podanego numeru'''
         tmp = dict(self.__zaladowane_obiekty)

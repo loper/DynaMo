@@ -35,7 +35,7 @@ class Nazwa_modulu:
             opcja = raw_input('opcja > ')
             try:
                 opcja = int(opcja)
-            except Exception:
+            except ValueError:
                 print "Błędna opcja"
                 continue
             if opcja == 0:
