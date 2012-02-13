@@ -49,22 +49,23 @@ class Nazwamodulu:
         '''lista opcji, które idą do menu'''
         return (self.__pozycja_w_menu, self.__nazwa_w_menu)
 
-    def menu(self, glowne_menu):
+    def menu(self, glowne_menu, zaladowane):
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "NAZWA_MODULU:"
+        print "  1: lista przekazanych obiektów"
         print "  0: POWRÓT"
 
         self.__wybor_menu(glowne_menu)
 
-    def __wybor_menu(self, glowne_menu):
+    def __wybor_menu(self, glowne_menu, zaladowane):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
             opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
                 return
             elif opcja == 1:
-                pass
+                print zaladowane
             else:
                 print "Błędna opcja"
                 continue
