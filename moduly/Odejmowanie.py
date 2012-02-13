@@ -20,7 +20,7 @@ class Odejmowanie:
         return self.__wersja
 
     def menu(self, zaladowane):
-        print "odejmowanie menu..."
+        print "odejmowanie menu... "
 
     def odejmij(self, liczby):
         wynik = liczby[0]-liczby[1]

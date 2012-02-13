@@ -12,16 +12,17 @@ import sys
 class Menu:
     '''klasa Menu'''
 
-    __pozycje = [(8, 'Moduly')]
+    __pozycje = []
     __zaladowane_obiekty = None
 
     def __init__(self):
+        self.__pozycje = [(8, 'Moduly')]
+        self.__zaladowane_obiekty = None
         pass
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        os.system("clear")
-        print "MENU:"
+        print "\nMENU:"
         for i in self.__pozycje:
             print "%d: %s" % (i[0], i[1])
         print "0: WYJŚCIE"

@@ -3,9 +3,7 @@
 """wyszukuje i dynamicznie wczytuje moduły i tworzy ich obiekty
 
 Modułów szuka w 'moduly/'. Wczytuje je i tworzy listę obiektów, które są
-wywoływane z poziomu menu. Dodatkowo wypisuje ich listę i umożliwia
-przeładowanie."""
-
+wywoływane z poziomu menu. Dodatkowo wypisuje ich listę."""
 import logging
 import os
 import re
@@ -88,7 +86,6 @@ class Moduly:
         os.system("clear")
         print "MODUŁY:"
         print "1. Lista modułów"
-        print "2. Przeładuj moduły"
         print "0. POWRÓT"
 
         self.__wybor_menu()
@@ -107,12 +104,6 @@ class Moduly:
                 return
             elif opcja == 1:
                 self.__wypisz_zaladowane()
-            elif opcja == 2:
-                self.__zaladowane_obiekty = []
-                self.__zaladowane_pluginy = []
-                self.wczytaj_moduly()
-                #menu nie jest przekazywane do uruchom.py - BŁĄD!!!!!!!!!!!!!!!!!!!!!!!!!!
-                print "Moduły zostały przeładowane"
             else:
                 print "Błędna opcja"
                 continue
@@ -173,7 +164,7 @@ class Moduly:
             try:
                 numer = wolne.pop(1)
             except IndexError:
-                logging.error("[%s] Error: %s",'Moduly','no free space in menu')
+                logging.error("[%s] Error: %s", 'Moduly', 'no free space in menu')
                 return
             pozycje.append((numer, wartosc))
             self.__zmien_obiekt(oim.get(wartosc), numer)
