@@ -3,7 +3,4 @@ start:
 v:
 	python DynaMo.py -v
 clean:
-	rm -v *.pyc
-	rm -v *.pyo
-	rm -v moduly/*.pyc
-	rm -v moduly/*.pyo
+	\rm -v *.pyc *.pyo moduly/*.pyc moduly/*.pyo
