@@ -1,7 +1,7 @@
 start:
-	python -O uruchom.pyc
+	python -O DynaMo.pyc
 v:
-	python -O uruchom.pyc -v
+	python -O DynaMo.pyc -v
 clean:
 	rm -v *.pyc
 	rm -v *.pyo
