@@ -53,14 +53,14 @@ class Nazwamodulu:
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "NAZWA_MODULU:"
-        print "0. POWRÓT"
+        print "  0: POWRÓT"
 
         self.__wybor_menu(zaladowane)
 
     def __wybor_menu(self, zaladowane=None):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
-            opcja = raw_input('opcja > ')
+            opcja = raw_input('\nopcja > ')
             try:
                 opcja = int(opcja)
             except ValueError:

@@ -18,21 +18,20 @@ class Menu:
     def __init__(self):
         self.__pozycje = [(8, 'Moduly')]
         self.__zaladowane_obiekty = None
-        pass
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
         print "\nMENU:"
         for i in self.__pozycje:
-            print "%d: %s" % (i[0], i[1])
-        print "0: WYJŚCIE"
-        print "\n"
+            print "  %d: %s" % (i[0], i[1])
+        print "  0: WYJŚCIE"
+        #print "\n"
         self.__wybor_menu(moduly)
         
     def __wybor_menu(self, moduly):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
-            opcja = raw_input('opcja > ')
+            opcja = raw_input('\nopcja > ')
             try:
                 opcja = int(opcja)
             except ValueError:

@@ -1,10 +1,11 @@
 #-*- coding: utf-8 -*-
 
 """DynaMo - główny moduł uruchomieniowy
-wersja 0.9"""
+wersja 0.9 RC1"""
 
 import getopt
 import logging
+import os
 from sys import argv
 
 import Moduly
@@ -20,9 +21,9 @@ for op, arg in OPCJE:
         logging.basicConfig(
                     format='%(message)s (in %(funcName)s at %(lineno)d)',
                     level=logging.WARNING)
-
+os.system('clear')
 print """DynaMo - główny moduł uruchomieniowy
-wersja 0.9"""
+wersja 0.9 RC1"""
 
 MODULY = Moduly.Moduly()
 logging.debug("[%s] loaded", 'Moduly')

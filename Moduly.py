@@ -27,7 +27,8 @@ class Moduly:
 
         lista_plikow = os.listdir('moduly')
         pliki_py = re.compile("\.py$")
-        znalezione = filter(pliki_py.search, lista_plikow)
+        #znalezione = filter(pliki_py.search, lista_plikow)
+        znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
         nazwy_modulow = map(nazwa_na_modul, znalezione)
 
@@ -77,23 +78,26 @@ class Moduly:
 
     def __wypisz_zaladowane(self):
         '''wypisuje listę załadowanych i ich wersje'''
-        print "\nZAŁADOWANE MODULY:"
-        for i in self.__zaladowane_pluginy:
-            print '   - ' + i
+        if self.__zaladowane_pluginy == []:
+            print "brak załadowanych modułów"
+        else:
+            print "\nZAŁADOWANE MODUŁY:"
+            for i in self.__zaladowane_pluginy:
+                print '   - ' + i
 
     def menu(self):
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "MODUŁY:"
-        print "1. Lista modułów"
-        print "0. POWRÓT"
+        print "  1. Lista modułów"
+        print "  0. POWRÓT"
 
         self.__wybor_menu()
 
     def __wybor_menu(self):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
-            opcja = raw_input('opcja > ')
+            opcja = raw_input('\nopcja > ')
             try:
                 opcja = int(opcja)
             except ValueError:
@@ -164,7 +168,8 @@ class Moduly:
             try:
                 numer = wolne.pop(1)
             except IndexError:
-                logging.error("[%s] Error: %s", 'Moduly', 'no free space in menu')
+                logging.error("[%s] Error: %s", 'Moduly',
+                              'no free space in menu')
                 return
             pozycje.append((numer, wartosc))
             self.__zmien_obiekt(oim.get(wartosc), numer)

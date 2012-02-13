@@ -1,9 +1,9 @@
 start:
-	python -O DynaMo.pyc
+	python DynaMo.py
 v:
-	python -O DynaMo.pyc -v
+	python DynaMo.py -v
 clean:
 	rm -v *.pyc
 	rm -v *.pyo
 	rm -v moduly/*.pyc
-	rm -v  moduly/*.pyo
+	rm -v moduly/*.pyo
