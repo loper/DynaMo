@@ -1,7 +1,7 @@
-**DynaMo**
+DynaMo
 
 ver. 0.9 RC2
-_by Maciej Spychalski_
+_by Loper_
 
 Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
 
@@ -16,18 +16,3 @@ Funkcjonalność:
  - tworzenie listy załadowanych modułów
  - włączanie programu w trybie "gadatliwym" (verbose)
 
-
-Changelog:
-
-RC2:
- - mod
- - optymalizacja
- - readme
-
-RC1:
- pierwsza wydanie programu (punkt odniesienia)
-
-
-Planowane:
- + logowanie użytkowników
- + konfiguracja programu 
