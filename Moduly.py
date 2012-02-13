@@ -30,12 +30,13 @@ class Moduly:
         #znalezione = filter(pliki_py.search, lista_plikow)
         znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
-        nazwy_modulow=[]
-        for k in znalezione:
-            nazwy_modulow.append(nazwa_na_modul(k))
+        #nazwy_modulow=[]
+        #for k in znalezione:
+            #nazwy_modulow.append(nazwa_na_modul(k))
         #nazwy_modulow = map(nazwa_na_modul, znalezione)
 
-        for i in nazwy_modulow:
+        for k in znalezione:
+            i=nazwa_na_modul(k)
             """wszystko, oprócz __init__ i blank"""
             if i in('__init__', 'blank'):
                 continue
