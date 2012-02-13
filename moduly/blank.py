@@ -49,23 +49,18 @@ class Nazwamodulu:
         '''lista opcji, które idą do menu'''
         return (self.__pozycja_w_menu, self.__nazwa_w_menu)
 
-    def menu(self, zaladowane):
+    def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "NAZWA_MODULU:"
         print "  0: POWRÓT"
 
-        self.__wybor_menu(zaladowane)
+        self.__wybor_menu(glowne_menu)
 
-    def __wybor_menu(self, zaladowane=None):
+    def __wybor_menu(self, glowne_menu):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
-            opcja = raw_input('\nopcja > ')
-            try:
-                opcja = int(opcja)
-            except ValueError:
-                print "Błędna opcja"
-                continue
+            opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
                 return
             elif opcja == 1:

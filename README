@@ -1,11 +1,33 @@
-Program: DynaMo
-Autor: Maciej Spychalski
-wersja: 0.9 RC1
-data: 13.02.2012 02:50 
+**DynaMo**
 
-Wniosek o nadanie numeracji wersji 1.0 i wydanie wersji do użytku publicznego
-został ODDALONY.
+ver. 0.9 RC2
+_by Maciej Spychalski_
 
-Poprawki zostały dodane do ISSUES na github.com/loper/DynaMo.
+Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
 
-A. Adamczyk
+Funkcjonalność:
+ - wyszukiwanie i wczytywanie modułów
+ - dodawanie ich do menu
+ - wywoływanie ich funkcji i menu
+ - sprawdzanie spełnienia zależności
+ - sprawdzanie poprawności modułu
+ - wyłączanie błędnych modułów
+ - korekcja duplikatów z menu
+ - tworzenie listy załadowanych modułów
+ - włączanie programu w trybie "gadatliwym" (verbose)
+
+
+Changelog:
+
+RC2:
+ - mod
+ - optymalizacja
+ - readme
+
+RC1:
+ pierwsza wydanie programu (punkt odniesienia)
+
+
+Planowane:
+ + logowanie użytkowników
+ + konfiguracja programu 

@@ -27,22 +27,28 @@ class Menu:
         print "  0: WYJŚCIE"
         #print "\n"
         self.__wybor_menu(moduly)
+
+    def pytanie_o_opcje(self):
+        '''pyta o wybór z menu i zwraca opcję'''
+        opcja = raw_input('\nopcja > ')
+        try:
+            opcja = int(opcja)
+        except ValueError:
+            return None
+        return opcja
         
     def __wybor_menu(self, moduly):
-        '''pyta o wybór i wywołuje daną funkcję'''
+        '''wywołuje daną funkcję z menu'''
         while(1):
-            opcja = raw_input('\nopcja > ')
-            try:
-                opcja = int(opcja)
-            except ValueError:
+            opcja = self.pytanie_o_opcje()
+            if opcja == None:
                 print "Błędna opcja"
                 continue
-                
             if opcja == 0:
                 os.system("clear")
                 sys.exit(0)
             elif opcja == 8:
-                moduly.menu()
+                moduly.menu(self)
             else:
                 obj = self.__szukaj_modul(opcja)
                 if obj == None:

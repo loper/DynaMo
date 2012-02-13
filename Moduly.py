@@ -36,7 +36,7 @@ class Moduly:
         #nazwy_modulow = map(nazwa_na_modul, znalezione)
 
         for k in znalezione:
-            i=nazwa_na_modul(k)
+            i = nazwa_na_modul(k)
             """wszystko, oprócz __init__ i blank"""
             if i in('__init__', 'blank'):
                 continue
@@ -89,25 +89,19 @@ class Moduly:
             for i in self.__zaladowane_pluginy:
                 print '   - ' + i
 
-    def menu(self):
+    def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "MODUŁY:"
         print "  1. Lista modułów"
         print "  0. POWRÓT"
 
-        self.__wybor_menu()
+        self.__wybor_menu(glowne_menu)
 
-    def __wybor_menu(self):
+    def __wybor_menu(self, glowne_menu):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
-            opcja = raw_input('\nopcja > ')
-            try:
-                opcja = int(opcja)
-            except ValueError:
-                print "Błędna opcja"
-                continue
-                
+            opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
                 return
             elif opcja == 1:
@@ -115,7 +109,7 @@ class Moduly:
             else:
                 print "Błędna opcja"
                 continue
-        self.menu()
+        self.menu(glowne_menu)
 
     def __sprawdz_zaleznosci(self, menu):
         '''sprawdza, czy spełnione są zależności między modułami
