@@ -9,6 +9,11 @@ import os
 from sys import argv
 
 import Moduly
+import Konfiguracja
+
+konf=Konfiguracja.Konfiguracja('ustawienia.cfg')
+
+exit(-1)
 
 OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
