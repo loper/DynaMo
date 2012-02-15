@@ -25,20 +25,24 @@ a odczyt wartości przy pomocy funkcji 'podaj_wartosc(klucz)'.
 
 import os
 
+""" UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
 class Nazwamodulu:
-    'klasa Nazwamodulu'
+    '''klasa Nazwamodulu'''
 
+    '''----------------- USTAWIĆ WEDŁUG UZNANIA -----------------'''
     __wersja = '0.1'
     __info = "opis"
     __pozycja_w_menu = 5
     __nazwa_w_menu = 'nazwa w menu'
     __zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']
-    '''dla pustych zależności ustawić "[]"'''
+    ''' dla pustych zależności ustawić "[]"; pamiętać o "moduly." '''
+
+    '''----------------- NIE ZMIENIAĆ -----------------'''
 
     __obiekty = {}
 
     def __init__(self):
-        pass
+        self.__obiekty = {}
 
     def info(self):
         '''zwraca opis modułu'''
@@ -61,8 +65,10 @@ class Nazwamodulu:
         '''zapis przekazanych obiektów'''
         self.__obiekty = obiekty
 
-        '''dodanie pozycji do menu'''
-        self.__do_menu()
+        '''uruchomienie modułu'''
+        self.uruchom_modul()
+
+    '''----------------- TĄ CZĘŚĆ MOŻNA ZMIENIAĆ -----------------'''
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
@@ -84,3 +90,10 @@ class Nazwamodulu:
                 print "Błędna opcja"
                 continue
         self.menu()
+
+    def uruchom_modul(self):
+        '''dodanie pozycji do menu'''
+        '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
+        self.__do_menu()
+
+        '''uzupelnić o własne funkcje'''
