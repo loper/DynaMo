@@ -27,7 +27,7 @@ class Nazwamodulu:
     __info = "opis"
     __pozycja_w_menu = 5
     __nazwa_w_menu = 'nazwa w menu'
-    __zaleznosci = ['NiezbednyModul', 'InnyWaznyModul']
+    __zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']
     '''dla pustych zależności ustawić "[]"'''
 
     def __init__(self):
@@ -49,7 +49,7 @@ class Nazwamodulu:
         '''lista opcji, które idą do menu'''
         return (self.__pozycja_w_menu, self.__nazwa_w_menu)
 
-    def menu(self, glowne_menu,zaladowane):
+    def menu(self, glowne_menu, zaladowane):
         '''pokazuje pozycje z menu'''
         os.system("clear")
         print "NAZWA_MODULU:"
@@ -58,7 +58,7 @@ class Nazwamodulu:
 
         self.__wybor_menu(glowne_menu)
 
-    def __wybor_menu(self, glowne_menu,zaladowane):
+    def __wybor_menu(self, glowne_menu, zaladowane):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
             opcja = glowne_menu.pytanie_o_opcje()
