@@ -1,0 +1,40 @@
+From 9f21b653e52d71835bff1cbfd60b489de5a9030d Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 23:31:52 +0100
+Subject: [PATCH] sprawdzanie opcji menu
+
+---
+ Menu.py |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/Menu.py b/Menu.py
+index 1cc9f0f..8f92041 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -6,7 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
+ (lista w '__zaladowane_obiekty')."""
+ 
+ import logging
+-#import os
++import os
+ import sys
+ 
+ class Menu:
+@@ -55,8 +55,12 @@ class Menu:
+             elif opcja == 8:
+                 moduly.menu(self)
+             else:
+-                obj = self.__zaladowane_obiekty[opcja]
+-                obj.menu(self)
++                try:
++                    obj = self.__zaladowane_obiekty[opcja]
++                    obj.menu(self)
++                except KeyError:
++                    print "Błędna opcja"
++                    continue
+             self.pokaz_menu(moduly)
+ 
+ 
+-- 
+1.7.8.4
+
