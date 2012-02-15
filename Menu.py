@@ -6,7 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
 (lista w '__zaladowane_obiekty')."""
 
 import logging
-import os
+#import os
 import sys
 
 class Menu:
@@ -15,8 +15,11 @@ class Menu:
     __pozycje = []
     __zaladowane_obiekty = None
 
-    def __init__(self):
-        self.__pozycje = [(8, 'Moduly')]
+    def __init__(self, pokazywac_moduly = 't'):
+        if pokazywac_moduly == 't':
+            self.__pozycje = [(8, 'Moduly')]
+        else:
+            self.__pozycje = []
         self.__zaladowane_obiekty = None
 
     def pokaz_menu(self, moduly):
@@ -36,7 +39,7 @@ class Menu:
         except ValueError:
             return None
         return opcja
-        
+
     def __wybor_menu(self, moduly):
         '''wywołuje daną funkcję z menu'''
         while(1):
@@ -45,7 +48,8 @@ class Menu:
                 print "Błędna opcja"
                 continue
             if opcja == 0:
-                os.system("clear")
+                #os.system("clear")
+                print 20 * "\n"
                 sys.exit(0)
             elif opcja == 8:
                 moduly.menu(self)
@@ -89,4 +93,4 @@ class Menu:
             if k == numer:
                 logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
                 self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
-        
+

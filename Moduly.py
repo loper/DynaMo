@@ -20,9 +20,9 @@ class Moduly:
     def __init__(self):
         pass
 
-    def wczytaj_moduly(self):
+    def wczytaj_moduly(self, mod_w_menu):
         '''dynamiczne wczytywanie i szukanie pluginow w folderze "moduly"'''
-        menu = Menu.Menu()
+        menu = Menu.Menu(mod_w_menu)
         logging.debug("[%s] loaded", 'Menu')
 
         lista_plikow = os.listdir('moduly')
@@ -74,8 +74,8 @@ class Moduly:
         self.__sprawdz_zaleznosci(menu)
         self.__sprawdzanie_numeracji(menu)
         return menu
-        
-    
+
+
     def podaj_zaladowane(self):
         '''zwraca listę załadowanych'''
         return self.__zaladowane_obiekty
@@ -91,7 +91,8 @@ class Moduly:
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        os.system("clear")
+        #6os.system("clear")
+        print 20 * "\n"
         print "MODUŁY:"
         print "  1. Lista modułów"
         print "  0. POWRÓT"
