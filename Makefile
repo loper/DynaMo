@@ -2,7 +2,7 @@ start:
 	python DynaMo.py
 v:
 	python DynaMo.py -v
-o:
-	python -OO DynaMo.py
+clean:
+	@rm *.pyc *.pyo moduly/*.pyo moduly/*.pyc
 patch:
 	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 < (nazwa_latki).patch"
