@@ -1,6 +1,6 @@
 DynaMo
 
-ver. 1.0
+ver. 1.1
 _by Loper_
 
 Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
