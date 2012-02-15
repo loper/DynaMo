@@ -1,7 +1,12 @@
-From c81d7b3f2bf7f25bf09a45b62c1383ff45904d5b Wed, 15 Feb 2012 14:29:39 +0100
+From 8df591914b9e7fc94f3f4c4f3c54ee0e8370f257 Mon Sep 17 00:00:00 2001
 From: Loper <loper.t2h@gmail.com>
-Date: Wed, 15 Feb 2012 14:28:18 +0100
-Subject: [PATCH] patch: otwieranie i zamykanie pliku
+Date: Wed, 15 Feb 2012 15:12:38 +0100
+Subject: [PATCH] patch 1
+
+---
+ Konfiguracja.py |   39 +++++++++++++++++++++++----------------
+ README          |    4 ++--
+ 2 files changed, 25 insertions(+), 18 deletions(-)
 
 diff --git a/Konfiguracja.py b/Konfiguracja.py
 index eb5bf5a..8da5c47 100644
@@ -64,3 +69,24 @@ index eb5bf5a..8da5c47 100644
      def podaj_wartosc(self, klucz):
          try:
              return self.__ustawienia[klucz]
+diff --git a/README b/README
+index 0d13104..6c33ac7 100644
+--- a/README
++++ b/README
+@@ -1,6 +1,6 @@
+ DynaMo
+ 
+-ver. 1.0
++ver. 1.1
+ _by Loper_
+ 
+ Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
+@@ -15,4 +15,4 @@ Funkcjonalność:
+  - korekcja duplikatów z menu
+  - tworzenie listy załadowanych modułów
+  - włączanie programu w trybie "gadatliwym" (verbose)
+-
++ - wczytywanie ustawień z pliku konfiguracyjnego
+-- 
+1.7.8.4
+
