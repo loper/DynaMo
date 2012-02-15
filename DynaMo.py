@@ -12,6 +12,7 @@ import Moduly
 import Konfiguracja
 
 def tryb_verbose(wlaczyc = False):
+    '''włącza tryb "gadatliwy"'''
     if wlaczyc:
         logging.basicConfig(level = logging.DEBUG)
     else:
@@ -37,7 +38,8 @@ else:
 #os.system('clear')
 print 20 * "\n"
 print KONF.podaj_wartosc("naglowek")
-print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"), KONF.podaj_wartosc("autor"))
+print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+                           KONF.podaj_wartosc("autor"))
 
 MODULY = Moduly.Moduly(KONF)
 logging.debug("[%s] loaded", 'Moduly')

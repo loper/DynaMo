@@ -138,8 +138,9 @@ class Moduly:
                 except AssertionError:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
-                                  """[%s] dependency error: \'%s\'.
-                                  Module disabled""", wadliwy_modul, zaleznosc)
+                    """[%s] dependency error: \'%s\'. Module disabled""",
+                    wadliwy_modul, zaleznosc)
+
                     '''usuń skąd tylko się da'''
                     del(sys.modules['moduly.' + wadliwy_modul])
                     del obiekt
@@ -147,10 +148,12 @@ class Moduly:
                     self.__zaladowane_obiekty.pop(i)
                     for j in copy.copy(self.__zaladowane_pluginy):
                         if j.find(i) >= 0:
-                            self.__zaladowane_pluginy.pop(self.__zaladowane_pluginy.index(j))
+                            self.__zaladowane_pluginy.pop(
+                                            self.__zaladowane_pluginy.index(j))
                             break
 
     def __przekaz_obiekty(self, obiekty, zaladowane):
+        '''tworzy pakiet i przekazuje go do wszystkich obiektow'''
         do_przekazania = {}
         do_przekazania.update(obiekty)
         do_przekazania.update(zaladowane)

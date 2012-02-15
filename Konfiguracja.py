@@ -2,7 +2,7 @@
 '''umożliwia wczytywanie ustawień do programu'''
 import logging
 
-class Konfiguracja(object):
+class Konfiguracja:
     '''klasa Konfiguracja'''
 
     __ustawienia = {}
@@ -28,10 +28,10 @@ class Konfiguracja(object):
                     linia[1] = False
                 self.__dodaj_do_ustawien(linia[0], linia[1])
             del plik_konf
-        except:
-            logging.basicConfig(
-                    format = '%(message)s (in %(funcName)s at %(lineno)d)')
-            logging.error("Błąd: Nie można odnaleźć pliku konfiguracyjnego '%s'" % konfig)
+        except IOError:
+            logging.error(
+            "Błąd: Nie można odnaleźć pliku konfiguracyjnego '%s'",
+                          konfig)
             exit(-1)
 
 
@@ -40,7 +40,8 @@ class Konfiguracja(object):
         self.__ustawienia.update({klucz:wartosc})
 
     def podaj_wartosc(self, klucz):
+        '''zwraca wartość ze słownika __ustawienia dla podanego klucza '''
         try:
             return self.__ustawienia[klucz]
-        except:
+        except KeyError:
             return "<brak klucza>"
