@@ -15,8 +15,8 @@ class Menu:
     __pozycje = []
     __zaladowane_obiekty = {}
 
-    def __init__(self, pokazywac_moduly = 't'):
-        if pokazywac_moduly == 't':
+    def __init__(self, pokazywac_moduly = True):
+        if pokazywac_moduly:
             self.__pozycje = [(8, 'Moduly')]
             self.__zaladowane_obiekty = {8: None}
         else:

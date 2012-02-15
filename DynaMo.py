@@ -23,8 +23,7 @@ KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
 
 ''' dwa sposoby włączania trybu gadatliwego:
 albo konfiguracja albo przełącznik'''
-CZY_VERBOSE = KONF.podaj_wartosc("verbose")
-if CZY_VERBOSE == 'y':
+if KONF.podaj_wartosc("verbose") == 'y':
     tryb_verbose(True)
 else:
     OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
