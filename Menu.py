@@ -6,7 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
 (lista w '__zaladowane_obiekty')."""
 
 import logging
-#import os
+import os
 import sys
 
 class Menu:
@@ -55,8 +55,12 @@ class Menu:
             elif opcja == 8:
                 moduly.menu(self)
             else:
-                obj = self.__zaladowane_obiekty[opcja]
-                obj.menu(self)
+                try:
+                    obj = self.__zaladowane_obiekty[opcja]
+                    obj.menu(self)
+                except KeyError:
+                    print "Błędna opcja"
+                    continue
             self.pokaz_menu(moduly)
 
 
