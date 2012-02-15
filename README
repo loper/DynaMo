@@ -1,7 +1,10 @@
 DynaMo
 
-ver. 1.0
+ver. 1.2
 _by Loper_
+
+UWAGA!!!
+Wersja 1.2 nie jest kompatybilna z poprzednimi wersjami programu (zmiana silnika przetwarzania modułów). Aplikację należy uaktualnić według zaleceń z pliku 'UPDATE' lub na wiki. Poprzednie wersje nie będą dalej rozwijane i wspierane.
 
 Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
 
@@ -9,10 +12,11 @@ Funkcjonalność:
  - wyszukiwanie i wczytywanie modułów
  - dodawanie ich do menu
  - wywoływanie ich funkcji i menu
+ - przekazywanie obiektów do modułów
  - sprawdzanie spełnienia zależności
  - sprawdzanie poprawności modułu
  - wyłączanie błędnych modułów
  - korekcja duplikatów z menu
  - tworzenie listy załadowanych modułów
  - włączanie programu w trybie "gadatliwym" (verbose)
-
+ - wczytywanie ustawień z pliku konfiguracyjnego

@@ -13,14 +13,16 @@ class Menu:
     '''klasa Menu'''
 
     __pozycje = []
-    __zaladowane_obiekty = None
+    __zaladowane_obiekty = {}
+    __domyslna_opcja = None
 
-    def __init__(self, pokazywac_moduly = 't'):
-        if pokazywac_moduly == 't':
+    def __init__(self, pokazywac_moduly = True):
+        if pokazywac_moduly:
             self.__pozycje = [(8, 'Moduly')]
+            self.__zaladowane_obiekty = {8: None}
         else:
             self.__pozycje = []
-        self.__zaladowane_obiekty = None
+            self.__zaladowane_obiekty = {}
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
@@ -28,7 +30,6 @@ class Menu:
         for i in self.__pozycje:
             print "  %d: %s" % (i[0], i[1])
         print "  0: WYJŚCIE"
-        #print "\n"
         self.__wybor_menu(moduly)
 
     def pytanie_o_opcje(self):
@@ -37,7 +38,7 @@ class Menu:
         try:
             opcja = int(opcja)
         except ValueError:
-            return None
+            return self.__domyslna_opcja
         return opcja
 
     def __wybor_menu(self, moduly):
@@ -54,30 +55,25 @@ class Menu:
             elif opcja == 8:
                 moduly.menu(self)
             else:
-                obj = self.__szukaj_modul(opcja)
-                if obj == None:
-                    print "Błędna opcja"
-                    continue
-                obj.menu(self, moduly.podaj_zaladowane())
+                obj = self.__zaladowane_obiekty[opcja]
+                obj.menu(self)
             self.pokaz_menu(moduly)
 
 
-    def dodaj_do_menu(self, element):
+    def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
+        '''najpierw sprawdza duplikaty'''
+        numer = element[0]
+        if self.__zaladowane_obiekty.has_key(numer):
+            numer = self.__znajdz_wolny()
+            element = (numer, element[1])
         self.__pozycje.append(element)
         self.__pozycje.sort()
+        self.__zaladowane_obiekty.update({numer:obiekt})
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         '''zwraca listę załadowanych obiektów'''
         self.__zaladowane_obiekty = zaladowane
-
-    def przekaz_pozycje(self):
-        '''zwraca pozycje z menu'''
-        return self.__pozycje
-
-    def zapisz_pozycje(self, pozycje):
-        '''zapisuje nową listę pozycji'''
-        self.__pozycje = pozycje
 
     def __szukaj_modul(self, numer):
         '''zwraca obiekt dla podanego numeru'''
@@ -93,4 +89,12 @@ class Menu:
             if k == numer:
                 logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
                 self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
+
+    def __znajdz_wolny(self):
+        '''dostępna numeracja - od 1 do 10'''
+        wolne = range(1, 9 + 1)
+        for klucz in wolne:
+            if not self.__zaladowane_obiekty.has_key(klucz):
+                return klucz
+
 
