@@ -42,7 +42,7 @@ class Nazwamodulu:
     __obiekty = {}
 
     def __init__(self):
-	self.__obiekty = {}
+        self.__obiekty = {}
 
     def info(self):
         '''zwraca opis modułu'''
@@ -65,10 +65,11 @@ class Nazwamodulu:
         '''zapis przekazanych obiektów'''
         self.__obiekty = obiekty
 
-	'''uruchomienie modułu'''
-	self.uruchom_modul()
+        '''uruchomienie modułu'''
+        self.uruchom_modul()
 
     '''----------------- TĄ CZĘŚĆ MOŻNA ZMIENIAĆ -----------------'''
+
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
@@ -91,8 +92,8 @@ class Nazwamodulu:
         self.menu()
 
     def uruchom_modul(self):
-	'''dodanie pozycji do menu'''
-	'''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
+        '''dodanie pozycji do menu'''
+        '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
         self.__do_menu()
 
-	'''uzupelnić o własne funkcje'''
+        '''uzupelnić o własne funkcje'''
