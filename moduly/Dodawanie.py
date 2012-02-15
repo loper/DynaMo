@@ -6,11 +6,13 @@ class Dodawanie:
 
     __pozycja_w_menu = 1
     __nazwa_w_menu = 'dodaj'
-    __wersja = '0.3'
+    __wersja = '0.6'
     __info = "Plugin do dodawania liczb calkowitych"
-    __zaleznosci = ["Odejmowanie"]
+    #__zaleznosci = ["moduly.Odejmowanie"]
+    __zaleznosci = []
 
     __liczby = []
+    __obiekty = {}
 
     def __init__(self):
         pass
@@ -24,11 +26,19 @@ class Dodawanie:
     def zaleznosci(self):
         return self.__zaleznosci
 
-    def do_menu(self):
-        '''lista opcji, które idą do menu'''
-        return (self.__pozycja_w_menu, self.__nazwa_w_menu)
+    def __do_menu(self):
+        '''wysłanie listy opcji, które idą do menu'''
+        if self.__obiekty.has_key('menu'):
+            self.__obiekty['menu'].dodaj(self, (self.__pozycja_w_menu, self.__nazwa_w_menu))
 
-    def menu(self, glowne_menu, zaladowane):
+    def zapisz_obiekty(self, obiekty):
+        '''zapis przekazanych obiektów'''
+        self.__obiekty = obiekty
+
+        '''dodanie pozycji do menu'''
+        self.__do_menu()
+
+    def menu(self, glowne_menu):
         os.system("clear")
         print "DODAWANIE:"
         print "1. Wprowadz liczby"
@@ -36,9 +46,9 @@ class Dodawanie:
         print "3. Solver"
         print "0. POWRÓT"
 
-        self.__wybor_menu(glowne_menu,zaladowane)
+        self.__wybor_menu(glowne_menu)
 
-    def __wybor_menu(self, glowne_menu,zaladowane):
+    def __wybor_menu(self, glowne_menu):
         while(1):
             opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
@@ -47,10 +57,10 @@ class Dodawanie:
                 self.__liczby = self.__pobierz_liczby()
             elif opcja == 2:
                 self.__oblicz_wynik(self.__liczby)
-            elif opcja == 3:
-                self.__solver(zaladowane)
+#            elif opcja == 3:
+#                self.__solver()
             else:
-                print "Bledna opcja"
+                print "Błędna opcja"
                 continue
         self.menu()
 
@@ -78,19 +88,19 @@ class Dodawanie:
         wynik = liczby[0] + liczby[1]
         return wynik
 
-    def __solver(self, zaladowane):
-        #malo eleganckie...
-        for k, v in zaladowane:
-            if str(v).split('.')[1] == 'Odejmowanie':
-                break
-        wynik = raw_input('Podaj wynik: ')
-        try:
-            wynik = int(wynik)
-        except Exception:
-            print "Błędna liczba"
-        odj = raw_input('Podaj odjemną: ')
-        try:
-            odj = int(odj)
-        except Exception:
-            print "Błędna liczba"
-        print 'Wynik działania: ' + str(v.odejmij([wynik, odj]))
+#    def __solver(self):
+#        #malo eleganckie...
+#        for k, v in zaladowane:
+#            if str(v).split('.')[1] == 'Odejmowanie':
+#                break
+#        wynik = raw_input('Podaj wynik: ')
+#        try:
+#            wynik = int(wynik)
+#        except Exception:
+#            print "Błędna liczba"
+#        odj = raw_input('Podaj odjemną: ')
+#        try:
+#            odj = int(odj)
+#        except Exception:
+#            print "Błędna liczba"
+#        print 'Wynik działania: ' + str(v.odejmij([wynik, odj]))

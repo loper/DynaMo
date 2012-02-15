@@ -13,14 +13,14 @@ class Menu:
     '''klasa Menu'''
 
     __pozycje = []
-    __zaladowane_obiekty = None
+    __zaladowane_obiekty = {}
 
     def __init__(self, pokazywac_moduly = 't'):
         if pokazywac_moduly == 't':
             self.__pozycje = [(8, 'Moduly')]
         else:
             self.__pozycje = []
-        self.__zaladowane_obiekty = None
+        self.__zaladowane_obiekty = {}
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
@@ -28,7 +28,6 @@ class Menu:
         for i in self.__pozycje:
             print "  %d: %s" % (i[0], i[1])
         print "  0: WYJŚCIE"
-        #print "\n"
         self.__wybor_menu(moduly)
 
     def pytanie_o_opcje(self):
@@ -54,18 +53,16 @@ class Menu:
             elif opcja == 8:
                 moduly.menu(self)
             else:
-                obj = self.__szukaj_modul(opcja)
-                if obj == None:
-                    print "Błędna opcja"
-                    continue
-                obj.menu(self, moduly.podaj_zaladowane())
+                obj = self.__zaladowane_obiekty[opcja]
+                obj.menu(self)
             self.pokaz_menu(moduly)
 
 
-    def dodaj_do_menu(self, element):
+    def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
         self.__pozycje.append(element)
         self.__pozycje.sort()
+        self.__zaladowane_obiekty.update({element[0]:obiekt})
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         '''zwraca listę załadowanych obiektów'''

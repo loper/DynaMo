@@ -14,26 +14,38 @@ import Menu
 class Moduly:
     '''klasa Moduly'''
 
-    __zaladowane_obiekty = []
+    __zaladowane_obiekty = {}
     __zaladowane_pluginy = []
 
-    def __init__(self):
-        pass
+    __obiekty = {}
 
-    def wczytaj_moduly(self, mod_w_menu):
-        '''dynamiczne wczytywanie i szukanie pluginow w folderze "moduly"'''
-        menu = Menu.Menu(mod_w_menu)
+    def __init__(self, konfiguracja):
+        '''zapisz obiekt konfiguracji'''
+        self.__obiekty.update({'konfiguracja': konfiguracja})
+
+        '''stwórz menu'''
+        menu = Menu.Menu(konfiguracja.podaj_wartosc("moduly_w_menu"))
+        self.__obiekty.update({'menu': menu})
         logging.debug("[%s] loaded", 'Menu')
 
+        '''wczytaj moduły'''
+        self.__wczytaj_moduly()
+
+        '''sprawdź zależności między modułami'''
+        self.__sprawdz_zaleznosci(self.__zaladowane_obiekty)
+
+        '''przekaż obiekty do modułów'''
+        self.__przekaz_obiekty(self.__obiekty, self.__zaladowane_obiekty)
+
+        '''pokaż menu'''
+        self.__obiekty['menu'].pokaz_menu(self)
+
+    def __wczytaj_moduly(self):
+        '''dynamiczne wczytywanie i szukanie pluginow w folderze "moduly"'''
         lista_plikow = os.listdir('moduly')
         pliki_py = re.compile("\.py$")
-        #znalezione = filter(pliki_py.search, lista_plikow)
         znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
-        #nazwy_modulow=[]
-        #for k in znalezione:
-            #nazwy_modulow.append(nazwa_na_modul(k))
-        #nazwy_modulow = map(nazwa_na_modul, znalezione)
 
         for k in znalezione:
             i = nazwa_na_modul(k)
@@ -54,26 +66,24 @@ class Moduly:
                 continue
             obiekt = mod()
             """sprawdzanie poprawności modułu -
-               obowiązkowe funkcje: info, wersja, menu, do_menu"""
+               obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
             try:
                 assert(obiekt.info != None)
                 assert(obiekt.wersja != None)
-                assert(obiekt.menu != None)
-                assert(obiekt.do_menu() != None)
+                #assert(obiekt.menu != None)
+                assert(obiekt.zapisz_obiekty != None)
             except AttributeError, err:
                 logging.error("[%s] Error: %s", i, err)
                 del(sys.modules[nazwa])
                 continue
-            """dodawanie do menu głównego"""
-            do_menu = obiekt.do_menu()
+            #"""dodawanie do menu głównego"""
+            #do_menu = obiekt.do_menu()
+            #menu.dodaj_do_menu(do_menu)
+            self.__zaladowane_obiekty.update({nazwa: obiekt})
             nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
-            menu.dodaj_do_menu(do_menu)
             self.__zaladowane_pluginy.append(nazwa)
-            self.__zaladowane_obiekty.append([do_menu[0], obiekt])
             logging.debug("[%s] plugin loaded", i)
-        self.__sprawdz_zaleznosci(menu)
-        self.__sprawdzanie_numeracji(menu)
-        return menu
+        #self.__sprawdzanie_numeracji(menu)
 
 
     def podaj_zaladowane(self):
@@ -112,17 +122,15 @@ class Moduly:
                 continue
         self.menu(glowne_menu)
 
-    def __sprawdz_zaleznosci(self, menu):
+    def __sprawdz_zaleznosci(self, obiekty):
         '''sprawdza, czy spełnione są zależności między modułami
         i ewentualnie wyłącza "złe" moduły'''
-        tmp = self.__zaladowane_obiekty
-        #to c moze kiedys nie dzialac
-        licznik = 0
-        for i in tmp:
-            obiekt = i[1]
+        for i in obiekty:
+            obiekt = obiekty[i]
             zal = obiekt.zaleznosci()
-            for j in zal:
-                nazwa = 'moduly.' + j
+            #exit(-1)
+            for nazwa in zal:
+                #nazwa = 'moduly.' + j
                 """pustych nie sprawdzaj"""
                 if obiekt.zaleznosci() == '':
                     continue
@@ -132,15 +140,13 @@ class Moduly:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
                                   """[%s] dependency error: \'%s\'.
-                                  Module disabled""", wadliwy_modul, j)
+                                  Module disabled""", wadliwy_modul, nazwa)
                     '''usuń skąd tylko się da'''
                     del(sys.modules['moduly.' + wadliwy_modul])
                     del obiekt
                     del zal
-                    self.__zaladowane_obiekty.pop(licznik)
-                    self.__zaladowane_pluginy.pop(licznik)
-                    menu.usun_pozycje(i[0])
-            licznik += 1
+                    #self.__zaladowane_obiekty.pop(licznik)
+                    #self.__zaladowane_pluginy.pop(licznik)
 
     def __sprawdzanie_numeracji(self, menu):
         '''sprawdzanie, czy numeracja w menu nie jest zduplikowana
@@ -175,18 +181,25 @@ class Moduly:
         pozycje.sort()
         menu.zapisz_pozycje(pozycje)
 
-    def __obiekty_i_menu(self):
-        '''podaje słownik pozycji i przypisanych obiektów'''
-        obj = {}
-        for i in self.__zaladowane_obiekty:
-            obiekt = i[1]
-            do_menu = obiekt.do_menu()[1]
-            obj.update({do_menu:obiekt})
-        return obj
+#    def __obiekty_i_menu(self):
+#        '''podaje słownik pozycji i przypisanych obiektów'''
+#        obj = {}
+#        for i in self.__zaladowane_obiekty:
+#            obiekt = i[1]
+#            do_menu = obiekt.do_menu()[1]
+#            obj.update({do_menu:obiekt})
+#        return obj
+#
+#    def __zmien_obiekt(self, obiekt, numer):
+#        '''zmienia numerację na liście obiektów'''
+#        for i in self.__zaladowane_obiekty:
+#            if i[1] == obiekt:
+#                i[0] = numer
+#                return
 
-    def __zmien_obiekt(self, obiekt, numer):
-        '''zmienia numerację na liście obiektów'''
-        for i in self.__zaladowane_obiekty:
-            if i[1] == obiekt:
-                i[0] = numer
-                return
+    def __przekaz_obiekty(self, obiekty, zaladowane):
+        do_przekazania = {}
+        do_przekazania.update(obiekty)
+        do_przekazania.update(zaladowane)
+        for obiekt in zaladowane:
+            zaladowane[obiekt].zapisz_obiekty(do_przekazania)

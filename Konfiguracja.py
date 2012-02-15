@@ -12,6 +12,7 @@ class Konfiguracja(object):
 
     def __otworz_plik(self, konfig):
         '''otwiera plik i odczytuje z niego konfigurację'''
+        # TODO: zamienić 't' na True i 'n' na False!!!
         try:
             plik_konf = open(konfig, 'r')
             for linia in plik_konf.readlines():
