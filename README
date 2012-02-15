@@ -15,4 +15,4 @@ Funkcjonalność:
  - korekcja duplikatów z menu
  - tworzenie listy załadowanych modułów
  - włączanie programu w trybie "gadatliwym" (verbose)
-
+ - wczytywanie ustawień z pliku konfiguracyjnego
