@@ -1,0 +1,57 @@
+From 6e49998158aa193a75ce2826b89f7eb08e78ee41 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 23:23:21 +0100
+Subject: [PATCH] poprawiony verbose
+
+---
+ DynaMo.py |   24 +++++++++++-------------
+ 1 files changed, 11 insertions(+), 13 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 4c132e9..668e80c 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -10,29 +10,27 @@ from sys import argv
+ import Moduly
+ import Konfiguracja
+ 
++FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
++
+ def tryb_verbose(wlaczyc = False):
+     '''włącza tryb "gadatliwy"'''
+     if wlaczyc:
+-        logging.basicConfig(level = logging.DEBUG)
++        logging.basicConfig(format = FORMAT, level = logging.DEBUG)
+     else:
+-        logging.basicConfig(level = logging.WARNING)
+-
+-logging.basicConfig(format = '%(message)s (in %(funcName)s at %(lineno)d)')
++        logging.basicConfig(format = FORMAT, level = logging.WARNING)
+ 
+ KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
+ 
+ ''' dwa sposoby włączania trybu gadatliwego:
+ albo konfiguracja albo przełącznik'''
+-if KONF.podaj_wartosc("verbose") == 'y':
++if KONF.podaj_wartosc("verbose"):
+     tryb_verbose(True)
+-else:
+-    OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+-
+-    for op, arg in OPCJE:
+-        if op in ('-v', '--verbose'):
+-            tryb_verbose(True)
+-        else:
+-            tryb_verbose(False)
++
++OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
++
++for op, arg in OPCJE:
++    if op in ('-v', '--verbose'):
++        tryb_verbose(True)
+ 
+ os.system('clear')
+ #print 20 * "\n"
+-- 
+1.7.8.4
+
