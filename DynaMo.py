@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 
-"""DynaMo - główny moduł uruchomieniowy
-wersja 0.9 RC2"""
+"""DynaMo - główny moduł uruchomieniowy"""
 
 import getopt
 import logging
