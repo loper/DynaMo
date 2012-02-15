@@ -14,6 +14,7 @@ class Menu:
 
     __pozycje = []
     __zaladowane_obiekty = {}
+    __domyslna_opcja = None
 
     def __init__(self, pokazywac_moduly = True):
         if pokazywac_moduly:
@@ -37,7 +38,7 @@ class Menu:
         try:
             opcja = int(opcja)
         except ValueError:
-            return None
+            return self.__domyslna_opcja
         return opcja
 
     def __wybor_menu(self, moduly):
@@ -62,13 +63,13 @@ class Menu:
     def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
         '''najpierw sprawdza duplikaty'''
-        nr = element[0]
-        if self.__zaladowane_obiekty.has_key(nr):
-            nr = self.__znajdz_wolny()
-            element = (nr, element[1])
+        numer = element[0]
+        if self.__zaladowane_obiekty.has_key(numer):
+            numer = self.__znajdz_wolny()
+            element = (numer, element[1])
         self.__pozycje.append(element)
         self.__pozycje.sort()
-        self.__zaladowane_obiekty.update({nr:obiekt})
+        self.__zaladowane_obiekty.update({numer:obiekt})
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         '''zwraca listę załadowanych obiektów'''
