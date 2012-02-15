@@ -48,8 +48,8 @@ class Menu:
                 print "Błędna opcja"
                 continue
             if opcja == 0:
-                #os.system("clear")
-                print 20 * "\n"
+                os.system("clear")
+                #print 20 * "\n"
                 sys.exit(0)
             elif opcja == 8:
                 moduly.menu(self)

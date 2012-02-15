@@ -5,7 +5,7 @@ wersja 0.9 RC2"""
 
 import getopt
 import logging
-#import os
+import os
 from sys import argv
 
 import Moduly
@@ -37,8 +37,8 @@ else:
         else:
             tryb_verbose(False)
 
-#os.system('clear')
-print 20 * "\n"
+os.system('clear')
+#print 20 * "\n"
 print KONF.podaj_wartosc("naglowek")
 print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"), KONF.podaj_wartosc("autor"))
 

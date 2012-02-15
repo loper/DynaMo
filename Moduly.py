@@ -91,8 +91,8 @@ class Moduly:
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        #6os.system("clear")
-        print 20 * "\n"
+        os.system("clear")
+        #print 20 * "\n"
         print "MODUŁY:"
         print "  1. Lista modułów"
         print "  0. POWRÓT"
