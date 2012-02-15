@@ -18,9 +18,10 @@ class Menu:
     def __init__(self, pokazywac_moduly = 't'):
         if pokazywac_moduly == 't':
             self.__pozycje = [(8, 'Moduly')]
+            self.__zaladowane_obiekty = {8: None}
         else:
             self.__pozycje = []
-        self.__zaladowane_obiekty = {}
+            self.__zaladowane_obiekty = {}
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
@@ -60,21 +61,18 @@ class Menu:
 
     def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
+        '''najpierw sprawdza duplikaty'''
+        nr = element[0]
+        if self.__zaladowane_obiekty.has_key(nr):
+            nr = self.__znajdz_wolny()
+            element = (nr, element[1])
         self.__pozycje.append(element)
         self.__pozycje.sort()
-        self.__zaladowane_obiekty.update({element[0]:obiekt})
+        self.__zaladowane_obiekty.update({nr:obiekt})
 
     def przekaz_zaladowane_obiekty(self, zaladowane):
         '''zwraca listę załadowanych obiektów'''
         self.__zaladowane_obiekty = zaladowane
-
-    def przekaz_pozycje(self):
-        '''zwraca pozycje z menu'''
-        return self.__pozycje
-
-    def zapisz_pozycje(self, pozycje):
-        '''zapisuje nową listę pozycji'''
-        self.__pozycje = pozycje
 
     def __szukaj_modul(self, numer):
         '''zwraca obiekt dla podanego numeru'''
@@ -90,4 +88,12 @@ class Menu:
             if k == numer:
                 logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
                 self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
+
+    def __znajdz_wolny(self):
+        '''dostępna numeracja - od 1 do 10'''
+        wolne = range(1, 9 + 1)
+        for klucz in wolne:
+            if not self.__zaladowane_obiekty.has_key(klucz):
+                return klucz
+
 

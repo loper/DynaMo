@@ -37,13 +37,9 @@ else:
 
 #os.system('clear')
 print 20 * "\n"
-#print KONF.podaj_wartosc("naglowek")
-#print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"), KONF.podaj_wartosc("autor"))
+print KONF.podaj_wartosc("naglowek")
+print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"), KONF.podaj_wartosc("autor"))
 
 MODULY = Moduly.Moduly(KONF)
 logging.debug("[%s] loaded", 'Moduly')
 
-#MENU = MODULY.wczytaj_moduly()
-#ZALADOWANE = MODULY.podaj_zaladowane()
-#MENU.przekaz_zaladowane_obiekty(ZALADOWANE)
-#MENU.pokaz_menu(MODULY)

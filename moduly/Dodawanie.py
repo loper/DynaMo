@@ -8,7 +8,6 @@ class Dodawanie:
     __nazwa_w_menu = 'dodaj'
     __wersja = '0.6'
     __info = "Plugin do dodawania liczb calkowitych"
-    #__zaleznosci = ["moduly.Odejmowanie"]
     __zaleznosci = []
 
     __liczby = []

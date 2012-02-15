@@ -4,12 +4,13 @@
 
 Modułów szuka w 'moduly/'. Wczytuje je i tworzy listę obiektów, które są
 wywoływane z poziomu menu. Dodatkowo wypisuje ich listę."""
+import Menu
+import copy
 import logging
 import os
 import re
 import sys
 
-import Menu
 
 class Moduly:
     '''klasa Moduly'''
@@ -125,77 +126,29 @@ class Moduly:
     def __sprawdz_zaleznosci(self, obiekty):
         '''sprawdza, czy spełnione są zależności między modułami
         i ewentualnie wyłącza "złe" moduły'''
-        for i in obiekty:
+        for i in copy.copy(obiekty):
             obiekt = obiekty[i]
             zal = obiekt.zaleznosci()
-            #exit(-1)
-            for nazwa in zal:
-                #nazwa = 'moduly.' + j
+            for zaleznosc in zal:
                 """pustych nie sprawdzaj"""
                 if obiekt.zaleznosci() == '':
                     continue
                 try:
-                    assert(sys.modules.get(nazwa) != None)
+                    assert(sys.modules.get(zaleznosc) != None)
                 except AssertionError:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
                                   """[%s] dependency error: \'%s\'.
-                                  Module disabled""", wadliwy_modul, nazwa)
+                                  Module disabled""", wadliwy_modul, zaleznosc)
                     '''usuń skąd tylko się da'''
                     del(sys.modules['moduly.' + wadliwy_modul])
                     del obiekt
                     del zal
-                    #self.__zaladowane_obiekty.pop(licznik)
-                    #self.__zaladowane_pluginy.pop(licznik)
-
-    def __sprawdzanie_numeracji(self, menu):
-        '''sprawdzanie, czy numeracja w menu nie jest zduplikowana
-        i dokonywanie poprawek'''
-        pozycje = menu.przekaz_pozycje()
-        ost = 0
-        do_zamiany = []
-        oim = self.__obiekty_i_menu()
-        '''dostępna numeracja - od 0 do 10'''
-        wolne = range(0, 9 + 1)
-        '''tworzenie listy pozycji do zamiany (ale bierze tylko jeden
-        z duplikatów'''
-        for k, wartosc in pozycje:
-            if k == ost:
-                do_zamiany.append(wartosc)
-                pozycje.pop(pozycje.index((k, wartosc)))
-            else:
-                wolne.pop(wolne.index(k))
-            ost = k
-        do_zamiany.sort()
-
-        '''i ich zamiana na pierwszy wolny numer'''
-        for wartosc in do_zamiany:
-            try:
-                numer = wolne.pop(1)
-            except IndexError:
-                logging.error("[%s] Error: %s", 'Moduly',
-                              'no free space in menu')
-                return
-            pozycje.append((numer, wartosc))
-            self.__zmien_obiekt(oim.get(wartosc), numer)
-        pozycje.sort()
-        menu.zapisz_pozycje(pozycje)
-
-#    def __obiekty_i_menu(self):
-#        '''podaje słownik pozycji i przypisanych obiektów'''
-#        obj = {}
-#        for i in self.__zaladowane_obiekty:
-#            obiekt = i[1]
-#            do_menu = obiekt.do_menu()[1]
-#            obj.update({do_menu:obiekt})
-#        return obj
-#
-#    def __zmien_obiekt(self, obiekt, numer):
-#        '''zmienia numerację na liście obiektów'''
-#        for i in self.__zaladowane_obiekty:
-#            if i[1] == obiekt:
-#                i[0] = numer
-#                return
+                    self.__zaladowane_obiekty.pop(i)
+                    for j in copy.copy(self.__zaladowane_pluginy):
+                        if j.find(i) >= 0:
+                            self.__zaladowane_pluginy.pop(self.__zaladowane_pluginy.index(j))
+                            break
 
     def __przekaz_obiekty(self, obiekty, zaladowane):
         do_przekazania = {}
