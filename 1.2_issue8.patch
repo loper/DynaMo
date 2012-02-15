@@ -1,0 +1,25 @@
+From 524fc8f910049e8ef50ed5a80f8c1e64ae9eceb3 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 21:39:29 +0100
+Subject: [PATCH] import os
+
+---
+ Menu.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Menu.py b/Menu.py
+index 1cc9f0f..62d1a53 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -6,7 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
+ (lista w '__zaladowane_obiekty')."""
+ 
+ import logging
+-#import os
++import os
+ import sys
+ 
+ class Menu:
+-- 
+1.7.8.4
+
