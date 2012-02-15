@@ -55,8 +55,12 @@ class Menu:
             elif opcja == 8:
                 moduly.menu(self)
             else:
-                obj = self.__zaladowane_obiekty[opcja]
-                obj.menu(self)
+                try:
+                    obj = self.__zaladowane_obiekty[opcja]
+                    obj.menu(self)
+                except KeyError:
+                    print "Błędna opcja"
+                    continue
             self.pokaz_menu(moduly)
 
 
