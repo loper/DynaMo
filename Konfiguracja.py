@@ -12,7 +12,6 @@ class Konfiguracja(object):
 
     def __otworz_plik(self, konfig):
         '''otwiera plik i odczytuje z niego konfigurację'''
-        # TODO: zamienić 't' na True i 'n' na False!!!
         try:
             plik_konf = open(konfig, 'r')
             for linia in plik_konf.readlines():
@@ -23,6 +22,10 @@ class Konfiguracja(object):
                 linia = linia.rstrip().split("=")
                 if len(linia) != 2:
                     continue
+                if linia[1] in ('t'):
+                    linia[1] = True
+                elif linia[1] in ('n'):
+                    linia[1] = False
                 self.__dodaj_do_ustawien(linia[0], linia[1])
             del plik_konf
         except:
