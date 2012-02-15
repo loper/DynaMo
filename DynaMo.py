@@ -5,38 +5,36 @@ wersja 0.9 RC2"""
 
 import getopt
 import logging
-#import os
+import os
 from sys import argv
 
 import Moduly
 import Konfiguracja
 
+FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
+
 def tryb_verbose(wlaczyc = False):
     '''włącza tryb "gadatliwy"'''
     if wlaczyc:
-        logging.basicConfig(level = logging.DEBUG)
+        logging.basicConfig(format = FORMAT, level = logging.DEBUG)
     else:
-        logging.basicConfig(level = logging.WARNING)
-
-logging.basicConfig(format = '%(message)s (in %(funcName)s at %(lineno)d)')
+        logging.basicConfig(format = FORMAT, level = logging.WARNING)
 
 KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
 
 ''' dwa sposoby włączania trybu gadatliwego:
 albo konfiguracja albo przełącznik'''
-if KONF.podaj_wartosc("verbose") == 'y':
+if KONF.podaj_wartosc("verbose"):
     tryb_verbose(True)
-else:
-    OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
-    for op, arg in OPCJE:
-        if op in ('-v', '--verbose'):
-            tryb_verbose(True)
-        else:
-            tryb_verbose(False)
+OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
-#os.system('clear')
-print 20 * "\n"
+for op, arg in OPCJE:
+    if op in ('-v', '--verbose'):
+        tryb_verbose(True)
+
+os.system('clear')
+#print 20 * "\n"
 print KONF.podaj_wartosc("naglowek")
 print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
                            KONF.podaj_wartosc("autor"))
