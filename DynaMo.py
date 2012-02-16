@@ -35,9 +35,9 @@ for op, arg in OPCJE:
         tryb_verbose(True)
 
 os.system('clear')
-print(KONF.podaj_wartosc("naglowek"))
-print("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
-                           KONF.podaj_wartosc("autor")))
+print((KONF.podaj_wartosc("naglowek")))
+print(("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+                           KONF.podaj_wartosc("autor"))))
 
 MODULY = Moduly.Moduly(KONF)
 logging.debug("[%s] loaded", 'Moduly')

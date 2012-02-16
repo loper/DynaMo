@@ -1,10 +1,12 @@
 DynaMo
 
-ver. 1.2.1
+ver. 1.3
 _by Loper_
 
 UWAGA!!!
-Wersja 1.2 nie jest kompatybilna z poprzednimi wersjami programu (zmiana silnika przetwarzania modułów). Aplikację należy uaktualnić według zaleceń z pliku 'UPDATE' lub na wiki. Poprzednie wersje nie będą dalej rozwijane i wspierane.
+Wersja 1.3 nie jest kompatybilna z poprzednimi wersjami programu (zmiana interpretera na Python 3.2). Należy uaktualnić program do obecnej wersji. Poprzednie wersje nie będą dalej rozwijane i wspierane.
+
+Za utrudnienia przepraszam.
 
 Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
 

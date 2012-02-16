@@ -87,7 +87,8 @@ class Moduly:
                 continue
 
             self.__zaladowane_obiekty.update({nazwa: obiekt})
-            nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
+            nazwa = nazwa + " (ver. %s)\n     : %s" % (obiekt.podaj_wersje(),
+                                            obiekt.podaj_info()[:40 - 1])
             self.__zaladowane_pluginy.append(nazwa)
             logging.debug("[%s] plugin loaded", i)
 
@@ -103,12 +104,12 @@ class Moduly:
         else:
             print("\nZAŁADOWANE MODUŁY:")
             for i in self.__zaladowane_pluginy:
-                print('   - ' + i)
+                print(('   - ' + i))
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         #6os.system("clear")
-        print(20 * "\n")
+        print((20 * "\n"))
         print("MODUŁY:")
         print("  1. Lista modułów")
         print("  0. POWRÓT")
