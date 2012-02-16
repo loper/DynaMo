@@ -30,7 +30,8 @@ class Template:
 
     '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''
     wersja = '0.1'
-    #TODO: info jest nieużywane
+
+    '''opis max. 40 znaków'''
     info = "opis"
 
     '''jeżeli program dodaje opcję do menu'''

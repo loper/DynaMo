@@ -28,13 +28,13 @@ class Menu:
         '''pokazuje pozycje z menu'''
         print("\nMENU:")
         for i in self.__pozycje:
-            print("  %d: %s" % (i[0], i[1]))
+            print(("  %d: %s" % (i[0], i[1])))
         print("  0: WYJŚCIE")
         self.__wybor_menu(moduly)
 
     def pytanie_o_opcje(self):
         '''pyta o wybór z menu i zwraca opcję'''
-        opcja = input('\nopcja > ')
+        opcja = eval(input('\nopcja > '))
         try:
             opcja = int(opcja)
         except ValueError:
