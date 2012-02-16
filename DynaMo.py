@@ -11,28 +11,23 @@ import Moduly
 import Konfiguracja
 
 FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
+logging.basicConfig(format = FORMAT, level = logging.WARNING)
 
-def tryb_verbose(wlaczyc = False):
+def tryb_verbose():
     '''włącza tryb "gadatliwy"'''
-    if wlaczyc:
-        logging.basicConfig(format = FORMAT, level = logging.DEBUG)
-    else:
-        logging.basicConfig(format = FORMAT, level = logging.WARNING)
+    logging.basicConfig(format = FORMAT, level = logging.DEBUG)
 
 KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
 
-''' dwa sposoby włączania trybu gadatliwego:
-albo konfiguracja albo przełącznik'''
+#''' dwa sposoby włączania trybu gadatliwego:
+#albo konfiguracja albo przełącznik'''
 if KONF.podaj_wartosc("verbose"):
-    tryb_verbose(True)
+    tryb_verbose()
 
-logging.basicConfig(format = FORMAT)
-
-OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
-
-for op, arg in OPCJE:
-    if op in ('-v', '--verbose'):
-        tryb_verbose(True)
+#OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+#for op, arg in OPCJE:
+#    if op in ('-v', '--verbose'):
+#        tryb_verbose()
 
 os.system('clear')
 print((KONF.podaj_wartosc("naglowek")))
