@@ -62,14 +62,14 @@ class Moduly:
             """obiekt"""
             try:
                 mod = getattr(mod, i)
-            except AttributeError, err:
+            except AttributeError as err:
                 logging.error("[%s] Error: %s", i, err)
                 continue
             obiekt = mod()
             """sprawdzanie poprawności modułu -
                obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
             if not hasattr(obiekt, 'podaj_zaleznosci'):
-                print 'not ok!!!!!!!!!!!!!'
+                print('not ok!!!!!!!!!!!!!')
                 exit(-1)
             try:
                 assert(obiekt.podaj_info != None)
@@ -77,7 +77,7 @@ class Moduly:
                 assert(obiekt.zapisz_obiekty != None)
                 assert(obiekt.podaj_zaleznosci != None)
                 #TODO: hasattr?
-            except AttributeError, err:
+            except AttributeError as err:
                 logging.error("[%s] Error: %s", i, err)
                 del(sys.modules[nazwa])
                 continue
@@ -98,19 +98,19 @@ class Moduly:
     def __wypisz_zaladowane(self):
         '''wypisuje listę załadowanych i ich wersje'''
         if self.__zaladowane_pluginy == []:
-            print "brak załadowanych modułów"
+            print("brak załadowanych modułów")
         else:
-            print "\nZAŁADOWANE MODUŁY:"
+            print("\nZAŁADOWANE MODUŁY:")
             for i in self.__zaladowane_pluginy:
-                print '   - ' + i
+                print('   - ' + i)
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         #6os.system("clear")
-        print 20 * "\n"
-        print "MODUŁY:"
-        print "  1. Lista modułów"
-        print "  0. POWRÓT"
+        print(20 * "\n")
+        print("MODUŁY:")
+        print("  1. Lista modułów")
+        print("  0. POWRÓT")
 
         self.__wybor_menu(glowne_menu)
 
@@ -123,7 +123,7 @@ class Moduly:
             elif opcja == 1:
                 self.__wypisz_zaladowane()
             else:
-                print "Błędna opcja"
+                print("Błędna opcja")
                 continue
         self.menu(glowne_menu)
 

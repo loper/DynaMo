@@ -22,8 +22,8 @@ class Przyklad(Template):
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
-        print "PRZYKŁAD:"
-        print "  0: POWRÓT"
+        print("PRZYKŁAD:")
+        print("  0: POWRÓT")
 
         self.wybor_menu(glowne_menu)
 
@@ -46,4 +46,4 @@ class Przyklad(Template):
         self.do_menu()
 
         '''uzupelnić o własne funkcje'''
-        print "\n[Przykład] moja super ekstra funkcja!"
+        print("\n[Przykład] moja super ekstra funkcja!")

@@ -67,7 +67,7 @@ class Template:
 
     def do_menu(self):
         '''wysłanie listy opcji, które idą do menu'''
-        if self.obiekty.has_key('menu'):
+        if 'menu' in self.obiekty:
             self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
 
     def zapisz_obiekty(self, obiekty):
@@ -82,8 +82,8 @@ class Template:
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
-        print "NAZWA_MODULU:"
-        print "  0: POWRÓT"
+        print("NAZWA_MODULU:")
+        print("  0: POWRÓT")
 
         self.wybor_menu(glowne_menu)
 
@@ -97,7 +97,7 @@ class Template:
             elif opcja == 1:
                 pass
             else:
-                print "Błędna opcja"
+                print("Błędna opcja")
                 continue
         self.menu()
 
@@ -107,4 +107,3 @@ class Template:
         self.do_menu()
 
         '''uzupelnić o własne funkcje'''
-
