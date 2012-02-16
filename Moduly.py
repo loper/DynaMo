@@ -4,6 +4,7 @@
 
 Modułów szuka w 'moduly/'. Wczytuje je i tworzy listę obiektów, które są
 wywoływane z poziomu menu. Dodatkowo wypisuje ich listę."""
+
 import Menu
 import copy
 import logging
@@ -41,6 +42,20 @@ class Moduly:
         '''pokaż menu'''
         self.__obiekty['menu'].pokaz_menu(self)
 
+
+    def __sprawdz_poprawnosc(self, obiekt):
+        """sprawdzanie poprawności modułu"""
+        obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
+                     'zapisz_obiekty')
+        try:
+            for atrybut in obowiazkowe:
+                if not hasattr(obiekt, atrybut):
+                    return False
+        except AttributeError:
+            return False
+        return True
+
+
     def __wczytaj_moduly(self):
         '''dynamiczne wczytywanie i szukanie pluginow w folderze "moduly"'''
         lista_plikow = os.listdir('moduly')
@@ -66,29 +81,15 @@ class Moduly:
                 logging.error("[%s] Error: %s", i, err)
                 continue
             obiekt = mod()
-            """sprawdzanie poprawności modułu -
-               obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
-            if not hasattr(obiekt, 'podaj_zaleznosci'):
-                print 'not ok!!!!!!!!!!!!!'
-                exit(-1)
-            try:
-                assert(obiekt.podaj_info != None)
-                assert(obiekt.podaj_wersje != None)
-                assert(obiekt.zapisz_obiekty != None)
-                assert(obiekt.podaj_zaleznosci != None)
-                #TODO: hasattr?
-            except AttributeError, err:
-                logging.error("[%s] Error: %s", i, err)
-                del(sys.modules[nazwa])
+            if not self.__sprawdz_poprawnosc(obiekt):
+                del sys.modules[nazwa]
+                logging.error("[%s] Error: module is incorrect", i)
                 continue
-            #"""dodawanie do menu głównego"""
-            #do_menu = obiekt.do_menu()
-            #menu.dodaj_do_menu(do_menu)
+
             self.__zaladowane_obiekty.update({nazwa: obiekt})
             nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
             self.__zaladowane_pluginy.append(nazwa)
             logging.debug("[%s] plugin loaded", i)
-        #self.__sprawdzanie_numeracji(menu)
 
 
     def podaj_zaladowane(self):
@@ -137,12 +138,10 @@ class Moduly:
                 """pustych nie sprawdzaj"""
                 if zaleznosc == '':
                     continue
-                try:
-                    assert(sys.modules.get(zaleznosc) != None)
-                except AssertionError:
+                if sys.modules.get(zaleznosc) == None:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
-                    """[%s] dependency error: \'%s\'. Module disabled""",
+                    """[%s] dependency failure: \'%s\'. Module disabled""",
                     wadliwy_modul, zaleznosc)
 
                     '''usuń skąd tylko się da'''

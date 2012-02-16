@@ -26,6 +26,8 @@ albo konfiguracja albo przełącznik'''
 if KONF.podaj_wartosc("verbose"):
     tryb_verbose(True)
 
+logging.basicConfig(format = FORMAT)
+
 OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
 for op, arg in OPCJE:
