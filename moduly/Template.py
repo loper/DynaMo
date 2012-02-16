@@ -10,65 +10,74 @@ Obowiązkowe funkcje:
     - zapisz_obiekty()
 
 Obowiązkowe pola:
-    - __wersja
-    - __info
-    - __zaleznosci
+    - wersja
+    - info
     
 Jeżeli moduł ma dodawać swoją opcję do menu, obowiązkowe są:
     - __do_menu()
-    - __pozycja_w_menu
-    - __nazwa_w_menu
+    - pozycja_w_menu
+    - nazwa_w_menu
 
-Dostęp do konfiguracji jest z poziomu self.__obiekty['konfiguracja'],
+Dostęp do konfiguracji jest z poziomu self.obiekty['konfiguracja'],
 a odczyt wartości przy pomocy funkcji 'podaj_wartosc(klucz)'.
 """
 
 import os
 
 """ UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
-class Nazwamodulu:
-    '''klasa Nazwamodulu'''
+class Template:
+    '''klasa Template'''
 
-    '''----------------- USTAWIĆ WEDŁUG UZNANIA -----------------'''
-    __wersja = '0.1'
-    __info = "opis"
-    __pozycja_w_menu = 5
-    __nazwa_w_menu = 'nazwa w menu'
-    __zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']
-    ''' dla pustych zależności ustawić "[]"; pamiętać o "moduly." '''
+    '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''
+    wersja = '0.1'
+    #TODO: info jest nieużywane
+    info = "opis"
+
+    '''jeżeli program dodaje opcję do menu'''
+    pozycja_w_menu = 5
+    nazwa_w_menu = 'nazwa w menu'
+
+    ''' dla pustych zależności ustawić "[]" lub nie umieszczać zmiennej;
+     pamiętać o "moduly." 
+     np. zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']'''
+    zaleznosci = []
+
+    '''nie zmieniać, ale skopiować'''
+    obiekty = {}
 
     '''----------------- NIE ZMIENIAĆ -----------------'''
 
-    __obiekty = {}
-
     def __init__(self):
-        self.__obiekty = {}
+        self.obiekty = {}
 
-    def info(self):
+    def podaj_info(self):
         '''zwraca opis modułu'''
-        return self.__info
+        return self.info
 
-    def wersja(self):
+    def podaj_wersje(self):
         '''zwraca wersję modułu'''
-        return self.__wersja
+        return self.wersja
 
-    def zaleznosci(self):
+    def podaj_zaleznosci(self):
         '''zwraca listę zależności'''
-        return self.__zaleznosci
+        try:
+            return self.zaleznosci
+        except AttributeError:
+            return []
 
-    def __do_menu(self):
+    def do_menu(self):
         '''wysłanie listy opcji, które idą do menu'''
-        if self.__obiekty.has_key('menu'):
-            self.__obiekty['menu'].dodaj(self, (self.__pozycja_w_menu, self.__nazwa_w_menu))
+        if self.obiekty.has_key('menu'):
+            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
 
     def zapisz_obiekty(self, obiekty):
         '''zapis przekazanych obiektów'''
-        self.__obiekty = obiekty
+        self.obiekty = obiekty
 
         '''uruchomienie modułu'''
         self.uruchom_modul()
 
-    '''----------------- TĄ CZĘŚĆ MOŻNA ZMIENIAĆ -----------------'''
+    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
@@ -76,13 +85,14 @@ class Nazwamodulu:
         print "NAZWA_MODULU:"
         print "  0: POWRÓT"
 
-        self.__wybor_menu(glowne_menu)
+        self.wybor_menu(glowne_menu)
 
-    def __wybor_menu(self, glowne_menu):
+    def wybor_menu(self, glowne_menu):
         '''pyta o wybór i wywołuje daną funkcję'''
         while(1):
             opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
+                os.system('clear')
                 return
             elif opcja == 1:
                 pass
@@ -94,6 +104,7 @@ class Nazwamodulu:
     def uruchom_modul(self):
         '''dodanie pozycji do menu'''
         '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
-        self.__do_menu()
+        self.do_menu()
 
         '''uzupelnić o własne funkcje'''
+

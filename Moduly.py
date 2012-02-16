@@ -50,8 +50,8 @@ class Moduly:
 
         for k in znalezione:
             i = nazwa_na_modul(k)
-            """wszystko, oprócz __init__ i blank"""
-            if i in('__init__', 'blank'):
+            """wszystko, oprócz __init__ i Template"""
+            if i in('__init__', 'Template'):
                 continue
 
             """pluginy"""
@@ -68,11 +68,15 @@ class Moduly:
             obiekt = mod()
             """sprawdzanie poprawności modułu -
                obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
+            if not hasattr(obiekt, 'podaj_zaleznosci'):
+                print 'not ok!!!!!!!!!!!!!'
+                exit(-1)
             try:
-                assert(obiekt.info != None)
-                assert(obiekt.wersja != None)
-                #assert(obiekt.menu != None)
+                assert(obiekt.podaj_info != None)
+                assert(obiekt.podaj_wersje != None)
                 assert(obiekt.zapisz_obiekty != None)
+                assert(obiekt.podaj_zaleznosci != None)
+                #TODO: hasattr?
             except AttributeError, err:
                 logging.error("[%s] Error: %s", i, err)
                 del(sys.modules[nazwa])
@@ -81,7 +85,7 @@ class Moduly:
             #do_menu = obiekt.do_menu()
             #menu.dodaj_do_menu(do_menu)
             self.__zaladowane_obiekty.update({nazwa: obiekt})
-            nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
+            nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
             self.__zaladowane_pluginy.append(nazwa)
             logging.debug("[%s] plugin loaded", i)
         #self.__sprawdzanie_numeracji(menu)
@@ -128,10 +132,10 @@ class Moduly:
         i ewentualnie wyłącza "złe" moduły'''
         for i in copy.copy(obiekty):
             obiekt = obiekty[i]
-            zal = obiekt.zaleznosci()
+            zal = obiekt.podaj_zaleznosci()
             for zaleznosc in zal:
                 """pustych nie sprawdzaj"""
-                if obiekt.zaleznosci() == '':
+                if zaleznosc == '':
                     continue
                 try:
                     assert(sys.modules.get(zaleznosc) != None)
