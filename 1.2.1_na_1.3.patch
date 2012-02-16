@@ -1,0 +1,1986 @@
+From 120efa0dbf1a120e8600b3ff922edb9c98421dc6 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 22:18:17 +0100
+Subject: [PATCH 01/12] popr. wyjscie z prog
+
+---
+ Konfiguracja.pyc     |  Bin 0 -> 2074 bytes
+ Konfiguracja.pyo     |  Bin 0 -> 1808 bytes
+ Makefile             |    4 ++--
+ Menu.py              |    6 +++---
+ Menu.pyc             |  Bin 0 -> 3785 bytes
+ Menu.pyo             |  Bin 0 -> 3201 bytes
+ Moduly.pyc           |  Bin 0 -> 5178 bytes
+ Moduly.pyo           |  Bin 0 -> 4368 bytes
+ moduly/Dodawanie.pyc |  Bin 0 -> 3548 bytes
+ moduly/Dodawanie.pyo |  Bin 0 -> 3468 bytes
+ moduly/__init__.pyc  |  Bin 0 -> 133 bytes
+ moduly/__init__.pyo  |  Bin 0 -> 133 bytes
+ 12 files changed, 5 insertions(+), 5 deletions(-)
+ create mode 100644 Konfiguracja.pyc
+ create mode 100644 Konfiguracja.pyo
+ create mode 100644 Menu.pyc
+ create mode 100644 Menu.pyo
+ create mode 100644 Moduly.pyc
+ create mode 100644 Moduly.pyo
+ create mode 100644 moduly/Dodawanie.pyc
+ create mode 100644 moduly/Dodawanie.pyo
+ create mode 100644 moduly/__init__.pyc
+ create mode 100644 moduly/__init__.pyo
+
+diff --git a/Konfiguracja.pyc b/Konfiguracja.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..190aec617f37f96e684cd82ddc41af67490c426a
+GIT binary patch
+literal 2074
+zcmbtV-EJF26h5<?tdlgRkivz5s*6ggp{Tw?fYO56f`lqkv_?v?gjR!hYR0?SHM?WE
+zwo-(eBAx*uo`SoI8>ILpcn!FR@0@kwBzF)?^X-|xbG|u$_Wx>b{C#EnL7x^sAK#BL
+zs<#0NQ4gpn@hDT&gWyxLO34a6BRU}Zs^{@uw;k}6cLC$QV*Yz(Csv1({%q=|6P;TV
+zjw`1p*36%UNfD09Vo>V6vHb_X9k+>V_lx|I9gIueAL?T+3LAG=@%sP+F0c>u$O1t`
+zF^k>`GhhL{d=Y{L!Cr%+ZhMtAYyr|tS2{dp$;0x|xXb5W0_+nFfr<_kDH!awnaGZy
+zdlh1QQb!yYZc>!9c$C?+&C1*gpfcGb5o8$))Mlt|06O0md!~~WBU5(1D2t&<-L!LW
+zn(NPt&PmlbM^m?k^Koo*>*9EW6|e<Teg3c=ew{Gi1j*^2<b*j~bKubvj~@R)`yLH3
+zCA#<ZZ}h|`=h42;Z-d)XMddB}?h56&29NsGN}7}gRCbrEL!5?7;OBs^ol?=D)Ti=?
+z<zXmoC2OMMS8}VO)uZkF@<M7Q>$3TrTyVTu`@C^Pftf%JUZ6m2_j`|a^Bc4RU!)sU
+zHWYqtorW8fY)F`J&RwA7f&?sA^f1{(&|ZLNs+$1B$C^@y9Es3|MZ$SG9-43#A~gp^
+zm@bp=@Mp)tE-fR{4AEris$fU(mX#p$vXh0p`T+8s`P0K6lMllkWINYDu3;(HnVCO7
+z{7Gz&PZ*jGbGCf_T6Mjy0?C|+%P499+FTTpKgg0CuLUQglg#F(az17mR{3;Uxzdi{
+zXgn4VbaLm*a%^PjQ=L`Dh1fikvq_QYVVo54qA+vERzG|2Nm&-9$XPKM*nA*rjI46H
+zna9?(S%}05%%Jw3P-G9sJeOM_Yqezk|4aQQl%J|DUZ~yykmsw5>XO=0fqD_+m4(#A
+ztf^jC4Pc;reEaMx9?bbJM)ew?u5eTZ!i@4jslO++u8=nTuId^<Tx7ygF`M?0Ea+R+
+z{An@CZK{{;Y^SdH7S5mX@R4J!mN<<^iFT&VRBG38#L{fspNY38x^zX=KZmz2F$F~Q
+zOkCf>a@{jL=^6aI<DS9hrWcnDuhrenw@_$G3hgSP(9lV`4^fR>p<aE28?y=8G}=2;
+zp8ta6o|zM_iH}nXe*sB`vI8Yac6qH1D-PrKH>FO)dgXTQ#E2s!{qDY*N*>lV!HlEJ
+zfO9y9O)`&Ryl^yUQMCrBQ>m%iJXv(xT<@7UcHC~`c&|vt8Be)D*unic7OIhy0k?sO
+z|6QUt085G@{nu_EL4`!8;_?qv;04~gzusD3sTE81yos&oWd@A%T9g-W*KfQnsn4$p
+H)TZ|@@o?5@
+
+literal 0
+HcmV?d00001
+
+diff --git a/Konfiguracja.pyo b/Konfiguracja.pyo
+new file mode 100644
+index 0000000000000000000000000000000000000000..bcb3e988d259c725fb773eea00aab0500d804d63
+GIT binary patch
+literal 1808
+zcmbtUUuzRV5TCtkFHLMvt3Jd(7%6H{FyMorR1yDyh*2&=wIIitTjS-fcX4k+jZ_h<
+z_$mApzKJh_{Stl+eb?X2rK$E!dt@iGv%9~U`OWOQKkBug$CvK)X!5!Ezlu>TLPYo}
+zN{LpWI26rL<kCB$4WdUYir2cWS?r5{;p^CWsCV-0Y1|)~ur~;&pb87uFpBdK8gPnY
+zNFWl!t+))u3LH41%uYP5c;t6mGdR|BAhyPJ2HOv@PBeg2w4q1=t=nQ>9g+4h)Zov6
+zf*`kRxp^53(>Q4{m}Tffr%y!@GYr&XQJjTnKg(BjJI#mMwC|gIpc6Z8-xz1%-MsxL
+z^ts{K&S8HL#93^EpvC~~fs{nfewZqWd>%oLzmt{7k@|*1uN->umDU{^U`ll3@h5ua
+zl67d^<=j9^qR3pP=f^3-F)-#*BbukgBh%fs4zL@PfJcvy{RL5>#3l1)dow^A(VReh
+zBs(jp4lQNJCR!t^%Hn6T-gL3#ys{MnM*<jRpb*;fYloJzvor%Pk{X$c!e^^As8Ljt
+zGGU+HL(v{7Sf=Qq6s-<sI+jakVwUI*)P}W1k!_KeV<{P%tr)W6BJ^vUZ@;~dE;T!`
+zZm#B=U$U^7M_HKa&ClOHG`XguW-@Kd@gURvym|U$aa!6|+Q9dK<5wVB+{DrhD0zm^
+z5t0t0G|qHkUCdHgdABL7iHBefb%qZsXC9c57SpXTEwpW7aYqA2c@z$UC=W)34cB6T
+zvDe%8ZW@yt(bK%&kF&nOXt8qd=ohh-d*BNP96_0rgvdz-JeN}lHV&nQ|F4g^8h>3C
+zHWX(d$Z^$PbwDjBPwm4vG|}pq)zwi|f%KG%{~mM2gM+`0Q5=CNuPa&{RYtGl-d@;o
+zaV5J3w(j6<i>^2n_D91gw7SI(N<z2}NjmDi6b{!yWAmc73l0u&2&mJJYMp|)yw=Y2
+zL7HA`b~oO;{U$ZK%h>|%f|9$iNVp69WR@+@iFOKRcIk-;lcoe8UMbs=xsvDPjvh;A
+zlx9BTAA{IMV(f7!X-!Dtx)yT~WpV4O#T_|$%(8G*2Z80+EC^QfXp~~=b9g=%*5|wE
+zFR(ZPu^pCZ|N4OXfRIPBV1J(LIaRmXsLqtIlKep|$hKX&lJu6!gsyNGNm1vW-(tae
+AGynhq
+
+literal 0
+HcmV?d00001
+
+diff --git a/Makefile b/Makefile
+index 03883d4..447ea83 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@ start:
+ 	python DynaMo.py
+ v:
+ 	python DynaMo.py -v
+-clean:
+-	\rm -v *.pyc *.pyo moduly/*.pyc moduly/*.pyo
++o:
++	python -OO DynaMo.py
+ patch:
+ 	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 < (nazwa_latki).patch"
+diff --git a/Menu.py b/Menu.py
+index 6d42681..62d1a53 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -6,7 +6,7 @@ Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
+ (lista w '__zaladowane_obiekty')."""
+ 
+ import logging
+-#import os
++import os
+ import sys
+ 
+ class Menu:
+@@ -49,8 +49,8 @@ class Menu:
+                 print "Błędna opcja"
+                 continue
+             if opcja == 0:
+-                #os.system("clear")
+-                print 20 * "\n"
++                os.system("clear")
++                #print 20 * "\n"
+                 sys.exit(0)
+             elif opcja == 8:
+                 moduly.menu(self)
+diff --git a/Menu.pyc b/Menu.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..bb0e4de521c835127fc551c95ffbd97baea8c0d8
+GIT binary patch
+literal 3785
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/Menu.pyo b/Menu.pyo
+new file mode 100644
+index 0000000000000000000000000000000000000000..3fbff3a07bfd921499d3875c777ac2ffa4624868
+GIT binary patch
+literal 3201
+zcmbVO?QR=Y5S?8+j_o=mG-^azkPK~*kq|)wRVb|r>IW@Fb*l|DZA!G-cyH77$F8$`
+zt;AOPhxQ5hS000BpijgDz&UfBI1+!_MBd5VkDWVn=FHqJ{j*U2t9kulN2Y%z{Qm(@
+zaSbBI&y&8$_KEJvws$=5%eF5uer1VE@>=AT$kXi--`Q-<;r--a{IzWv>I0LGP7d)g
+zaT8CGLKv9$WDnAp1QPGpWP46bh3CA+f%CKo^V?OPMx{1AaJ$aKIde|pIaL}GS5#S$
+zcwUtcB(AEmD8Xi{jw3sCfDfa+g-4@3@+4oQ;XO}|L_+v~9O_k$eM!&L&*_>|5WOJU
+zGK{p7Dx|GIJjmivf862`I$4~W<eByZh>)0s;V_$wJ6)qFwX@XN)!Eu4>PK;Q5Tz!}
+zb`#UH&Zh1yO#iuE!ro!lizefPs1pv{v6zz<MR6Ho{Y5q~>-}tK^7Th~)}@v8+v7BP
+zkgd~$uZCkw$HOp56B~xhe32-LSMeI&vS0HQFZ#`-DqcTAK~nDCJ8Th;uE_13PvoW2
+z;Rv!MtNd4%)#tvf+`YHIC|gL--Fw^&cs+ULiKoyJnzjN|e{iS$>qbFmn$5L%qq$aq
+z5Sj+Kw4l>pZ#1`_-hcb&t)K2Fya6$`A3{vwJQ(k0c{o5|EqWZ#WzC5L$9fniiq88%
+zL_`#6wS5UA2a-SMEqRx`Ij=*@^yUPl?=Y~66M}u|$#_X{yo(*ft@MJFtuMX0<ll(r
+zdBmn9n@_M~Q-f<4HJGSp!%jD9-e@YzET{750NEOjtYwTzYAxM+9Q8-$PM&AEy@25q
+zkT@HRi+&n~YQ}-4pisCuDDO#_MZ5vtL}>zMs%3K-Q$>TO{DxNoC<|WIF^9!LV3av;
+zpd9`&CCw`#XUG(ho-g_5j#T?4L1*AJ(82UW0Zf1fv?6Ul|Lz>uI7qMR#<Fhg5#4Tu
+z)^+Woo-@xKt1nA(R64atw5!KV#ED8qV$v>Hoj2e9{`Z?WjhYIP^3Za%(>GDBMcra1
+z0#Ywv7T_ZAER<`-xUgoR$)QRB%wb|xAvFWe1m_?$r%KX5&9R{My==F829^^4Fr3xE
+zmlzipA;d4Cm>b|Ji+aIdf?V<!kfaWsr$2l&MFkXs?>W%4yjir0etu0c1^CFFLhACw
+zLPsu{H>Gj6OdHI?bUep5bb$2=dn<AUn^(CfW)r0&ZABW3fMy;-k+RfYL`B#$W6S<D
+zrS>F^y744D$olEnH3Bx1XgD-!?0O_hK@&0>#*sBMuyxY4R5fn;26?fX;dC@G`5CY$
+zJK`*ky5B=l4oRu*od?j%S`8<+&Pgq>r4a-Kq!;XFi*dJAYT&1;l?6V#4$j~nSuo5e
+z2A4%RGjx2f+{bD`$Hf1CxBnK?Xk<*JHg4p3++cd){OaZwuEpa%w$47rWIoZ1x^PG=
+zO-Gz`tV?JWQ$L%rHY=^3S+fp4<#uwx4u)rlQ?J&rn2dT+*WHM1*qS!$MRX?6f7X|n
+zv|C)?g*besG4e8dB)=)2NpX#neW=d<-POuK_hCJhP8f}SfCoS2J=RbUU^dCUUl;tg
+zW*jegeLPz$cA7DWXOncV`8>}CO|}N!dI6S2zn~neN&kMfw}*|&(Aeyb_7tLFHq@CU
+zjm_bV-VQ^e-&1-YM7hn1&Kb~TLm3sL^!PL7F~)jBi@&1G?(h_5i&<7AH=wv{kNp}b
+zdUAM$RJpzLv9^1q5ny!vp;)1^xxX?+h<4iA01|e@gv3{NXrOtN?itrUN$44Ebd{aJ
+zsMhO`I+HWR>)3O;vFzZOX~c_Q&Uvrh(k4v`hhZ8GOc?6*8#=aOs9AGP5}AOvr53<1
+z`N#y?*4X>q-9bCSXB1bs?Noa^&Ea63JII?^P^!J_H=c5e*(^SSsFW(W2r7P~TC3J-
+wwdLBmS{d5BGtLwQUr^ASfFBc%l2A^a|E@>t=jC<%{xUZhu72(DHfs3)0r-ws7XSbN
+
+literal 0
+HcmV?d00001
+
+diff --git a/Moduly.pyc b/Moduly.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..58a01ebd1a18285f8f925e4c85e18b5cdb5a3668
+GIT binary patch
+literal 5178
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/Moduly.pyo b/Moduly.pyo
+new file mode 100644
+index 0000000000000000000000000000000000000000..d8493f0179cd4ce9e595c448488e4d9c1eafc19f
+GIT binary patch
+literal 4368
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/moduly/Dodawanie.pyc b/moduly/Dodawanie.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..516b30ee73e423e15564eb2dd1f6987a77ab1ac9
+GIT binary patch
+literal 3548
+zcmb_eU2oh(6rJ&YB%3B_n$na4QjJPsg;3HK2~brKZBqdfY$^ve5CPU??WW${*jtZ-
+zYpZ!_;TIqt`aAj)n*JhqhjXrXlPKYZZnN?D&WG>ZIrpA>r}o#}%-<Jptaa7suZH)R
+zc<d!K0sgfbD76W}Q9)e=HT9cPPnG&{Q*&;;-N3r&AN+N)7R1#gFu94N@Ia%+=q)_<
+zPc$KP;X|}gr`2YSdN)PyW<zabyeaLJiXcyOOYFDVQb9w685J}|IHiIq5oT2|EyA1%
+zS|ZG=U`B+~DmW#=f(m9uIHQ6&5f)W2FTz>nt+!9ZvWRwOJWYTj^eln6viym?jQ8Ea
+z?sgQrL4yD4c*Y$>-EzzAnn6FwqpavY=u*M>xeeLY(cq}-ZH{)@Xq1Q<Cu}&lUk!2G
+zuAo_YknDsjgJc+{D|geR7xuGaWwnUScgf0566_Ap8^gOiEV5~Q<NHw@Wxl^aB@P;;
+zPZ~0X;m1n#4sDUc@*Dp^BQ@Pm#6XXVCNz#`q{6d!|6juvj~SMSsqLB9W?B>KE0s&H
+zU>v_Widty~VHqd38@)CIXRyVg+6(_-B+-=^y8)qcZBGdKRIBu}(Fh23q35u}6*Xz=
+z>b|3%I!ebv>Gd|_+<u5AFYL=FWG+J6W`&y!yS?Zmx1YUuo`!A|?Eg*z?1b^I#4m-8
+zus@@Vk0O$6MGW1HVfVmTzaJK!1l(K477mlL==O}C`=a*EW7DxI^YP?s!<I?P_k%>X
+zd<Pw&sd5%|mr*}{1l;o&c&v$=Uty@3`n2RdF0}l<G{eZc!?X<hrZh1!fm;Fa;(6X_
+zbD4Jv%?Xr7CR8i9Oz;|EHzE1v$99$eNa4E}8J)CMJ9*Mixj%wr977su`Kzyy?a|cP
+zG}tuJFq9BeKtclvW)!-)Bbl>12u*4ky{l`hH#cr}zPWSVlFV0^-Hl<I<R&Pq#93IH
+zcx~Ce%Vg{3MI7}lUGwp>yPgbw1>vdY3KpzwcrX6=Ug9((Oo`1%U|ZNM+{uo!F)y}~
+zRD62`SmM7uNb)$WX3(wD+pDBqkA~4das;L4bYuK;1XwbPhDr$SLU<Gqub$M+JzyuL
+zukWbzqLc^r9mW3VLQx4a#+;)bg0z^e$?Q)@XbcVmeoTvZ@a9T*rd|ao-NI7VK@}a9
+zwumN)$+uoU*?$(qMi_1?3bO*DqLBW6;*<Jec9N~&bz1sT`HJj#k{%5oCvmdH312*1
+zK}UR~!g%DD1P(Ve6UO{3l=;|a?Eh=%TZV_yH9d=89nT`3v-O5<R#lQ|l))sf+Jk@_
+z$evb@wn+xi9DYHrT>bf;g5NUq#UD$+ey^sA1%-foT%#+{-H2UP&)}*VmHwi%*5aB&
+zr^H(Qz%XcxKG6@C)CPEku_e%ocPX0Ek&8$~knA}$6+r~t{bz2Rx|f6NuBE>Y{3w&g
+zzK^kQc`GU0%hoNy6Z7&(;Yxloap>mm(CkF}&rqnikpQ2XcsrDfTWWG#0EW96j=;*D
+z$>^O&-Ef#iN$jx-3GvKu7{)=H(1{miP)sO*5I#K|nAD|mLGg!7VFz({3tNob+SE&W
+z0nS|z4$kW{x>Y4{p5TCiSJ45w@GL2Ij&4ON14HN<nWF!MgWwumAxVuYI^uv1Dq=oL
+zUP+u(`OCh6`3+_*Hz*_E4Ca{Y@J&^xh=XLTD$XyVD{u=7CX90?P9JHVkXN)?!-%9y
+zh3IY|&QBl0z;oQ@JedF(cqib?Q5Vivxv07V9LW@wef;pydhY{tCo^2G0QYDLLq~y%
+zZGt$u#l~hQ^!<#v)%WGHi>^0^uEzs=j95=%ZkiHvlay6Y>}0O<Scg2;5RY-=F+WMd
+z@pyEJU+-;7;v5K*o`)*9v3(Cs(`h29$d8iKs*Qe))>Lbzwa}VtO;z|YFg>2!!*j$2
+VnSGUlBnaN9F#CdV$aQ<x`4@==@{|Ao
+
+literal 0
+HcmV?d00001
+
+diff --git a/moduly/Dodawanie.pyo b/moduly/Dodawanie.pyo
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b7ca013138f068564d98fc4b6182ff23e36a809
+GIT binary patch
+literal 3468
+zcmb_eU2oh}5S{D&NH$H<G@&U0q#BjNJ|%6D096IiG!-DhrgBgN5nwrMH}Pg;Z*7OI
+zSItYqKR`V6_mKV~c!zVw-s~#jg(TVddhWgUc;?KUnOpg5X6o;o57ygK{#9`Q5?6W)
+zgO7hBU6CyamiSfiEApGjk;so*hI<>$8lDUP!CxzDKwOJ`ukS@+aH7#*bro0o2ZjK;
+z@FGU2GqP2o-YwO;Rg)d8*L9qb5b`8HiSKPS#ILC^C4OCnE8<V6FfIP13Nzw2RG1Zi
+zN`<T9Ur}LB{Am@gi9e&ly!f*!EQqtwyb8-g+L_TCA1-uK0&!>glk_(3Pr3&?VPyL;
+z{tNd!yBoF#+jiUQ?#2Bu%iFtcDi~gmAg5IfaCM`})m9UOsF-mh4Z6>YC9bC{7*=-U
+z{a~dV_kv{QNfLL0y)0i@%Omf*cx6BK54xBQ;a%?K*(Ba^-7pF>*PWvh3xk-mhD>1j
+zrATLFi#p49+!Kw|^ek2b9V)t@arBW27jXZ-hRvTctREz4$GbGs>QG;(Ts((yd}kcB
+zf!7TNQJl8JOEYi^pBSlK`VS+CuIAVS2t{Z+O2{K4$!FyX2)5L*IN=i&9jo%pk|Rq@
+zROTi_-O`NQ526F5bH<pByBKeW%*Bj(wCknrUXVMQLGPS;uon;VcE@x3E|q0(pW2SR
+zL4UY;X<)JHxUL`TC*Q+Fc_-GqY16mirD)y2!b?LS+yWHCT4u&b%Ez567|wuDexa#P
+za8Ni(Xf8;WS*RO$y)YfPrNZ~IQaaM8oOR?=ejh;{#@wKce)Tn~GlnXM8izUth8{Tp
+zM@{J{quA0)*X{;hk}})Y*4G|xK5TvS_<l<A-Cedfdr92){6SIZ@{}gtTehFDINJR@
+z3inbX|M9ZD5qEzDL8;~r9$4RW{`~#>W(CuXFvV#`!likd1^d})_Vn}ZIML9J0ZaUM
+zx^X`WiXBXga&(?D>CiC7M_mvzV`{^nrNGis8mbv`0O5sCygJ(F4uPGvsy$1Rn_A8}
+zw}kW0l~S5ROessAgJjsP=<ZKrv;*e=KejbGxbsOwraH<$ww@NcUfGI5nxrPLzIk>0
+z+K)Ut?txncL)o#=0oZ8W*yTo$oh2h^n+#m-RC#u~sFus8IT~+s!_^2E&=DW)2oC9^
+ziBnjD+4;kgP2+7B-x<dL9_A_2Lrld?<5$Hsk87b?GxegYvFtIKG*pKWaAG(#@?wW%
+zK)FL)P}|miekzDthPlRL5!fGAB%fnKzN|15m~KY4R5OHXN|Im17^9&X1tl`_1Jj^Z
+zzG9v)$|iV)wMEd1XCIo<(t|@tkkacI3W6xO$FJ=uv2XkL?UeC4iKA|M>4#YRmZyl^
+zzMa|w@WgxbDz~)`cu`>Y?Vh(E9=}Fo;fECX#EW(UJ!mCf9}T;Akii9Z+Dum;zi0=&
+zEQ}+ET|<fI^?E_%Hwm3aQ5V&O90=jn(SmouGNuO#x5pB8l6R~4L>bn)Su}G9?woRP
+z)?71<qDIq$69(SJ1n45Nq}X+a6{QSE7luZ+7(eA8xQ0+@^`?rJ2A~xJy0Uo1QC!ro
+z^eyafvTE7>AOy}}j&~oiDcTTm(27;$`7KNpZe_s*L1E!^QPv50L92DFXt@+*cMW-d
+zbp!+bc*K1&0Wh$K^JdA?jiMH9sG(z(qOgxIj;wb+!t`Q>YlnYIQ<ypeDmDpXdFqV3
+z{lIlI)>hZm!zrfD45khpc9^k_=G-JD)+TMMj@rpu=dces>>&>G#$kQZg5%J2&0ptT
+zN*Wvp7xjlK_~G;e40WrHqM|=aR-;n>YK@7;RAa6&)0immV`4h=+`%<wgYKTEAt{0n
+O3e3JB9C|#Sw*CcCWYjPK
+
+literal 0
+HcmV?d00001
+
+diff --git a/moduly/__init__.pyc b/moduly/__init__.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..1c9ca42d78b4f4d2146931a0ac445312baa4f61e
+GIT binary patch
+literal 133
+zcmZSn%*%B`(#AiT0SXv_v;z<qvjB+{28Lh_kcgiKkYGR~iuHhE`WgATsrotj1*t{)
+z0Y&*)so5o!`Yx4uiN5*zx%nxjIhFeH@tJv<CGqik1(hWnKrJ?4@l-pI!Now#007~L
+B8(IJW
+
+literal 0
+HcmV?d00001
+
+diff --git a/moduly/__init__.pyo b/moduly/__init__.pyo
+new file mode 100644
+index 0000000000000000000000000000000000000000..1c9ca42d78b4f4d2146931a0ac445312baa4f61e
+GIT binary patch
+literal 133
+zcmZSn%*%B`(#AiT0SXv_v;z<qvjB+{28Lh_kcgiKkYGR~iuHhE`WgATsrotj1*t{)
+z0Y&*)so5o!`Yx4uiN5*zx%nxjIhFeH@tJv<CGqik1(hWnKrJ?4@l-pI!Now#007~L
+B8(IJW
+
+literal 0
+HcmV?d00001
+
+-- 
+1.7.8.4
+
+
+From 6b2e57af9f59ddbdd266e7ebfc57dbb6e94ab22d Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 22:42:03 +0100
+Subject: [PATCH 02/12] powrot
+
+---
+ Konfiguracja.pyc     |  Bin 2074 -> 0 bytes
+ Konfiguracja.pyo     |  Bin 1808 -> 0 bytes
+ Makefile             |    4 ++--
+ Menu.pyc             |  Bin 3785 -> 0 bytes
+ Menu.pyo             |  Bin 3201 -> 0 bytes
+ Moduly.pyc           |  Bin 5178 -> 0 bytes
+ Moduly.pyo           |  Bin 4368 -> 0 bytes
+ moduly/Dodawanie.pyc |  Bin 3548 -> 0 bytes
+ moduly/Dodawanie.pyo |  Bin 3468 -> 0 bytes
+ moduly/__init__.pyc  |  Bin 133 -> 0 bytes
+ moduly/__init__.pyo  |  Bin 133 -> 0 bytes
+ 11 files changed, 2 insertions(+), 2 deletions(-)
+ delete mode 100644 Konfiguracja.pyc
+ delete mode 100644 Konfiguracja.pyo
+ delete mode 100644 Menu.pyc
+ delete mode 100644 Menu.pyo
+ delete mode 100644 Moduly.pyc
+ delete mode 100644 Moduly.pyo
+ delete mode 100644 moduly/Dodawanie.pyc
+ delete mode 100644 moduly/Dodawanie.pyo
+ delete mode 100644 moduly/__init__.pyc
+ delete mode 100644 moduly/__init__.pyo
+
+diff --git a/Konfiguracja.pyc b/Konfiguracja.pyc
+deleted file mode 100644
+index 190aec617f37f96e684cd82ddc41af67490c426a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2074
+zcmbtV-EJF26h5<?tdlgRkivz5s*6ggp{Tw?fYO56f`lqkv_?v?gjR!hYR0?SHM?WE
+zwo-(eBAx*uo`SoI8>ILpcn!FR@0@kwBzF)?^X-|xbG|u$_Wx>b{C#EnL7x^sAK#BL
+zs<#0NQ4gpn@hDT&gWyxLO34a6BRU}Zs^{@uw;k}6cLC$QV*Yz(Csv1({%q=|6P;TV
+zjw`1p*36%UNfD09Vo>V6vHb_X9k+>V_lx|I9gIueAL?T+3LAG=@%sP+F0c>u$O1t`
+zF^k>`GhhL{d=Y{L!Cr%+ZhMtAYyr|tS2{dp$;0x|xXb5W0_+nFfr<_kDH!awnaGZy
+zdlh1QQb!yYZc>!9c$C?+&C1*gpfcGb5o8$))Mlt|06O0md!~~WBU5(1D2t&<-L!LW
+zn(NPt&PmlbM^m?k^Koo*>*9EW6|e<Teg3c=ew{Gi1j*^2<b*j~bKubvj~@R)`yLH3
+zCA#<ZZ}h|`=h42;Z-d)XMddB}?h56&29NsGN}7}gRCbrEL!5?7;OBs^ol?=D)Ti=?
+z<zXmoC2OMMS8}VO)uZkF@<M7Q>$3TrTyVTu`@C^Pftf%JUZ6m2_j`|a^Bc4RU!)sU
+zHWYqtorW8fY)F`J&RwA7f&?sA^f1{(&|ZLNs+$1B$C^@y9Es3|MZ$SG9-43#A~gp^
+zm@bp=@Mp)tE-fR{4AEris$fU(mX#p$vXh0p`T+8s`P0K6lMllkWINYDu3;(HnVCO7
+z{7Gz&PZ*jGbGCf_T6Mjy0?C|+%P499+FTTpKgg0CuLUQglg#F(az17mR{3;Uxzdi{
+zXgn4VbaLm*a%^PjQ=L`Dh1fikvq_QYVVo54qA+vERzG|2Nm&-9$XPKM*nA*rjI46H
+zna9?(S%}05%%Jw3P-G9sJeOM_Yqezk|4aQQl%J|DUZ~yykmsw5>XO=0fqD_+m4(#A
+ztf^jC4Pc;reEaMx9?bbJM)ew?u5eTZ!i@4jslO++u8=nTuId^<Tx7ygF`M?0Ea+R+
+z{An@CZK{{;Y^SdH7S5mX@R4J!mN<<^iFT&VRBG38#L{fspNY38x^zX=KZmz2F$F~Q
+zOkCf>a@{jL=^6aI<DS9hrWcnDuhrenw@_$G3hgSP(9lV`4^fR>p<aE28?y=8G}=2;
+zp8ta6o|zM_iH}nXe*sB`vI8Yac6qH1D-PrKH>FO)dgXTQ#E2s!{qDY*N*>lV!HlEJ
+zfO9y9O)`&Ryl^yUQMCrBQ>m%iJXv(xT<@7UcHC~`c&|vt8Be)D*unic7OIhy0k?sO
+z|6QUt085G@{nu_EL4`!8;_?qv;04~gzusD3sTE81yos&oWd@A%T9g-W*KfQnsn4$p
+H)TZ|@@o?5@
+
+diff --git a/Konfiguracja.pyo b/Konfiguracja.pyo
+deleted file mode 100644
+index bcb3e988d259c725fb773eea00aab0500d804d63..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 1808
+zcmbtUUuzRV5TCtkFHLMvt3Jd(7%6H{FyMorR1yDyh*2&=wIIitTjS-fcX4k+jZ_h<
+z_$mApzKJh_{Stl+eb?X2rK$E!dt@iGv%9~U`OWOQKkBug$CvK)X!5!Ezlu>TLPYo}
+zN{LpWI26rL<kCB$4WdUYir2cWS?r5{;p^CWsCV-0Y1|)~ur~;&pb87uFpBdK8gPnY
+zNFWl!t+))u3LH41%uYP5c;t6mGdR|BAhyPJ2HOv@PBeg2w4q1=t=nQ>9g+4h)Zov6
+zf*`kRxp^53(>Q4{m}Tffr%y!@GYr&XQJjTnKg(BjJI#mMwC|gIpc6Z8-xz1%-MsxL
+z^ts{K&S8HL#93^EpvC~~fs{nfewZqWd>%oLzmt{7k@|*1uN->umDU{^U`ll3@h5ua
+zl67d^<=j9^qR3pP=f^3-F)-#*BbukgBh%fs4zL@PfJcvy{RL5>#3l1)dow^A(VReh
+zBs(jp4lQNJCR!t^%Hn6T-gL3#ys{MnM*<jRpb*;fYloJzvor%Pk{X$c!e^^As8Ljt
+zGGU+HL(v{7Sf=Qq6s-<sI+jakVwUI*)P}W1k!_KeV<{P%tr)W6BJ^vUZ@;~dE;T!`
+zZm#B=U$U^7M_HKa&ClOHG`XguW-@Kd@gURvym|U$aa!6|+Q9dK<5wVB+{DrhD0zm^
+z5t0t0G|qHkUCdHgdABL7iHBefb%qZsXC9c57SpXTEwpW7aYqA2c@z$UC=W)34cB6T
+zvDe%8ZW@yt(bK%&kF&nOXt8qd=ohh-d*BNP96_0rgvdz-JeN}lHV&nQ|F4g^8h>3C
+zHWX(d$Z^$PbwDjBPwm4vG|}pq)zwi|f%KG%{~mM2gM+`0Q5=CNuPa&{RYtGl-d@;o
+zaV5J3w(j6<i>^2n_D91gw7SI(N<z2}NjmDi6b{!yWAmc73l0u&2&mJJYMp|)yw=Y2
+zL7HA`b~oO;{U$ZK%h>|%f|9$iNVp69WR@+@iFOKRcIk-;lcoe8UMbs=xsvDPjvh;A
+zlx9BTAA{IMV(f7!X-!Dtx)yT~WpV4O#T_|$%(8G*2Z80+EC^QfXp~~=b9g=%*5|wE
+zFR(ZPu^pCZ|N4OXfRIPBV1J(LIaRmXsLqtIlKep|$hKX&lJu6!gsyNGNm1vW-(tae
+AGynhq
+
+diff --git a/Makefile b/Makefile
+index 447ea83..e80eb6b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@ start:
+ 	python DynaMo.py
+ v:
+ 	python DynaMo.py -v
+-o:
+-	python -OO DynaMo.py
++clean:
++	@rm *.pyc *.pyo moduly/*.pyo moduly/*.pyc
+ patch:
+ 	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 < (nazwa_latki).patch"
+diff --git a/Menu.pyc b/Menu.pyc
+deleted file mode 100644
+index bb0e4de521c835127fc551c95ffbd97baea8c0d8..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3785
+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
+
+diff --git a/Menu.pyo b/Menu.pyo
+deleted file mode 100644
+index 3fbff3a07bfd921499d3875c777ac2ffa4624868..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3201
+zcmbVO?QR=Y5S?8+j_o=mG-^azkPK~*kq|)wRVb|r>IW@Fb*l|DZA!G-cyH77$F8$`
+zt;AOPhxQ5hS000BpijgDz&UfBI1+!_MBd5VkDWVn=FHqJ{j*U2t9kulN2Y%z{Qm(@
+zaSbBI&y&8$_KEJvws$=5%eF5uer1VE@>=AT$kXi--`Q-<;r--a{IzWv>I0LGP7d)g
+zaT8CGLKv9$WDnAp1QPGpWP46bh3CA+f%CKo^V?OPMx{1AaJ$aKIde|pIaL}GS5#S$
+zcwUtcB(AEmD8Xi{jw3sCfDfa+g-4@3@+4oQ;XO}|L_+v~9O_k$eM!&L&*_>|5WOJU
+zGK{p7Dx|GIJjmivf862`I$4~W<eByZh>)0s;V_$wJ6)qFwX@XN)!Eu4>PK;Q5Tz!}
+zb`#UH&Zh1yO#iuE!ro!lizefPs1pv{v6zz<MR6Ho{Y5q~>-}tK^7Th~)}@v8+v7BP
+zkgd~$uZCkw$HOp56B~xhe32-LSMeI&vS0HQFZ#`-DqcTAK~nDCJ8Th;uE_13PvoW2
+z;Rv!MtNd4%)#tvf+`YHIC|gL--Fw^&cs+ULiKoyJnzjN|e{iS$>qbFmn$5L%qq$aq
+z5Sj+Kw4l>pZ#1`_-hcb&t)K2Fya6$`A3{vwJQ(k0c{o5|EqWZ#WzC5L$9fniiq88%
+zL_`#6wS5UA2a-SMEqRx`Ij=*@^yUPl?=Y~66M}u|$#_X{yo(*ft@MJFtuMX0<ll(r
+zdBmn9n@_M~Q-f<4HJGSp!%jD9-e@YzET{750NEOjtYwTzYAxM+9Q8-$PM&AEy@25q
+zkT@HRi+&n~YQ}-4pisCuDDO#_MZ5vtL}>zMs%3K-Q$>TO{DxNoC<|WIF^9!LV3av;
+zpd9`&CCw`#XUG(ho-g_5j#T?4L1*AJ(82UW0Zf1fv?6Ul|Lz>uI7qMR#<Fhg5#4Tu
+z)^+Woo-@xKt1nA(R64atw5!KV#ED8qV$v>Hoj2e9{`Z?WjhYIP^3Za%(>GDBMcra1
+z0#Ywv7T_ZAER<`-xUgoR$)QRB%wb|xAvFWe1m_?$r%KX5&9R{My==F829^^4Fr3xE
+zmlzipA;d4Cm>b|Ji+aIdf?V<!kfaWsr$2l&MFkXs?>W%4yjir0etu0c1^CFFLhACw
+zLPsu{H>Gj6OdHI?bUep5bb$2=dn<AUn^(CfW)r0&ZABW3fMy;-k+RfYL`B#$W6S<D
+zrS>F^y744D$olEnH3Bx1XgD-!?0O_hK@&0>#*sBMuyxY4R5fn;26?fX;dC@G`5CY$
+zJK`*ky5B=l4oRu*od?j%S`8<+&Pgq>r4a-Kq!;XFi*dJAYT&1;l?6V#4$j~nSuo5e
+z2A4%RGjx2f+{bD`$Hf1CxBnK?Xk<*JHg4p3++cd){OaZwuEpa%w$47rWIoZ1x^PG=
+zO-Gz`tV?JWQ$L%rHY=^3S+fp4<#uwx4u)rlQ?J&rn2dT+*WHM1*qS!$MRX?6f7X|n
+zv|C)?g*besG4e8dB)=)2NpX#neW=d<-POuK_hCJhP8f}SfCoS2J=RbUU^dCUUl;tg
+zW*jegeLPz$cA7DWXOncV`8>}CO|}N!dI6S2zn~neN&kMfw}*|&(Aeyb_7tLFHq@CU
+zjm_bV-VQ^e-&1-YM7hn1&Kb~TLm3sL^!PL7F~)jBi@&1G?(h_5i&<7AH=wv{kNp}b
+zdUAM$RJpzLv9^1q5ny!vp;)1^xxX?+h<4iA01|e@gv3{NXrOtN?itrUN$44Ebd{aJ
+zsMhO`I+HWR>)3O;vFzZOX~c_Q&Uvrh(k4v`hhZ8GOc?6*8#=aOs9AGP5}AOvr53<1
+z`N#y?*4X>q-9bCSXB1bs?Noa^&Ea63JII?^P^!J_H=c5e*(^SSsFW(W2r7P~TC3J-
+wwdLBmS{d5BGtLwQUr^ASfFBc%l2A^a|E@>t=jC<%{xUZhu72(DHfs3)0r-ws7XSbN
+
+diff --git a/Moduly.pyc b/Moduly.pyc
+deleted file mode 100644
+index 58a01ebd1a18285f8f925e4c85e18b5cdb5a3668..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 5178
+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
+
+diff --git a/Moduly.pyo b/Moduly.pyo
+deleted file mode 100644
+index d8493f0179cd4ce9e595c448488e4d9c1eafc19f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 4368
+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
+
+diff --git a/moduly/Dodawanie.pyc b/moduly/Dodawanie.pyc
+deleted file mode 100644
+index 516b30ee73e423e15564eb2dd1f6987a77ab1ac9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3548
+zcmb_eU2oh(6rJ&YB%3B_n$na4QjJPsg;3HK2~brKZBqdfY$^ve5CPU??WW${*jtZ-
+zYpZ!_;TIqt`aAj)n*JhqhjXrXlPKYZZnN?D&WG>ZIrpA>r}o#}%-<Jptaa7suZH)R
+zc<d!K0sgfbD76W}Q9)e=HT9cPPnG&{Q*&;;-N3r&AN+N)7R1#gFu94N@Ia%+=q)_<
+zPc$KP;X|}gr`2YSdN)PyW<zabyeaLJiXcyOOYFDVQb9w685J}|IHiIq5oT2|EyA1%
+zS|ZG=U`B+~DmW#=f(m9uIHQ6&5f)W2FTz>nt+!9ZvWRwOJWYTj^eln6viym?jQ8Ea
+z?sgQrL4yD4c*Y$>-EzzAnn6FwqpavY=u*M>xeeLY(cq}-ZH{)@Xq1Q<Cu}&lUk!2G
+zuAo_YknDsjgJc+{D|geR7xuGaWwnUScgf0566_Ap8^gOiEV5~Q<NHw@Wxl^aB@P;;
+zPZ~0X;m1n#4sDUc@*Dp^BQ@Pm#6XXVCNz#`q{6d!|6juvj~SMSsqLB9W?B>KE0s&H
+zU>v_Widty~VHqd38@)CIXRyVg+6(_-B+-=^y8)qcZBGdKRIBu}(Fh23q35u}6*Xz=
+z>b|3%I!ebv>Gd|_+<u5AFYL=FWG+J6W`&y!yS?Zmx1YUuo`!A|?Eg*z?1b^I#4m-8
+zus@@Vk0O$6MGW1HVfVmTzaJK!1l(K477mlL==O}C`=a*EW7DxI^YP?s!<I?P_k%>X
+zd<Pw&sd5%|mr*}{1l;o&c&v$=Uty@3`n2RdF0}l<G{eZc!?X<hrZh1!fm;Fa;(6X_
+zbD4Jv%?Xr7CR8i9Oz;|EHzE1v$99$eNa4E}8J)CMJ9*Mixj%wr977su`Kzyy?a|cP
+zG}tuJFq9BeKtclvW)!-)Bbl>12u*4ky{l`hH#cr}zPWSVlFV0^-Hl<I<R&Pq#93IH
+zcx~Ce%Vg{3MI7}lUGwp>yPgbw1>vdY3KpzwcrX6=Ug9((Oo`1%U|ZNM+{uo!F)y}~
+zRD62`SmM7uNb)$WX3(wD+pDBqkA~4das;L4bYuK;1XwbPhDr$SLU<Gqub$M+JzyuL
+zukWbzqLc^r9mW3VLQx4a#+;)bg0z^e$?Q)@XbcVmeoTvZ@a9T*rd|ao-NI7VK@}a9
+zwumN)$+uoU*?$(qMi_1?3bO*DqLBW6;*<Jec9N~&bz1sT`HJj#k{%5oCvmdH312*1
+zK}UR~!g%DD1P(Ve6UO{3l=;|a?Eh=%TZV_yH9d=89nT`3v-O5<R#lQ|l))sf+Jk@_
+z$evb@wn+xi9DYHrT>bf;g5NUq#UD$+ey^sA1%-foT%#+{-H2UP&)}*VmHwi%*5aB&
+zr^H(Qz%XcxKG6@C)CPEku_e%ocPX0Ek&8$~knA}$6+r~t{bz2Rx|f6NuBE>Y{3w&g
+zzK^kQc`GU0%hoNy6Z7&(;Yxloap>mm(CkF}&rqnikpQ2XcsrDfTWWG#0EW96j=;*D
+z$>^O&-Ef#iN$jx-3GvKu7{)=H(1{miP)sO*5I#K|nAD|mLGg!7VFz({3tNob+SE&W
+z0nS|z4$kW{x>Y4{p5TCiSJ45w@GL2Ij&4ON14HN<nWF!MgWwumAxVuYI^uv1Dq=oL
+zUP+u(`OCh6`3+_*Hz*_E4Ca{Y@J&^xh=XLTD$XyVD{u=7CX90?P9JHVkXN)?!-%9y
+zh3IY|&QBl0z;oQ@JedF(cqib?Q5Vivxv07V9LW@wef;pydhY{tCo^2G0QYDLLq~y%
+zZGt$u#l~hQ^!<#v)%WGHi>^0^uEzs=j95=%ZkiHvlay6Y>}0O<Scg2;5RY-=F+WMd
+z@pyEJU+-;7;v5K*o`)*9v3(Cs(`h29$d8iKs*Qe))>Lbzwa}VtO;z|YFg>2!!*j$2
+VnSGUlBnaN9F#CdV$aQ<x`4@==@{|Ao
+
+diff --git a/moduly/Dodawanie.pyo b/moduly/Dodawanie.pyo
+deleted file mode 100644
+index 1b7ca013138f068564d98fc4b6182ff23e36a809..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3468
+zcmb_eU2oh}5S{D&NH$H<G@&U0q#BjNJ|%6D096IiG!-DhrgBgN5nwrMH}Pg;Z*7OI
+zSItYqKR`V6_mKV~c!zVw-s~#jg(TVddhWgUc;?KUnOpg5X6o;o57ygK{#9`Q5?6W)
+zgO7hBU6CyamiSfiEApGjk;so*hI<>$8lDUP!CxzDKwOJ`ukS@+aH7#*bro0o2ZjK;
+z@FGU2GqP2o-YwO;Rg)d8*L9qb5b`8HiSKPS#ILC^C4OCnE8<V6FfIP13Nzw2RG1Zi
+zN`<T9Ur}LB{Am@gi9e&ly!f*!EQqtwyb8-g+L_TCA1-uK0&!>glk_(3Pr3&?VPyL;
+z{tNd!yBoF#+jiUQ?#2Bu%iFtcDi~gmAg5IfaCM`})m9UOsF-mh4Z6>YC9bC{7*=-U
+z{a~dV_kv{QNfLL0y)0i@%Omf*cx6BK54xBQ;a%?K*(Ba^-7pF>*PWvh3xk-mhD>1j
+zrATLFi#p49+!Kw|^ek2b9V)t@arBW27jXZ-hRvTctREz4$GbGs>QG;(Ts((yd}kcB
+zf!7TNQJl8JOEYi^pBSlK`VS+CuIAVS2t{Z+O2{K4$!FyX2)5L*IN=i&9jo%pk|Rq@
+zROTi_-O`NQ526F5bH<pByBKeW%*Bj(wCknrUXVMQLGPS;uon;VcE@x3E|q0(pW2SR
+zL4UY;X<)JHxUL`TC*Q+Fc_-GqY16mirD)y2!b?LS+yWHCT4u&b%Ez567|wuDexa#P
+za8Ni(Xf8;WS*RO$y)YfPrNZ~IQaaM8oOR?=ejh;{#@wKce)Tn~GlnXM8izUth8{Tp
+zM@{J{quA0)*X{;hk}})Y*4G|xK5TvS_<l<A-Cedfdr92){6SIZ@{}gtTehFDINJR@
+z3inbX|M9ZD5qEzDL8;~r9$4RW{`~#>W(CuXFvV#`!likd1^d})_Vn}ZIML9J0ZaUM
+zx^X`WiXBXga&(?D>CiC7M_mvzV`{^nrNGis8mbv`0O5sCygJ(F4uPGvsy$1Rn_A8}
+zw}kW0l~S5ROessAgJjsP=<ZKrv;*e=KejbGxbsOwraH<$ww@NcUfGI5nxrPLzIk>0
+z+K)Ut?txncL)o#=0oZ8W*yTo$oh2h^n+#m-RC#u~sFus8IT~+s!_^2E&=DW)2oC9^
+ziBnjD+4;kgP2+7B-x<dL9_A_2Lrld?<5$Hsk87b?GxegYvFtIKG*pKWaAG(#@?wW%
+zK)FL)P}|miekzDthPlRL5!fGAB%fnKzN|15m~KY4R5OHXN|Im17^9&X1tl`_1Jj^Z
+zzG9v)$|iV)wMEd1XCIo<(t|@tkkacI3W6xO$FJ=uv2XkL?UeC4iKA|M>4#YRmZyl^
+zzMa|w@WgxbDz~)`cu`>Y?Vh(E9=}Fo;fECX#EW(UJ!mCf9}T;Akii9Z+Dum;zi0=&
+zEQ}+ET|<fI^?E_%Hwm3aQ5V&O90=jn(SmouGNuO#x5pB8l6R~4L>bn)Su}G9?woRP
+z)?71<qDIq$69(SJ1n45Nq}X+a6{QSE7luZ+7(eA8xQ0+@^`?rJ2A~xJy0Uo1QC!ro
+z^eyafvTE7>AOy}}j&~oiDcTTm(27;$`7KNpZe_s*L1E!^QPv50L92DFXt@+*cMW-d
+zbp!+bc*K1&0Wh$K^JdA?jiMH9sG(z(qOgxIj;wb+!t`Q>YlnYIQ<ypeDmDpXdFqV3
+z{lIlI)>hZm!zrfD45khpc9^k_=G-JD)+TMMj@rpu=dces>>&>G#$kQZg5%J2&0ptT
+zN*Wvp7xjlK_~G;e40WrHqM|=aR-;n>YK@7;RAa6&)0immV`4h=+`%<wgYKTEAt{0n
+O3e3JB9C|#Sw*CcCWYjPK
+
+diff --git a/moduly/__init__.pyc b/moduly/__init__.pyc
+deleted file mode 100644
+index 1c9ca42d78b4f4d2146931a0ac445312baa4f61e..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 133
+zcmZSn%*%B`(#AiT0SXv_v;z<qvjB+{28Lh_kcgiKkYGR~iuHhE`WgATsrotj1*t{)
+z0Y&*)so5o!`Yx4uiN5*zx%nxjIhFeH@tJv<CGqik1(hWnKrJ?4@l-pI!Now#007~L
+B8(IJW
+
+diff --git a/moduly/__init__.pyo b/moduly/__init__.pyo
+deleted file mode 100644
+index 1c9ca42d78b4f4d2146931a0ac445312baa4f61e..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 133
+zcmZSn%*%B`(#AiT0SXv_v;z<qvjB+{28Lh_kcgiKkYGR~iuHhE`WgATsrotj1*t{)
+z0Y&*)so5o!`Yx4uiN5*zx%nxjIhFeH@tJv<CGqik1(hWnKrJ?4@l-pI!Now#007~L
+B8(IJW
+
+-- 
+1.7.8.4
+
+
+From 542d82c4a17f626f2c2426f754fcbb40641a7940 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 23:21:30 +0100
+Subject: [PATCH 03/12] poprawiony verbose
+
+---
+ DynaMo.py |   28 +++++++++++++---------------
+ 1 files changed, 13 insertions(+), 15 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 2653a0d..fd7e479 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -5,38 +5,36 @@ wersja 0.9 RC2"""
+ 
+ import getopt
+ import logging
+-#import os
++import os
+ from sys import argv
+ 
+ import Moduly
+ import Konfiguracja
+ 
++FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
++
+ def tryb_verbose(wlaczyc = False):
+     '''włącza tryb "gadatliwy"'''
+     if wlaczyc:
+-        logging.basicConfig(level = logging.DEBUG)
++        logging.basicConfig(format = FORMAT, level = logging.DEBUG)
+     else:
+-        logging.basicConfig(level = logging.WARNING)
+-
+-logging.basicConfig(format = '%(message)s (in %(funcName)s at %(lineno)d)')
++        logging.basicConfig(format = FORMAT, level = logging.WARNING)
+ 
+ KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
+ 
+ ''' dwa sposoby włączania trybu gadatliwego:
+ albo konfiguracja albo przełącznik'''
+-if KONF.podaj_wartosc("verbose") == 'y':
++if KONF.podaj_wartosc("verbose"):
+     tryb_verbose(True)
+-else:
+-    OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+ 
+-    for op, arg in OPCJE:
+-        if op in ('-v', '--verbose'):
+-            tryb_verbose(True)
+-        else:
+-            tryb_verbose(False)
++OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
++
++for op, arg in OPCJE:
++    if op in ('-v', '--verbose'):
++        tryb_verbose(True)
+ 
+-#os.system('clear')
+-print 20 * "\n"
++os.system('clear')
++#print 20 * "\n"
+ print KONF.podaj_wartosc("naglowek")
+ print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+                            KONF.podaj_wartosc("autor"))
+-- 
+1.7.8.4
+
+
+From 7b41e46e0e57a3f70d19ec88a6ca567c9b3456bf Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Wed, 15 Feb 2012 23:31:26 +0100
+Subject: [PATCH 04/12] sprawdzanie opcji menu
+
+---
+ DynaMo.py |    3 +--
+ Menu.py   |    8 ++++++--
+ 2 files changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index fd7e479..668e80c 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -1,7 +1,6 @@
+ #-*- coding: utf-8 -*-
+ 
+-"""DynaMo - główny moduł uruchomieniowy
+-wersja 0.9 RC2"""
++"""DynaMo - główny moduł uruchomieniowy"""
+ 
+ import getopt
+ import logging
+diff --git a/Menu.py b/Menu.py
+index 62d1a53..8f92041 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -55,8 +55,12 @@ class Menu:
+             elif opcja == 8:
+                 moduly.menu(self)
+             else:
+-                obj = self.__zaladowane_obiekty[opcja]
+-                obj.menu(self)
++                try:
++                    obj = self.__zaladowane_obiekty[opcja]
++                    obj.menu(self)
++                except KeyError:
++                    print "Błędna opcja"
++                    continue
+             self.pokaz_menu(moduly)
+ 
+ 
+-- 
+1.7.8.4
+
+
+From 66ee034585b271352ea3dc818c89c10dc441c42f Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 18:04:32 +0100
+Subject: [PATCH 05/12] dzialajace dziedziczenie
+
+---
+ Menu.py                          |    1 -
+ Moduly.py                        |   20 ++++---
+ moduly/Dodawanie.py              |  105 --------------------------------------
+ moduly/Przyklad.py               |   49 ++++++++++++++++++
+ moduly/{blank.py => Template.py} |   75 +++++++++++++++------------
+ 5 files changed, 104 insertions(+), 146 deletions(-)
+ delete mode 100644 moduly/Dodawanie.py
+ create mode 100644 moduly/Przyklad.py
+ rename moduly/{blank.py => Template.py} (53%)
+
+diff --git a/Menu.py b/Menu.py
+index 8f92041..a8cd2a4 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -50,7 +50,6 @@ class Menu:
+                 continue
+             if opcja == 0:
+                 os.system("clear")
+-                #print 20 * "\n"
+                 sys.exit(0)
+             elif opcja == 8:
+                 moduly.menu(self)
+diff --git a/Moduly.py b/Moduly.py
+index 1419fec..8b5a208 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -50,8 +50,8 @@ class Moduly:
+ 
+         for k in znalezione:
+             i = nazwa_na_modul(k)
+-            """wszystko, oprócz __init__ i blank"""
+-            if i in('__init__', 'blank'):
++            """wszystko, oprócz __init__ i Template"""
++            if i in('__init__', 'Template'):
+                 continue
+ 
+             """pluginy"""
+@@ -68,11 +68,15 @@ class Moduly:
+             obiekt = mod()
+             """sprawdzanie poprawności modułu -
+                obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
++            if not hasattr(obiekt, 'podaj_zaleznosci'):
++                print 'not ok!!!!!!!!!!!!!'
++                exit(-1)
+             try:
+-                assert(obiekt.info != None)
+-                assert(obiekt.wersja != None)
+-                #assert(obiekt.menu != None)
++                assert(obiekt.podaj_info != None)
++                assert(obiekt.podaj_wersje != None)
+                 assert(obiekt.zapisz_obiekty != None)
++                assert(obiekt.podaj_zaleznosci != None)
++                #TODO: hasattr?
+             except AttributeError, err:
+                 logging.error("[%s] Error: %s", i, err)
+                 del(sys.modules[nazwa])
+@@ -81,7 +85,7 @@ class Moduly:
+             #do_menu = obiekt.do_menu()
+             #menu.dodaj_do_menu(do_menu)
+             self.__zaladowane_obiekty.update({nazwa: obiekt})
+-            nazwa = nazwa + " (ver. %s)" % obiekt.wersja()
++            nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
+             self.__zaladowane_pluginy.append(nazwa)
+             logging.debug("[%s] plugin loaded", i)
+         #self.__sprawdzanie_numeracji(menu)
+@@ -128,10 +132,10 @@ class Moduly:
+         i ewentualnie wyłącza "złe" moduły'''
+         for i in copy.copy(obiekty):
+             obiekt = obiekty[i]
+-            zal = obiekt.zaleznosci()
++            zal = obiekt.podaj_zaleznosci()
+             for zaleznosc in zal:
+                 """pustych nie sprawdzaj"""
+-                if obiekt.zaleznosci() == '':
++                if zaleznosc == '':
+                     continue
+                 try:
+                     assert(sys.modules.get(zaleznosc) != None)
+diff --git a/moduly/Dodawanie.py b/moduly/Dodawanie.py
+deleted file mode 100644
+index c926b89..0000000
+--- a/moduly/Dodawanie.py
++++ /dev/null
+@@ -1,105 +0,0 @@
+-#-*- coding: utf-8 -*-
+-
+-import os
+-
+-class Dodawanie:
+-
+-    __pozycja_w_menu = 1
+-    __nazwa_w_menu = 'dodaj'
+-    __wersja = '0.6'
+-    __info = "Plugin do dodawania liczb calkowitych"
+-    __zaleznosci = []
+-
+-    __liczby = []
+-    __obiekty = {}
+-
+-    def __init__(self):
+-        pass
+-
+-    def info(self):
+-        return self.__info
+-
+-    def wersja(self):
+-        return self.__wersja
+-
+-    def zaleznosci(self):
+-        return self.__zaleznosci
+-
+-    def __do_menu(self):
+-        '''wysłanie listy opcji, które idą do menu'''
+-        if self.__obiekty.has_key('menu'):
+-            self.__obiekty['menu'].dodaj(self, (self.__pozycja_w_menu, self.__nazwa_w_menu))
+-
+-    def zapisz_obiekty(self, obiekty):
+-        '''zapis przekazanych obiektów'''
+-        self.__obiekty = obiekty
+-
+-        '''dodanie pozycji do menu'''
+-        self.__do_menu()
+-
+-    def menu(self, glowne_menu):
+-        os.system("clear")
+-        print "DODAWANIE:"
+-        print "1. Wprowadz liczby"
+-        print "2. Podaj wynik"
+-        print "3. Solver"
+-        print "0. POWRÓT"
+-
+-        self.__wybor_menu(glowne_menu)
+-
+-    def __wybor_menu(self, glowne_menu):
+-        while(1):
+-            opcja = glowne_menu.pytanie_o_opcje()
+-            if opcja == 0:
+-                return
+-            elif opcja == 1:
+-                self.__liczby = self.__pobierz_liczby()
+-            elif opcja == 2:
+-                self.__oblicz_wynik(self.__liczby)
+-#            elif opcja == 3:
+-#                self.__solver()
+-            else:
+-                print "Błędna opcja"
+-                continue
+-        self.menu()
+-
+-    def __pobierz_liczby(self):
+-        liczby = []
+-        for i in range(1, 3):
+-            liczba = raw_input('Podaj liczbę nr %d: ' % i)
+-            try:
+-                liczba = int(liczba)
+-            except Exception:
+-                print "Błędna liczba"
+-                self.__pobierz_liczby()
+-            liczby.append(liczba)
+-        print "Liczby %s zostały zapisane w pamięci" % liczby
+-        return liczby
+-
+-    def __oblicz_wynik(self, liczby):
+-        if liczby == []:
+-            print "Nie wprowadzono liczb"
+-            return
+-        wynik = self.dodaj(liczby)
+-        print "Wynik działania: %d" % wynik
+-
+-    def dodaj(self, liczby):
+-        wynik = liczby[0] + liczby[1]
+-        return wynik
+-
+-#    def __solver(self):
+-#        #malo eleganckie...
+-#        for k, v in zaladowane:
+-#            if str(v).split('.')[1] == 'Odejmowanie':
+-#                break
+-#        wynik = raw_input('Podaj wynik: ')
+-#        try:
+-#            wynik = int(wynik)
+-#        except Exception:
+-#            print "Błędna liczba"
+-#        odj = raw_input('Podaj odjemną: ')
+-#        try:
+-#            odj = int(odj)
+-#        except Exception:
+-#            print "Błędna liczba"
+-#        print 'Wynik działania: ' + str(v.odejmij([wynik, odj]))
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+new file mode 100644
+index 0000000..d2bbf86
+--- /dev/null
++++ b/moduly/Przyklad.py
+@@ -0,0 +1,49 @@
++#-*- coding: utf-8 -*-
++
++from moduly.Template import Template
++import os
++
++""" UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
++class Przyklad(Template):
++    '''klasa Przyklad'''
++
++    obiekty = {}
++
++    wersja = '1.4'
++    info = "Przykladowy moduł"
++    pozycja_w_menu = 7
++    nazwa_w_menu = 'przykład modułu'
++
++    def __init__(self):
++        Template.__init__(self)
++
++    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
++
++    def menu(self, glowne_menu):
++        '''pokazuje pozycje z menu'''
++        os.system("clear")
++        print "PRZYKŁAD:"
++        print "  0: POWRÓT"
++
++        self.wybor_menu(glowne_menu)
++
++    '''tego nie przysłaniam, bo jest takie samo, ale normalnie trzeba tu dodać własne funkcje'''
++#    def wybor_menu(self, glowne_menu):
++#        '''pyta o wybór i wywołuje daną funkcję'''
++#        while(1):
++#            opcja = glowne_menu.pytanie_o_opcje()
++#            if opcja == 0:
++#                os.system('clear')
++#                return
++#            else:
++#                print "Błędna opcja"
++#                continue
++#        self.menu()
++
++    def uruchom_modul(self):
++        '''dodanie pozycji do menu'''
++        '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
++        self.do_menu()
++
++        '''uzupelnić o własne funkcje'''
++        print "\n[Przykład] moja super ekstra funkcja!"
+diff --git a/moduly/blank.py b/moduly/Template.py
+similarity index 53%
+rename from moduly/blank.py
+rename to moduly/Template.py
+index cf615d1..b0e7e11 100644
+--- a/moduly/blank.py
++++ b/moduly/Template.py
+@@ -10,65 +10,74 @@ Obowiązkowe funkcje:
+     - zapisz_obiekty()
+ 
+ Obowiązkowe pola:
+-    - __wersja
+-    - __info
+-    - __zaleznosci
++    - wersja
++    - info
+     
+ Jeżeli moduł ma dodawać swoją opcję do menu, obowiązkowe są:
+     - __do_menu()
+-    - __pozycja_w_menu
+-    - __nazwa_w_menu
++    - pozycja_w_menu
++    - nazwa_w_menu
+ 
+-Dostęp do konfiguracji jest z poziomu self.__obiekty['konfiguracja'],
++Dostęp do konfiguracji jest z poziomu self.obiekty['konfiguracja'],
+ a odczyt wartości przy pomocy funkcji 'podaj_wartosc(klucz)'.
+ """
+ 
+ import os
+ 
+ """ UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
+-class Nazwamodulu:
+-    '''klasa Nazwamodulu'''
++class Template:
++    '''klasa Template'''
+ 
+-    '''----------------- USTAWIĆ WEDŁUG UZNANIA -----------------'''
+-    __wersja = '0.1'
+-    __info = "opis"
+-    __pozycja_w_menu = 5
+-    __nazwa_w_menu = 'nazwa w menu'
+-    __zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']
+-    ''' dla pustych zależności ustawić "[]"; pamiętać o "moduly." '''
++    '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''
++    wersja = '0.1'
++    #TODO: info jest nieużywane
++    info = "opis"
+ 
+-    '''----------------- NIE ZMIENIAĆ -----------------'''
++    '''jeżeli program dodaje opcję do menu'''
++    pozycja_w_menu = 5
++    nazwa_w_menu = 'nazwa w menu'
++
++    ''' dla pustych zależności ustawić "[]" lub nie umieszczać zmiennej;
++     pamiętać o "moduly." 
++     np. zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']'''
++    zaleznosci = []
+ 
+-    __obiekty = {}
++    '''nie zmieniać, ale skopiować'''
++    obiekty = {}
++
++    '''----------------- NIE ZMIENIAĆ -----------------'''
+ 
+     def __init__(self):
+-        self.__obiekty = {}
++        self.obiekty = {}
+ 
+-    def info(self):
++    def podaj_info(self):
+         '''zwraca opis modułu'''
+-        return self.__info
++        return self.info
+ 
+-    def wersja(self):
++    def podaj_wersje(self):
+         '''zwraca wersję modułu'''
+-        return self.__wersja
++        return self.wersja
+ 
+-    def zaleznosci(self):
++    def podaj_zaleznosci(self):
+         '''zwraca listę zależności'''
+-        return self.__zaleznosci
++        try:
++            return self.zaleznosci
++        except AttributeError:
++            return []
+ 
+-    def __do_menu(self):
++    def do_menu(self):
+         '''wysłanie listy opcji, które idą do menu'''
+-        if self.__obiekty.has_key('menu'):
+-            self.__obiekty['menu'].dodaj(self, (self.__pozycja_w_menu, self.__nazwa_w_menu))
++        if self.obiekty.has_key('menu'):
++            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
+ 
+     def zapisz_obiekty(self, obiekty):
+         '''zapis przekazanych obiektów'''
+-        self.__obiekty = obiekty
++        self.obiekty = obiekty
+ 
+         '''uruchomienie modułu'''
+         self.uruchom_modul()
+ 
+-    '''----------------- TĄ CZĘŚĆ MOŻNA ZMIENIAĆ -----------------'''
++    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+@@ -76,13 +85,14 @@ class Nazwamodulu:
+         print "NAZWA_MODULU:"
+         print "  0: POWRÓT"
+ 
+-        self.__wybor_menu(glowne_menu)
++        self.wybor_menu(glowne_menu)
+ 
+-    def __wybor_menu(self, glowne_menu):
++    def wybor_menu(self, glowne_menu):
+         '''pyta o wybór i wywołuje daną funkcję'''
+         while(1):
+             opcja = glowne_menu.pytanie_o_opcje()
+             if opcja == 0:
++                os.system('clear')
+                 return
+             elif opcja == 1:
+                 pass
+@@ -94,6 +104,7 @@ class Nazwamodulu:
+     def uruchom_modul(self):
+         '''dodanie pozycji do menu'''
+         '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
+-        self.__do_menu()
++        self.do_menu()
+ 
+         '''uzupelnić o własne funkcje'''
++
+-- 
+1.7.8.4
+
+
+From 36f5e07ae4ce437bd77ca85fa5f059b8a796721a Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 19:51:16 +0100
+Subject: [PATCH 06/12] na pythona 3.2
+
+---
+ DynaMo.py          |    7 +++----
+ Menu.py            |   18 +++++++++---------
+ Moduly.py          |   22 +++++++++++-----------
+ moduly/Przyklad.py |    6 +++---
+ moduly/Template.py |    9 ++++-----
+ 5 files changed, 30 insertions(+), 32 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 668e80c..86e4a5c 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -33,10 +33,9 @@ for op, arg in OPCJE:
+         tryb_verbose(True)
+ 
+ os.system('clear')
+-#print 20 * "\n"
+-print KONF.podaj_wartosc("naglowek")
+-print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+-                           KONF.podaj_wartosc("autor"))
++print(KONF.podaj_wartosc("naglowek"))
++print("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
++                           KONF.podaj_wartosc("autor")))
+ 
+ MODULY = Moduly.Moduly(KONF)
+ logging.debug("[%s] loaded", 'Moduly')
+diff --git a/Menu.py b/Menu.py
+index a8cd2a4..815ff13 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -26,15 +26,15 @@ class Menu:
+ 
+     def pokaz_menu(self, moduly):
+         '''pokazuje pozycje z menu'''
+-        print "\nMENU:"
++        print("\nMENU:")
+         for i in self.__pozycje:
+-            print "  %d: %s" % (i[0], i[1])
+-        print "  0: WYJŚCIE"
++            print("  %d: %s" % (i[0], i[1]))
++        print("  0: WYJŚCIE")
+         self.__wybor_menu(moduly)
+ 
+     def pytanie_o_opcje(self):
+         '''pyta o wybór z menu i zwraca opcję'''
+-        opcja = raw_input('\nopcja > ')
++        opcja = input('\nopcja > ')
+         try:
+             opcja = int(opcja)
+         except ValueError:
+@@ -46,7 +46,7 @@ class Menu:
+         while(1):
+             opcja = self.pytanie_o_opcje()
+             if opcja == None:
+-                print "Błędna opcja"
++                print("Błędna opcja")
+                 continue
+             if opcja == 0:
+                 os.system("clear")
+@@ -58,7 +58,7 @@ class Menu:
+                     obj = self.__zaladowane_obiekty[opcja]
+                     obj.menu(self)
+                 except KeyError:
+-                    print "Błędna opcja"
++                    print("Błędna opcja")
+                     continue
+             self.pokaz_menu(moduly)
+ 
+@@ -67,7 +67,7 @@ class Menu:
+         '''dodaje pozycję do menu, następnie je sortuje'''
+         '''najpierw sprawdza duplikaty'''
+         numer = element[0]
+-        if self.__zaladowane_obiekty.has_key(numer):
++        if numer in self.__zaladowane_obiekty:
+             numer = self.__znajdz_wolny()
+             element = (numer, element[1])
+         self.__pozycje.append(element)
+@@ -95,9 +95,9 @@ class Menu:
+ 
+     def __znajdz_wolny(self):
+         '''dostępna numeracja - od 1 do 10'''
+-        wolne = range(1, 9 + 1)
++        wolne = list(range(1, 9 + 1))
+         for klucz in wolne:
+-            if not self.__zaladowane_obiekty.has_key(klucz):
++            if klucz not in self.__zaladowane_obiekty:
+                 return klucz
+ 
+ 
+diff --git a/Moduly.py b/Moduly.py
+index 8b5a208..22f5c80 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -62,14 +62,14 @@ class Moduly:
+             """obiekt"""
+             try:
+                 mod = getattr(mod, i)
+-            except AttributeError, err:
++            except AttributeError as err:
+                 logging.error("[%s] Error: %s", i, err)
+                 continue
+             obiekt = mod()
+             """sprawdzanie poprawności modułu -
+                obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
+             if not hasattr(obiekt, 'podaj_zaleznosci'):
+-                print 'not ok!!!!!!!!!!!!!'
++                print('not ok!!!!!!!!!!!!!')
+                 exit(-1)
+             try:
+                 assert(obiekt.podaj_info != None)
+@@ -77,7 +77,7 @@ class Moduly:
+                 assert(obiekt.zapisz_obiekty != None)
+                 assert(obiekt.podaj_zaleznosci != None)
+                 #TODO: hasattr?
+-            except AttributeError, err:
++            except AttributeError as err:
+                 logging.error("[%s] Error: %s", i, err)
+                 del(sys.modules[nazwa])
+                 continue
+@@ -98,19 +98,19 @@ class Moduly:
+     def __wypisz_zaladowane(self):
+         '''wypisuje listę załadowanych i ich wersje'''
+         if self.__zaladowane_pluginy == []:
+-            print "brak załadowanych modułów"
++            print("brak załadowanych modułów")
+         else:
+-            print "\nZAŁADOWANE MODUŁY:"
++            print("\nZAŁADOWANE MODUŁY:")
+             for i in self.__zaladowane_pluginy:
+-                print '   - ' + i
++                print('   - ' + i)
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         #6os.system("clear")
+-        print 20 * "\n"
+-        print "MODUŁY:"
+-        print "  1. Lista modułów"
+-        print "  0. POWRÓT"
++        print(20 * "\n")
++        print("MODUŁY:")
++        print("  1. Lista modułów")
++        print("  0. POWRÓT")
+ 
+         self.__wybor_menu(glowne_menu)
+ 
+@@ -123,7 +123,7 @@ class Moduly:
+             elif opcja == 1:
+                 self.__wypisz_zaladowane()
+             else:
+-                print "Błędna opcja"
++                print("Błędna opcja")
+                 continue
+         self.menu(glowne_menu)
+ 
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+index d2bbf86..81fe3c3 100644
+--- a/moduly/Przyklad.py
++++ b/moduly/Przyklad.py
+@@ -22,8 +22,8 @@ class Przyklad(Template):
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         os.system("clear")
+-        print "PRZYKŁAD:"
+-        print "  0: POWRÓT"
++        print("PRZYKŁAD:")
++        print("  0: POWRÓT")
+ 
+         self.wybor_menu(glowne_menu)
+ 
+@@ -46,4 +46,4 @@ class Przyklad(Template):
+         self.do_menu()
+ 
+         '''uzupelnić o własne funkcje'''
+-        print "\n[Przykład] moja super ekstra funkcja!"
++        print("\n[Przykład] moja super ekstra funkcja!")
+diff --git a/moduly/Template.py b/moduly/Template.py
+index b0e7e11..c8c4690 100644
+--- a/moduly/Template.py
++++ b/moduly/Template.py
+@@ -67,7 +67,7 @@ class Template:
+ 
+     def do_menu(self):
+         '''wysłanie listy opcji, które idą do menu'''
+-        if self.obiekty.has_key('menu'):
++        if 'menu' in self.obiekty:
+             self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
+ 
+     def zapisz_obiekty(self, obiekty):
+@@ -82,8 +82,8 @@ class Template:
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         os.system("clear")
+-        print "NAZWA_MODULU:"
+-        print "  0: POWRÓT"
++        print("NAZWA_MODULU:")
++        print("  0: POWRÓT")
+ 
+         self.wybor_menu(glowne_menu)
+ 
+@@ -97,7 +97,7 @@ class Template:
+             elif opcja == 1:
+                 pass
+             else:
+-                print "Błędna opcja"
++                print("Błędna opcja")
+                 continue
+         self.menu()
+ 
+@@ -107,4 +107,3 @@ class Template:
+         self.do_menu()
+ 
+         '''uzupelnić o własne funkcje'''
+-
+-- 
+1.7.8.4
+
+
+From 8e56732c179b33224582112d469b5ff188e39472 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 20:54:09 +0100
+Subject: [PATCH 07/12] zamienione assert
+
+---
+ DynaMo.py          |    2 ++
+ Moduly.py          |   43 +++++++++++++++++++++----------------------
+ moduly/Przyklad.py |    1 +
+ 3 files changed, 24 insertions(+), 22 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 668e80c..f35953b 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -26,6 +26,8 @@ albo konfiguracja albo przełącznik'''
+ if KONF.podaj_wartosc("verbose"):
+     tryb_verbose(True)
+ 
++logging.basicConfig(format = FORMAT)
++
+ OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+ 
+ for op, arg in OPCJE:
+diff --git a/Moduly.py b/Moduly.py
+index 8b5a208..f3ed4ec 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -4,6 +4,7 @@
+ 
+ Modułów szuka w 'moduly/'. Wczytuje je i tworzy listę obiektów, które są
+ wywoływane z poziomu menu. Dodatkowo wypisuje ich listę."""
++
+ import Menu
+ import copy
+ import logging
+@@ -41,6 +42,20 @@ class Moduly:
+         '''pokaż menu'''
+         self.__obiekty['menu'].pokaz_menu(self)
+ 
++
++    def __sprawdz_poprawnosc(self, obiekt):
++        """sprawdzanie poprawności modułu"""
++        obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
++                     'zapisz_obiekty')
++        try:
++            for atrybut in obowiazkowe:
++                if not hasattr(obiekt, atrybut):
++                    return False
++        except AttributeError:
++            return False
++        return True
++
++
+     def __wczytaj_moduly(self):
+         '''dynamiczne wczytywanie i szukanie pluginow w folderze "moduly"'''
+         lista_plikow = os.listdir('moduly')
+@@ -66,29 +81,15 @@ class Moduly:
+                 logging.error("[%s] Error: %s", i, err)
+                 continue
+             obiekt = mod()
+-            """sprawdzanie poprawności modułu -
+-               obowiązkowe funkcje: info, wersja, zapisz_obiekty"""
+-            if not hasattr(obiekt, 'podaj_zaleznosci'):
+-                print 'not ok!!!!!!!!!!!!!'
+-                exit(-1)
+-            try:
+-                assert(obiekt.podaj_info != None)
+-                assert(obiekt.podaj_wersje != None)
+-                assert(obiekt.zapisz_obiekty != None)
+-                assert(obiekt.podaj_zaleznosci != None)
+-                #TODO: hasattr?
+-            except AttributeError, err:
+-                logging.error("[%s] Error: %s", i, err)
+-                del(sys.modules[nazwa])
++            if not self.__sprawdz_poprawnosc(obiekt):
++                del sys.modules[nazwa]
++                logging.error("[%s] Error: module is incorrect", i)
+                 continue
+-            #"""dodawanie do menu głównego"""
+-            #do_menu = obiekt.do_menu()
+-            #menu.dodaj_do_menu(do_menu)
++
+             self.__zaladowane_obiekty.update({nazwa: obiekt})
+             nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
+             self.__zaladowane_pluginy.append(nazwa)
+             logging.debug("[%s] plugin loaded", i)
+-        #self.__sprawdzanie_numeracji(menu)
+ 
+ 
+     def podaj_zaladowane(self):
+@@ -137,12 +138,10 @@ class Moduly:
+                 """pustych nie sprawdzaj"""
+                 if zaleznosc == '':
+                     continue
+-                try:
+-                    assert(sys.modules.get(zaleznosc) != None)
+-                except AssertionError:
++                if sys.modules.get(zaleznosc) == None:
+                     wadliwy_modul = str(obiekt).split('.')[1]
+                     logging.error(
+-                    """[%s] dependency error: \'%s\'. Module disabled""",
++                    """[%s] dependency failure: \'%s\'. Module disabled""",
+                     wadliwy_modul, zaleznosc)
+ 
+                     '''usuń skąd tylko się da'''
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+index d2bbf86..c6d0411 100644
+--- a/moduly/Przyklad.py
++++ b/moduly/Przyklad.py
+@@ -13,6 +13,7 @@ class Przyklad(Template):
+     info = "Przykladowy moduł"
+     pozycja_w_menu = 7
+     nazwa_w_menu = 'przykład modułu'
++    zaleznosci = []
+ 
+     def __init__(self):
+         Template.__init__(self)
+-- 
+1.7.8.4
+
+
+From bfeb51128377f6c1ffb8a99f3677e65efd5a5a67 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 22:39:28 +0100
+Subject: [PATCH 08/12] na pythona3.2
+
+---
+ DynaMo.py          |    6 +++---
+ Makefile           |    6 +++---
+ Menu.py            |    4 ++--
+ Moduly.py          |    7 ++++---
+ moduly/Template.py |    3 ++-
+ 5 files changed, 14 insertions(+), 12 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index bdcfbc7..f6f70bb 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -35,9 +35,9 @@ for op, arg in OPCJE:
+         tryb_verbose(True)
+ 
+ os.system('clear')
+-print(KONF.podaj_wartosc("naglowek"))
+-print("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+-                           KONF.podaj_wartosc("autor")))
++print((KONF.podaj_wartosc("naglowek")))
++print(("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
++                           KONF.podaj_wartosc("autor"))))
+ 
+ MODULY = Moduly.Moduly(KONF)
+ logging.debug("[%s] loaded", 'Moduly')
+diff --git a/Makefile b/Makefile
+index e80eb6b..2f6c797 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,8 @@
+ start:
+-	python DynaMo.py
++	python3.2 DynaMo.py
+ v:
+-	python DynaMo.py -v
++	python3.2 DynaMo.py -v
+ clean:
+-	@rm *.pyc *.pyo moduly/*.pyo moduly/*.pyc
++	@rm *.pyc *.pyo moduly/*.pyo moduly/*.pyc *.bak moduly/*.bak *.rej moduly/*.rej 
+ patch:
+ 	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 < (nazwa_latki).patch"
+diff --git a/Menu.py b/Menu.py
+index 815ff13..a3f527e 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -28,13 +28,13 @@ class Menu:
+         '''pokazuje pozycje z menu'''
+         print("\nMENU:")
+         for i in self.__pozycje:
+-            print("  %d: %s" % (i[0], i[1]))
++            print(("  %d: %s" % (i[0], i[1])))
+         print("  0: WYJŚCIE")
+         self.__wybor_menu(moduly)
+ 
+     def pytanie_o_opcje(self):
+         '''pyta o wybór z menu i zwraca opcję'''
+-        opcja = input('\nopcja > ')
++        opcja = eval(input('\nopcja > '))
+         try:
+             opcja = int(opcja)
+         except ValueError:
+diff --git a/Moduly.py b/Moduly.py
+index fc4b6eb..3aa2f67 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -87,7 +87,8 @@ class Moduly:
+                 continue
+ 
+             self.__zaladowane_obiekty.update({nazwa: obiekt})
+-            nazwa = nazwa + " (ver. %s)" % obiekt.podaj_wersje()
++            nazwa = nazwa + " (ver. %s)\n     : %s" % (obiekt.podaj_wersje(),
++                                            obiekt.podaj_info()[:40 - 1])
+             self.__zaladowane_pluginy.append(nazwa)
+             logging.debug("[%s] plugin loaded", i)
+ 
+@@ -103,12 +104,12 @@ class Moduly:
+         else:
+             print("\nZAŁADOWANE MODUŁY:")
+             for i in self.__zaladowane_pluginy:
+-                print('   - ' + i)
++                print(('   - ' + i))
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         #6os.system("clear")
+-        print(20 * "\n")
++        print((20 * "\n"))
+         print("MODUŁY:")
+         print("  1. Lista modułów")
+         print("  0. POWRÓT")
+diff --git a/moduly/Template.py b/moduly/Template.py
+index c8c4690..2cff8bd 100644
+--- a/moduly/Template.py
++++ b/moduly/Template.py
+@@ -30,7 +30,8 @@ class Template:
+ 
+     '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''
+     wersja = '0.1'
+-    #TODO: info jest nieużywane
++
++    '''opis max. 40 znaków'''
+     info = "opis"
+ 
+     '''jeżeli program dodaje opcję do menu'''
+-- 
+1.7.8.4
+
+
+From 8a67c4eedf2da0ef39e90ad720d1202de42646f4 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 22:43:09 +0100
+Subject: [PATCH 09/12] opis o 1.3
+
+---
+ README         |    6 ++++--
+ UPDATE         |   11 -----------
+ ustawienia.cfg |    2 +-
+ 3 files changed, 5 insertions(+), 14 deletions(-)
+ delete mode 100644 UPDATE
+
+diff --git a/README b/README
+index 8e9e84c..0ad78f3 100644
+--- a/README
++++ b/README
+@@ -1,10 +1,12 @@
+ DynaMo
+ 
+-ver. 1.2.1
++ver. 1.3
+ _by Loper_
+ 
+ UWAGA!!!
+-Wersja 1.2 nie jest kompatybilna z poprzednimi wersjami programu (zmiana silnika przetwarzania modułów). Aplikację należy uaktualnić według zaleceń z pliku 'UPDATE' lub na wiki. Poprzednie wersje nie będą dalej rozwijane i wspierane.
++Wersja 1.3 nie jest kompatybilna z poprzednimi wersjami programu (zmiana interpretera na Python 3.2). Należy uaktualnić program do obecnej wersji. Poprzednie wersje nie będą dalej rozwijane i wspierane.
++
++Za utrudnienia przepraszam.
+ 
+ Program umożliwia zarządzanie dynamicznymi obiektami i wywoływanie odpowiednich obiektów, co ułatwia rozbudowę programu o nową funkcjonalność. Stworzony jest w formie "wzorca", który można dostosować do własnych potrzeb i wykorzystać w swoich projektach. Zalecany jest wszędzie tam, gdzie programy tworzone są modułowo, nie tylko przez jedną osobę.
+ 
+diff --git a/UPDATE b/UPDATE
+deleted file mode 100644
+index 91962e1..0000000
+--- a/UPDATE
++++ /dev/null
+@@ -1,11 +0,0 @@
+-Aby uaktualnić swój program, należy pobrać najnowszą wersję DynaMo 1.2 z github.com i zastąpić swoją wersję.
+-Następnie skopiować plik 'moduly/blank.py' i ustawić go według własnych potrzeb, zachowując jego obecne funkcje.
+-
+-Od teraz nie ma obowiązku dodawania modułu do menu, a wszystkie funckje modułu wywoływane są w metodzie "uruchom_modul()".
+-
+-Należy zachować ostrożność przy modyfikacji pól oznaczonych "NIE ZMIENIAĆ" - najlepiej pozostawić domyślne.
+-
+-Więcej instrukcji w pliku 'moduly/blank.py'.
+-
+-Przepraszam za urudnienia,
+-Loper
+diff --git a/ustawienia.cfg b/ustawienia.cfg
+index d48a790..6dfaad4 100644
+--- a/ustawienia.cfg
++++ b/ustawienia.cfg
+@@ -11,7 +11,7 @@ uzytkownik=loper
+ naglowek=DynaMo - główny moduł uruchomieniowy
+ 
+ # wersja programu
+-wersja=1.2
++wersja=1.3
+ 
+ # autor programu
+ autor=Loper
+-- 
+1.7.8.4
+
+
+From 6aadf8988c5b34cefc84ea2e1de9d8d754730fd5 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 22:47:53 +0100
+Subject: [PATCH 10/12] poprawki z 'clear'
+
+---
+ Menu.py   |    2 +-
+ Moduly.py |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Menu.py b/Menu.py
+index a3f527e..4f31777 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -26,7 +26,7 @@ class Menu:
+ 
+     def pokaz_menu(self, moduly):
+         '''pokazuje pozycje z menu'''
+-        print("\nMENU:")
++        print("MENU:")
+         for i in self.__pozycje:
+             print(("  %d: %s" % (i[0], i[1])))
+         print("  0: WYJŚCIE")
+diff --git a/Moduly.py b/Moduly.py
+index 3aa2f67..77679cc 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -108,8 +108,7 @@ class Moduly:
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+-        #6os.system("clear")
+-        print((20 * "\n"))
++        os.system("clear")
+         print("MODUŁY:")
+         print("  1. Lista modułów")
+         print("  0. POWRÓT")
+@@ -121,6 +120,7 @@ class Moduly:
+         while(1):
+             opcja = glowne_menu.pytanie_o_opcje()
+             if opcja == 0:
++                os.system('clear')
+                 return
+             elif opcja == 1:
+                 self.__wypisz_zaladowane()
+-- 
+1.7.8.4
+
+
+From fe4c3c7cbde678f096e70db0d2e0fee9d5fa8b61 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 23:03:03 +0100
+Subject: [PATCH 11/12] wylaczony przelacznik '-v'
+
+---
+ DynaMo.py |   25 ++++++++++---------------
+ Makefile  |    5 +++--
+ 2 files changed, 13 insertions(+), 17 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index f6f70bb..7683a27 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -11,28 +11,23 @@ import Moduly
+ import Konfiguracja
+ 
+ FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
++logging.basicConfig(format = FORMAT, level = logging.WARNING)
+ 
+-def tryb_verbose(wlaczyc = False):
++def tryb_verbose():
+     '''włącza tryb "gadatliwy"'''
+-    if wlaczyc:
+-        logging.basicConfig(format = FORMAT, level = logging.DEBUG)
+-    else:
+-        logging.basicConfig(format = FORMAT, level = logging.WARNING)
++    logging.basicConfig(format = FORMAT, level = logging.DEBUG)
+ 
+ KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
+ 
+-''' dwa sposoby włączania trybu gadatliwego:
+-albo konfiguracja albo przełącznik'''
++#''' dwa sposoby włączania trybu gadatliwego:
++#albo konfiguracja albo przełącznik'''
+ if KONF.podaj_wartosc("verbose"):
+-    tryb_verbose(True)
++    tryb_verbose()
+ 
+-logging.basicConfig(format = FORMAT)
+-
+-OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+-
+-for op, arg in OPCJE:
+-    if op in ('-v', '--verbose'):
+-        tryb_verbose(True)
++#OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
++#for op, arg in OPCJE:
++#    if op in ('-v', '--verbose'):
++#        tryb_verbose()
+ 
+ os.system('clear')
+ print((KONF.podaj_wartosc("naglowek")))
+diff --git a/Makefile b/Makefile
+index 2f6c797..449dbda 100644
+--- a/Makefile
++++ b/Makefile
+@@ -3,6 +3,7 @@ start:
+ v:
+ 	python3.2 DynaMo.py -v
+ clean:
+-	@rm *.pyc *.pyo moduly/*.pyo moduly/*.pyc *.bak moduly/*.bak *.rej moduly/*.rej 
++	@rm -fr __pycache__ moduly/__pycache__ *.bak moduly/*.bak *.rej moduly/*.rej
++	@echo "wyczyszczono"
+ patch:
+-	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 < (nazwa_latki).patch"
++	@echo "aby zaktualizowac, wpisz w konsoli: patch -p1 -N < (nazwa_latki).patch"
+-- 
+1.7.8.4
+
+
+From 9a21bc76f6bf390f0ce42c22be6612b0261d7b85 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Thu, 16 Feb 2012 23:03:58 +0100
+Subject: [PATCH 12/12] wylaczenie printa w przykladzie
+
+---
+ moduly/Przyklad.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+index db12540..abc4781 100644
+--- a/moduly/Przyklad.py
++++ b/moduly/Przyklad.py
+@@ -47,4 +47,4 @@ class Przyklad(Template):
+         self.do_menu()
+ 
+         '''uzupelnić o własne funkcje'''
+-        print("\n[Przykład] moja super ekstra funkcja!")
++        #print("\n[Przykład] moja super ekstra funkcja!")
+-- 
+1.7.8.4
+
