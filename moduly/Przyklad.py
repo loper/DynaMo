@@ -13,6 +13,7 @@ class Przyklad(Template):
     info = "Przykladowy moduł"
     pozycja_w_menu = 7
     nazwa_w_menu = 'przykład modułu'
+    zaleznosci = []
 
     def __init__(self):
         Template.__init__(self)
