@@ -108,8 +108,7 @@ class Moduly:
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        #6os.system("clear")
-        print((20 * "\n"))
+        os.system("clear")
         print("MODUŁY:")
         print("  1. Lista modułów")
         print("  0. POWRÓT")
@@ -121,6 +120,7 @@ class Moduly:
         while(1):
             opcja = glowne_menu.pytanie_o_opcje()
             if opcja == 0:
+                os.system('clear')
                 return
             elif opcja == 1:
                 self.__wypisz_zaladowane()

@@ -26,7 +26,7 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        print("\nMENU:")
+        print("MENU:")
         for i in self.__pozycje:
             print(("  %d: %s" % (i[0], i[1])))
         print("  0: WYJŚCIE")
