@@ -26,15 +26,15 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        print "\nMENU:"
+        print("\nMENU:")
         for i in self.__pozycje:
-            print "  %d: %s" % (i[0], i[1])
-        print "  0: WYJŚCIE"
+            print("  %d: %s" % (i[0], i[1]))
+        print("  0: WYJŚCIE")
         self.__wybor_menu(moduly)
 
     def pytanie_o_opcje(self):
         '''pyta o wybór z menu i zwraca opcję'''
-        opcja = raw_input('\nopcja > ')
+        opcja = input('\nopcja > ')
         try:
             opcja = int(opcja)
         except ValueError:
@@ -46,11 +46,10 @@ class Menu:
         while(1):
             opcja = self.pytanie_o_opcje()
             if opcja == None:
-                print "Błędna opcja"
+                print("Błędna opcja")
                 continue
             if opcja == 0:
                 os.system("clear")
-                #print 20 * "\n"
                 sys.exit(0)
             elif opcja == 8:
                 moduly.menu(self)
@@ -59,7 +58,7 @@ class Menu:
                     obj = self.__zaladowane_obiekty[opcja]
                     obj.menu(self)
                 except KeyError:
-                    print "Błędna opcja"
+                    print("Błędna opcja")
                     continue
             self.pokaz_menu(moduly)
 
@@ -68,7 +67,7 @@ class Menu:
         '''dodaje pozycję do menu, następnie je sortuje'''
         '''najpierw sprawdza duplikaty'''
         numer = element[0]
-        if self.__zaladowane_obiekty.has_key(numer):
+        if numer in self.__zaladowane_obiekty:
             numer = self.__znajdz_wolny()
             element = (numer, element[1])
         self.__pozycje.append(element)
@@ -96,9 +95,9 @@ class Menu:
 
     def __znajdz_wolny(self):
         '''dostępna numeracja - od 1 do 10'''
-        wolne = range(1, 9 + 1)
+        wolne = list(range(1, 9 + 1))
         for klucz in wolne:
-            if not self.__zaladowane_obiekty.has_key(klucz):
+            if klucz not in self.__zaladowane_obiekty:
                 return klucz
 
 

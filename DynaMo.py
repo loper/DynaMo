@@ -26,6 +26,8 @@ albo konfiguracja albo przełącznik'''
 if KONF.podaj_wartosc("verbose"):
     tryb_verbose(True)
 
+logging.basicConfig(format = FORMAT)
+
 OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
 
 for op, arg in OPCJE:
@@ -33,10 +35,9 @@ for op, arg in OPCJE:
         tryb_verbose(True)
 
 os.system('clear')
-#print 20 * "\n"
-print KONF.podaj_wartosc("naglowek")
-print "wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
-                           KONF.podaj_wartosc("autor"))
+print(KONF.podaj_wartosc("naglowek"))
+print("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+                           KONF.podaj_wartosc("autor")))
 
 MODULY = Moduly.Moduly(KONF)
 logging.debug("[%s] loaded", 'Moduly')
