@@ -109,9 +109,11 @@ class Moduly:
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
         os.system("clear")
-        print("MODUŁY:")
-        print("  1. Lista modułów")
-        print("  0. POWRÓT")
+        pozycje = []
+        pozycje.append((1, 'Lista modułów'))
+        pozycje.append((0, 'POWRÓT'))
+
+        print(self.__obiekty['menu'].formatuj_menu('moduły', pozycje))
 
         self.__wybor_menu(glowne_menu)
 

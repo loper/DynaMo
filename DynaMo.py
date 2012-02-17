@@ -2,10 +2,8 @@
 
 """DynaMo - główny moduł uruchomieniowy"""
 
-#from sys import argv
 import Konfiguracja
 import Moduly
-#import getopt
 import logging
 import os
 
@@ -19,15 +17,8 @@ def tryb_verbose():
 
 KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
 
-#''' dwa sposoby włączania trybu gadatliwego:
-#albo konfiguracja albo przełącznik'''
 if KONF.podaj_wartosc("verbose"):
     tryb_verbose()
-
-#OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
-#for op, arg in OPCJE:
-#    if op in ('-v', '--verbose'):
-#        tryb_verbose()
 
 os.system('clear')
 print((KONF.podaj_wartosc("naglowek")))
