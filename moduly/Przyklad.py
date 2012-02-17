@@ -47,4 +47,4 @@ class Przyklad(Template):
         self.do_menu()
 
         '''uzupelnić o własne funkcje'''
-        print("\n[Przykład] moja super ekstra funkcja!")
+        #print("\n[Przykład] moja super ekstra funkcja!")

@@ -2,13 +2,13 @@
 
 """DynaMo - główny moduł uruchomieniowy"""
 
-import getopt
+#from sys import argv
+import Konfiguracja
+import Moduly
+#import getopt
 import logging
 import os
-from sys import argv
 
-import Moduly
-import Konfiguracja
 
 FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
 logging.basicConfig(format = FORMAT, level = logging.WARNING)

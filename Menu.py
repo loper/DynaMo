@@ -26,11 +26,35 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        print("MENU:")
-        for i in self.__pozycje:
-            print(("  %d: %s" % (i[0], i[1])))
-        print("  0: WYJŚCIE")
+        print(self.formatuj_menu("menu", self.__pozycje))
+
+        '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
+#        print("MENU:")
+#        for i in self.__pozycje:
+#            print(("  %d: %s" % (i[0], i[1])))
+#        print("  0: WYJŚCIE")
+
+
+    def formatuj_menu(self, naglowek, pozycje):
+        '''formatuje menu do pewnego standardu
+        - naglowek jest typu "string" i zostanie 
+          zamieniony na duże litery
+        - pozycje to lista zawierająca krotki "(nr, "opis")" '''
+
+        '''sprawdzanie formatów'''
+        if type(naglowek) != str or type(pozycje) != list:
+            logging.error("[%s] Error: %s", 'Menu',
+                          'Niewłaściwy format wysłanych danych do formatowania')
+            return ''
+
+        '''tworzenie łańcucha, który wystarczy wyświetlić'''
+        format_menu = []
+        format_menu.append(naglowek.upper() + ":")
+        for poz in pozycje:
+            format_menu.append("  %d: %s" % (poz[0], poz[1]))
+        return "\n".join(format_menu)
+
 
     def pytanie_o_opcje(self):
         '''pyta o wybór z menu i zwraca opcję'''
