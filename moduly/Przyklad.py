@@ -18,24 +18,25 @@ class Przyklad(Template):
     zaleznosci = []
 
     def __init__(self):
-        Template.__init__(self)
+        super().__init__()
 
     '''----------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------'''
 
-    def menu(self, glowne_menu):
-        '''pokazuje pozycje z menu'''
-
-        '''pusty słownik pozycji'''
-        pozycje = []
-        '''do którego dodajemy krotki (nr, 'opis')'''
-        pozycje.append((0, 'POWRÓT'))
-        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
-        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
-
-        self.wybor_menu(glowne_menu)
-
     '''tego nie przysłaniam, bo jest takie samo, ale normalnie trzeba tu dodać 
        własne funkcje'''
+
+#    def menu(self, glowne_menu):
+#        '''pokazuje pozycje z menu'''
+#
+#        '''pusty słownik pozycji'''
+#        pozycje = []
+#        '''do którego dodajemy krotki (nr, 'opis')'''
+#        pozycje.append((0, 'POWRÓT'))
+#        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
+#        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
+#
+#        self.wybor_menu(glowne_menu)
+
 #    def wybor_menu(self, glowne_menu):
 #        '''pyta o wybór i wywołuje daną funkcję'''
 #        while(1):

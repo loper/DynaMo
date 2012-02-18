@@ -43,7 +43,8 @@ class Menu:
         - pozycje to lista zawierająca krotki "(nr, "opis")" '''
 
         '''sprawdzanie formatów'''
-        if type(naglowek) != str or type(pozycje) != list:
+        #if type(naglowek) != str or type(pozycje) != list:
+        if not isinstance(naglowek, str) or not isinstance(pozycje, list):
             logging.error("[{}] Error: {}", 'Menu'.format(
                 'Niewłaściwy format wysłanych danych do formatowania'))
             return
@@ -60,9 +61,10 @@ class Menu:
 
     def pytanie_o_opcje(self):
         '''pyta o wybór z menu i zwraca opcję'''
-        opcja = eval(input('\nopcja > '))
         try:
-            opcja = int(opcja)
+            opcja = int((input('\nopcja > ')))
+        except SyntaxError:
+            return self.__domyslna_opcja
         except ValueError:
             return self.__domyslna_opcja
         return opcja
