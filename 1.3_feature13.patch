@@ -1,0 +1,267 @@
+From 56d9205c52f8795fa177a4131f0303266c522c35 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Sat, 18 Feb 2012 00:29:24 +0100
+Subject: [PATCH 1/3] nowe formatowanie menu
+
+---
+ DynaMo.py          |    8 ++++----
+ Menu.py            |   32 ++++++++++++++++++++++++++++----
+ moduly/Przyklad.py |    2 +-
+ 3 files changed, 33 insertions(+), 9 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 7683a27..58362c4 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -2,13 +2,13 @@
+ 
+ """DynaMo - główny moduł uruchomieniowy"""
+ 
+-import getopt
++#from sys import argv
++import Konfiguracja
++import Moduly
++#import getopt
+ import logging
+ import os
+-from sys import argv
+ 
+-import Moduly
+-import Konfiguracja
+ 
+ FORMAT = '%(message)s (in %(funcName)s at %(lineno)d)'
+ logging.basicConfig(format = FORMAT, level = logging.WARNING)
+diff --git a/Menu.py b/Menu.py
+index 4f31777..3d6702d 100644
+--- a/Menu.py
++++ b/Menu.py
+@@ -26,11 +26,35 @@ class Menu:
+ 
+     def pokaz_menu(self, moduly):
+         '''pokazuje pozycje z menu'''
+-        print("MENU:")
+-        for i in self.__pozycje:
+-            print(("  %d: %s" % (i[0], i[1])))
+-        print("  0: WYJŚCIE")
++        print(self.formatuj_menu("menu", self.__pozycje))
++
++        '''i pyta o wybór opcji'''
+         self.__wybor_menu(moduly)
++#        print("MENU:")
++#        for i in self.__pozycje:
++#            print(("  %d: %s" % (i[0], i[1])))
++#        print("  0: WYJŚCIE")
++
++
++    def formatuj_menu(self, naglowek, pozycje):
++        '''formatuje menu do pewnego standardu
++        - naglowek jest typu "string" i zostanie 
++          zamieniony na duże litery
++        - pozycje to lista zawierająca krotki "(nr, "opis")" '''
++
++        '''sprawdzanie formatów'''
++        if type(naglowek) != str or type(pozycje) != list:
++            logging.error("[%s] Error: %s", 'Menu',
++                          'Niewłaściwy format wysłanych danych do formatowania')
++            return ''
++
++        '''tworzenie łańcucha, który wystarczy wyświetlić'''
++        format_menu = []
++        format_menu.append(naglowek.upper() + ":")
++        for poz in pozycje:
++            format_menu.append("  %d: %s" % (poz[0], poz[1]))
++        return "\n".join(format_menu)
++
+ 
+     def pytanie_o_opcje(self):
+         '''pyta o wybór z menu i zwraca opcję'''
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+index db12540..abc4781 100644
+--- a/moduly/Przyklad.py
++++ b/moduly/Przyklad.py
+@@ -47,4 +47,4 @@ class Przyklad(Template):
+         self.do_menu()
+ 
+         '''uzupelnić o własne funkcje'''
+-        print("\n[Przykład] moja super ekstra funkcja!")
++        #print("\n[Przykład] moja super ekstra funkcja!")
+-- 
+1.7.8.4
+
+
+From 54123a085caa6b0c02b9c11a0b9d890fe5c6b149 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Sat, 18 Feb 2012 00:37:47 +0100
+Subject: [PATCH 2/3] nowe menu w Moduly
+
+---
+ DynaMo.py |    9 ---------
+ Makefile  |    2 --
+ Moduly.py |    8 +++++---
+ 3 files changed, 5 insertions(+), 14 deletions(-)
+
+diff --git a/DynaMo.py b/DynaMo.py
+index 58362c4..9c05163 100644
+--- a/DynaMo.py
++++ b/DynaMo.py
+@@ -2,10 +2,8 @@
+ 
+ """DynaMo - główny moduł uruchomieniowy"""
+ 
+-#from sys import argv
+ import Konfiguracja
+ import Moduly
+-#import getopt
+ import logging
+ import os
+ 
+@@ -19,16 +17,9 @@ def tryb_verbose():
+ 
+ KONF = Konfiguracja.Konfiguracja('ustawienia.cfg')
+ 
+-#''' dwa sposoby włączania trybu gadatliwego:
+-#albo konfiguracja albo przełącznik'''
+ if KONF.podaj_wartosc("verbose"):
+     tryb_verbose()
+ 
+-#OPCJE, ARGUMENTY = getopt.getopt(argv[1:], 'v', 'verbose')
+-#for op, arg in OPCJE:
+-#    if op in ('-v', '--verbose'):
+-#        tryb_verbose()
+-
+ os.system('clear')
+ print((KONF.podaj_wartosc("naglowek")))
+ print(("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+diff --git a/Makefile b/Makefile
+index 449dbda..f893a56 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,5 @@
+ start:
+ 	python3.2 DynaMo.py
+-v:
+-	python3.2 DynaMo.py -v
+ clean:
+ 	@rm -fr __pycache__ moduly/__pycache__ *.bak moduly/*.bak *.rej moduly/*.rej
+ 	@echo "wyczyszczono"
+diff --git a/Moduly.py b/Moduly.py
+index 77679cc..02b9932 100644
+--- a/Moduly.py
++++ b/Moduly.py
+@@ -109,9 +109,11 @@ class Moduly:
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         os.system("clear")
+-        print("MODUŁY:")
+-        print("  1. Lista modułów")
+-        print("  0. POWRÓT")
++        pozycje = []
++        pozycje.append((1, 'Lista modułów'))
++        pozycje.append((0, 'POWRÓT'))
++
++        print(self.__obiekty['menu'].formatuj_menu('moduły', pozycje))
+ 
+         self.__wybor_menu(glowne_menu)
+ 
+-- 
+1.7.8.4
+
+
+From f55630b40e3bc01c0034dcc1d9c6c4f4bcbff5c1 Mon Sep 17 00:00:00 2001
+From: Loper <loper.t2h@gmail.com>
+Date: Sat, 18 Feb 2012 01:11:05 +0100
+Subject: [PATCH 3/3] nowe menu w moduly/*
+
+---
+ moduly/Przyklad.py |   15 ++++++++++-----
+ moduly/Template.py |   12 +++++++-----
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+diff --git a/moduly/Przyklad.py b/moduly/Przyklad.py
+index abc4781..5df3539 100644
+--- a/moduly/Przyklad.py
++++ b/moduly/Przyklad.py
+@@ -1,5 +1,8 @@
+ #-*- coding: utf-8 -*-
+ 
++""" Przykładowy moduł, który należy traktować jako wzór i skasować po napisaniu
++własnego """
++
+ from moduly.Template import Template
+ import os
+ 
+@@ -18,17 +21,19 @@ class Przyklad(Template):
+     def __init__(self):
+         Template.__init__(self)
+ 
+-    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
++    '''----------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------'''
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         os.system("clear")
+-        print("PRZYKŁAD:")
+-        print("  0: POWRÓT")
++        pozycje = []
++        pozycje.append((0, 'POWRÓT'))
++        print(self.obiekty['menu'].formatuj_menu('przyklad', pozycje))
+ 
+         self.wybor_menu(glowne_menu)
+ 
+-    '''tego nie przysłaniam, bo jest takie samo, ale normalnie trzeba tu dodać własne funkcje'''
++    '''tego nie przysłaniam, bo jest takie samo, ale normalnie trzeba tu dodać 
++       własne funkcje'''
+ #    def wybor_menu(self, glowne_menu):
+ #        '''pyta o wybór i wywołuje daną funkcję'''
+ #        while(1):
+@@ -46,5 +51,5 @@ class Przyklad(Template):
+         '''tą część można skasować, jeśli ma nie być dodawana pozycja do menu'''
+         self.do_menu()
+ 
+-        '''uzupelnić o własne funkcje'''
++        '''uzupelnić o własne funkcje uruchomione po zaladowaniu'''
+         #print("\n[Przykład] moja super ekstra funkcja!")
+diff --git a/moduly/Template.py b/moduly/Template.py
+index 2cff8bd..5ee2c3c 100644
+--- a/moduly/Template.py
++++ b/moduly/Template.py
+@@ -69,7 +69,8 @@ class Template:
+     def do_menu(self):
+         '''wysłanie listy opcji, które idą do menu'''
+         if 'menu' in self.obiekty:
+-            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
++            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu,
++                                              self.nazwa_w_menu))
+ 
+     def zapisz_obiekty(self, obiekty):
+         '''zapis przekazanych obiektów'''
+@@ -78,13 +79,14 @@ class Template:
+         '''uruchomienie modułu'''
+         self.uruchom_modul()
+ 
+-    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
++    '''----------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------'''
+ 
+     def menu(self, glowne_menu):
+         '''pokazuje pozycje z menu'''
+         os.system("clear")
+-        print("NAZWA_MODULU:")
+-        print("  0: POWRÓT")
++        pozycje = []
++        pozycje.append((0, 'POWRÓT'))
++        print(self.obiekty['menu'].formatuj_menu('nazwa_modulu', pozycje))
+ 
+         self.wybor_menu(glowne_menu)
+ 
+@@ -100,7 +102,7 @@ class Template:
+             else:
+                 print("Błędna opcja")
+                 continue
+-        self.menu()
++        self.menu(glowne_menu)
+ 
+     def uruchom_modul(self):
+         '''dodanie pozycji do menu'''
+-- 
+1.7.8.4
+
