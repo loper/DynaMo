@@ -5,6 +5,7 @@ Pozycje w menu są dodawane dynamicznie, oprócz tych, wymienionych w '__pozycje
 Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
 (lista w '__zaladowane_obiekty')."""
 
+from copy import copy
 import logging
 import os
 import sys
@@ -18,7 +19,7 @@ class Menu:
 
     def __init__(self, pokazywac_moduly = True):
         if pokazywac_moduly:
-            self.__pozycje = [(8, 'Moduly')]
+            self.__pozycje = [(8, 'Moduły')]
             self.__zaladowane_obiekty = {8: None}
         else:
             self.__pozycje = []
@@ -26,7 +27,10 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        print(self.formatuj_menu("menu", self.__pozycje))
+        pozycje = copy(self.__pozycje)
+        '''dodanie WYJŚCIA'''
+        pozycje.append((0, 'WYJŚCIE'))
+        print(self.formatuj_menu("menu", pozycje))
 
         '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
@@ -89,6 +93,7 @@ class Menu:
 
     def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
+
         '''najpierw sprawdza duplikaty'''
         numer = element[0]
         if numer in self.__zaladowane_obiekty:
@@ -102,13 +107,13 @@ class Menu:
         '''zwraca listę załadowanych obiektów'''
         self.__zaladowane_obiekty = zaladowane
 
-    def __szukaj_modul(self, numer):
-        '''zwraca obiekt dla podanego numeru'''
-        tmp = dict(self.__zaladowane_obiekty)
-        try:
-            return tmp[numer]
-        except KeyError:
-            return None
+#    def __szukaj_modulu(self, numer):
+#        '''zwraca obiekt dla podanego numeru'''
+#        tmp = dict(self.__zaladowane_obiekty)
+#        try:
+#            return tmp[numer]
+#        except KeyError:
+#            return None
 
     def usun_pozycje(self, numer):
         '''wyszukuje i usuwa pozycję o podanym numerze z menu'''
@@ -124,4 +129,6 @@ class Menu:
             if klucz not in self.__zaladowane_obiekty:
                 return klucz
 
+    def test_podaj_pozycje(self):
+        return self.__pozycje
 
