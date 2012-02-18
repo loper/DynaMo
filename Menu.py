@@ -34,10 +34,6 @@ class Menu:
 
         '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
-#        print("MENU:")
-#        for i in self.__pozycje:
-#            print(("  %d: %s" % (i[0], i[1])))
-#        print("  0: WYJŚCIE")
 
 
     def formatuj_menu(self, naglowek, pozycje):
@@ -48,18 +44,18 @@ class Menu:
 
         '''sprawdzanie formatów'''
         if type(naglowek) != str or type(pozycje) != list:
-            logging.error("[%s] Error: %s", 'Menu',
-                          'Niewłaściwy format wysłanych danych do formatowania')
+            logging.error("[{}] Error: {}", 'Menu'.format(
+                'Niewłaściwy format wysłanych danych do formatowania'))
             return
 
         '''tworzenie łańcucha, który wystarczy wyświetlić'''
         format_menu = []
         format_menu.append(naglowek.upper() + ":")
         for poz in pozycje:
-            format_menu.append("  %d: %s" % (poz[0], poz[1]))
+            format_menu.append("  {}: {}".format(poz[0], poz[1]))
         #return "\n".join(format_menu)
         os.system("clear")
-        print ("\n".join(format_menu))
+        print(("\n".join(format_menu)))
 
 
     def pytanie_o_opcje(self):
@@ -121,7 +117,8 @@ class Menu:
         '''wyszukuje i usuwa pozycję o podanym numerze z menu'''
         for k, wartosc in self.__pozycje:
             if k == numer:
-                logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
+                logging.debug("[{}] deleting from menu: {}".
+                              format('Menu', wartosc))
                 self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
 
     def __znajdz_wolny(self):

@@ -28,7 +28,7 @@ class Moduly:
         '''stwórz menu'''
         menu = Menu.Menu(konfiguracja.podaj_wartosc("moduly_w_menu"))
         self.__obiekty.update({'menu': menu})
-        logging.debug("[%s] loaded", 'Menu')
+        logging.debug("[{}] loaded".format('Menu'))
 
         '''wczytaj moduły'''
         self.__wczytaj_moduly()
@@ -70,7 +70,7 @@ class Moduly:
                 continue
 
             """pluginy"""
-            mod = __import__('moduly.%s' % i)
+            mod = __import__('moduly.{}'.format(i))
             """modul"""
             mod = getattr(mod, i)
             nazwa = mod.__name__
@@ -78,19 +78,19 @@ class Moduly:
             try:
                 mod = getattr(mod, i)
             except AttributeError as err:
-                logging.error("[%s] Error: %s", i, err)
+                logging.error("[{}] Error: {}".format(i, err))
                 continue
             obiekt = mod()
             if not self.__sprawdz_poprawnosc(obiekt):
                 del sys.modules[nazwa]
-                logging.error("[%s] Error: module is incorrect", i)
+                logging.error("[{}] Error: module is incorrect".format(i))
                 continue
 
             self.__zaladowane_obiekty.update({nazwa: obiekt})
-            nazwa = nazwa + " (ver. %s)\n     : %s" % (obiekt.podaj_wersje(),
-                                            obiekt.podaj_info()[:40 - 1])
+            nazwa = nazwa + " (ver. {})\n     : {}".format(
+                obiekt.podaj_wersje(), obiekt.podaj_info()[:40 - 1])
             self.__zaladowane_pluginy.append(nazwa)
-            logging.debug("[%s] plugin loaded", i)
+            logging.debug("[{}] plugin loaded".format(i))
 
 
     def podaj_zaladowane(self):
@@ -143,8 +143,8 @@ class Moduly:
                 if sys.modules.get(zaleznosc) == None:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
-                    """[%s] dependency failure: \'%s\'. Module disabled""",
-                    wadliwy_modul, zaleznosc)
+                    """[{}] dependency failure: \'{}\'. Module disabled""".
+                    format(wadliwy_modul, zaleznosc))
 
                     '''usuń skąd tylko się da'''
                     del(sys.modules['moduly.' + wadliwy_modul])

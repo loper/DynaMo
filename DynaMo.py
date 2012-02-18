@@ -22,9 +22,9 @@ if KONF.podaj_wartosc("verbose"):
 
 os.system('clear')
 print((KONF.podaj_wartosc("naglowek")))
-print(("wersja %s by %s" % (KONF.podaj_wartosc("wersja"),
+print(("wersja {} by {}".format(KONF.podaj_wartosc("wersja"),
                            KONF.podaj_wartosc("autor"))))
 
 MODULY = Moduly.Moduly(KONF)
-logging.debug("[%s] loaded", 'Moduly')
+logging.debug("[{}] loaded".format('Moduly'))
 

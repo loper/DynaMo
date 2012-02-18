@@ -30,8 +30,8 @@ class Konfiguracja:
             del plik_konf
         except IOError:
             logging.error(
-            "Błąd: Nie można odnaleźć pliku konfiguracyjnego '%s'",
-                          konfig)
+            "Błąd: Nie można odnaleźć pliku konfiguracyjnego '{}'".
+            format(konfig))
             exit(-1)
 
 

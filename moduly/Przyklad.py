@@ -11,7 +11,7 @@ class Przyklad(Template):
 
     obiekty = {}
 
-    wersja = '1.4'
+    wersja = '1.7'
     info = "Przykladowy moduł"
     pozycja_w_menu = 7
     nazwa_w_menu = 'przykład modułu'
