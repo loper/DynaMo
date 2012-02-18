@@ -30,7 +30,7 @@ class Menu:
         pozycje = copy(self.__pozycje)
         '''dodanie WYJŚCIA'''
         pozycje.append((0, 'WYJŚCIE'))
-        print(self.formatuj_menu("menu", pozycje))
+        self.formatuj_menu("\nmenu", pozycje)
 
         '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
@@ -50,14 +50,16 @@ class Menu:
         if type(naglowek) != str or type(pozycje) != list:
             logging.error("[%s] Error: %s", 'Menu',
                           'Niewłaściwy format wysłanych danych do formatowania')
-            return ''
+            return
 
         '''tworzenie łańcucha, który wystarczy wyświetlić'''
         format_menu = []
         format_menu.append(naglowek.upper() + ":")
         for poz in pozycje:
             format_menu.append("  %d: %s" % (poz[0], poz[1]))
-        return "\n".join(format_menu)
+        #return "\n".join(format_menu)
+        os.system("clear")
+        print ("\n".join(format_menu))
 
 
     def pytanie_o_opcje(self):

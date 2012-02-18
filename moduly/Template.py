@@ -48,6 +48,7 @@ class Template:
 
     '''----------------- NIE ZMIENIAĆ -----------------'''
 
+
     def __init__(self):
         self.obiekty = {}
 
@@ -83,10 +84,13 @@ class Template:
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        os.system("clear")
+
+        '''pusty słownik pozycji'''
         pozycje = []
+        '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 'POWRÓT'))
-        print(self.obiekty['menu'].formatuj_menu('nazwa_modulu', pozycje))
+        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
+        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
 
         self.wybor_menu(glowne_menu)
 

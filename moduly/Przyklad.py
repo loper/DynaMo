@@ -4,7 +4,6 @@
 własnego """
 
 from moduly.Template import Template
-import os
 
 """ UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
 class Przyklad(Template):
@@ -25,10 +24,13 @@ class Przyklad(Template):
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        os.system("clear")
+
+        '''pusty słownik pozycji'''
         pozycje = []
+        '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 'POWRÓT'))
-        print(self.obiekty['menu'].formatuj_menu('przyklad', pozycje))
+        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
+        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
 
         self.wybor_menu(glowne_menu)
 
