@@ -48,6 +48,7 @@ class Template:
 
     '''----------------- NIE ZMIENIAĆ -----------------'''
 
+
     def __init__(self):
         self.obiekty = {}
 
@@ -69,7 +70,8 @@ class Template:
     def do_menu(self):
         '''wysłanie listy opcji, które idą do menu'''
         if 'menu' in self.obiekty:
-            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu, self.nazwa_w_menu))
+            self.obiekty['menu'].dodaj(self, (self.pozycja_w_menu,
+                                              self.nazwa_w_menu))
 
     def zapisz_obiekty(self, obiekty):
         '''zapis przekazanych obiektów'''
@@ -78,13 +80,17 @@ class Template:
         '''uruchomienie modułu'''
         self.uruchom_modul()
 
-    '''----------------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------------'''
+    '''----------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------'''
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
-        os.system("clear")
-        print("NAZWA_MODULU:")
-        print("  0: POWRÓT")
+
+        '''pusty słownik pozycji'''
+        pozycje = []
+        '''do którego dodajemy krotki (nr, 'opis')'''
+        pozycje.append((0, 'POWRÓT'))
+        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
+        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
 
         self.wybor_menu(glowne_menu)
 
@@ -100,7 +106,7 @@ class Template:
             else:
                 print("Błędna opcja")
                 continue
-        self.menu()
+        self.menu(glowne_menu)
 
     def uruchom_modul(self):
         '''dodanie pozycji do menu'''

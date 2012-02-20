@@ -5,6 +5,7 @@ Pozycje w menu są dodawane dynamicznie, oprócz tych, wymienionych w '__pozycje
 Opcje te odwolują się do funkcji 'menu()' dla danego obiektu
 (lista w '__zaladowane_obiekty')."""
 
+from copy import copy
 import logging
 import os
 import sys
@@ -18,7 +19,7 @@ class Menu:
 
     def __init__(self, pokazywac_moduly = True):
         if pokazywac_moduly:
-            self.__pozycje = [(8, 'Moduly')]
+            self.__pozycje = [(8, 'Moduły')]
             self.__zaladowane_obiekty = {8: None}
         else:
             self.__pozycje = []
@@ -26,17 +27,44 @@ class Menu:
 
     def pokaz_menu(self, moduly):
         '''pokazuje pozycje z menu'''
-        print("MENU:")
-        for i in self.__pozycje:
-            print(("  %d: %s" % (i[0], i[1])))
-        print("  0: WYJŚCIE")
+        pozycje = copy(self.__pozycje)
+        '''dodanie WYJŚCIA'''
+        pozycje.append((0, 'WYJŚCIE'))
+        self.formatuj_menu("\nmenu", pozycje)
+
+        '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
+
+
+    def formatuj_menu(self, naglowek, pozycje):
+        '''formatuje menu do pewnego standardu
+        - naglowek jest typu "string" i zostanie 
+          zamieniony na duże litery
+        - pozycje to lista zawierająca krotki "(nr, "opis")" '''
+
+        '''sprawdzanie formatów'''
+        #if type(naglowek) != str or type(pozycje) != list:
+        if not isinstance(naglowek, str) or not isinstance(pozycje, list):
+            logging.error("[{}] Error: {}", 'Menu'.format(
+                'Niewłaściwy format wysłanych danych do formatowania'))
+            return
+
+        '''tworzenie łańcucha, który wystarczy wyświetlić'''
+        format_menu = []
+        format_menu.append(naglowek.upper() + ":")
+        for poz in pozycje:
+            format_menu.append("  {}: {}".format(poz[0], poz[1]))
+        #return "\n".join(format_menu)
+        os.system("clear")
+        print(("\n".join(format_menu)))
+
 
     def pytanie_o_opcje(self):
         '''pyta o wybór z menu i zwraca opcję'''
-        opcja = eval(input('\nopcja > '))
         try:
-            opcja = int(opcja)
+            opcja = int((input('\nopcja > ')))
+        except SyntaxError:
+            return self.__domyslna_opcja
         except ValueError:
             return self.__domyslna_opcja
         return opcja
@@ -65,6 +93,7 @@ class Menu:
 
     def dodaj(self, obiekt, element):
         '''dodaje pozycję do menu, następnie je sortuje'''
+
         '''najpierw sprawdza duplikaty'''
         numer = element[0]
         if numer in self.__zaladowane_obiekty:
@@ -78,19 +107,20 @@ class Menu:
         '''zwraca listę załadowanych obiektów'''
         self.__zaladowane_obiekty = zaladowane
 
-    def __szukaj_modul(self, numer):
-        '''zwraca obiekt dla podanego numeru'''
-        tmp = dict(self.__zaladowane_obiekty)
-        try:
-            return tmp[numer]
-        except KeyError:
-            return None
+#    def __szukaj_modulu(self, numer):
+#        '''zwraca obiekt dla podanego numeru'''
+#        tmp = dict(self.__zaladowane_obiekty)
+#        try:
+#            return tmp[numer]
+#        except KeyError:
+#            return None
 
     def usun_pozycje(self, numer):
         '''wyszukuje i usuwa pozycję o podanym numerze z menu'''
         for k, wartosc in self.__pozycje:
             if k == numer:
-                logging.debug("[%s] deleting from menu: %s", 'Menu', wartosc)
+                logging.debug("[{}] deleting from menu: {}".
+                              format('Menu', wartosc))
                 self.__pozycje.pop(self.__pozycje.index((k, wartosc)))
 
     def __znajdz_wolny(self):
@@ -100,4 +130,6 @@ class Menu:
             if klucz not in self.__zaladowane_obiekty:
                 return klucz
 
+    def test_podaj_pozycje(self):
+        return self.__pozycje
 
