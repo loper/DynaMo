@@ -29,19 +29,18 @@ class Template:
     '''klasa Template'''
 
     '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''
-    wersja = '0.1'
+    wersja = '0.1' # zakres 1-10
 
-    '''opis max. 40 znaków'''
-    info = "opis"
+    info = "opis" # zakres 1-40
 
     '''jeżeli program dodaje opcję do menu'''
-    pozycja_w_menu = 5
-    nazwa_w_menu = 'nazwa w menu'
+    pozycja_w_menu = 5 # typu 'int' w zakresie 1-9
+    nazwa_w_menu = 'nazwa w menu' # zakres 1-20
 
     ''' dla pustych zależności ustawić "[]" lub nie umieszczać zmiennej;
      pamiętać o "moduly." 
      np. zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']'''
-    zaleznosci = []
+    zaleznosci = [] # każdy - zakres 1 - 20
 
     '''nie zmieniać, ale skopiować'''
     obiekty = {}
@@ -52,20 +51,20 @@ class Template:
     def __init__(self):
         self.obiekty = {}
 
-    def podaj_info(self):
-        '''zwraca opis modułu'''
-        return self.info
-
-    def podaj_wersje(self):
-        '''zwraca wersję modułu'''
-        return self.wersja
-
-    def podaj_zaleznosci(self):
-        '''zwraca listę zależności'''
-        try:
-            return self.zaleznosci
-        except AttributeError:
-            return []
+#    def podaj_info(self):
+#        '''zwraca opis modułu'''
+#        return self.__info
+#
+#    def podaj_wersje(self):
+#        '''zwraca wersję modułu'''
+#        return self.__wersja
+#
+#    def podaj_zaleznosci(self):
+#        '''zwraca listę zależności'''
+#        try:
+#            return self.zaleznosci
+#        except AttributeError:
+#            return []
 
     def do_menu(self):
         '''wysłanie listy opcji, które idą do menu'''
@@ -89,8 +88,10 @@ class Template:
         pozycje = []
         '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 'POWRÓT'))
+        '''ustawienie nagłówka'''
+        naglowek = 'przyklad'
         '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
-        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
+        self.obiekty['menu'].formatuj_menu(naglowek, pozycje)
 
         self.wybor_menu(glowne_menu)
 

@@ -32,8 +32,9 @@ class Przyklad(Template):
 #        pozycje = []
 #        '''do którego dodajemy krotki (nr, 'opis')'''
 #        pozycje.append((0, 'POWRÓT'))
+#        naglowek = 'przyklad'
 #        '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
-#        self.obiekty['menu'].formatuj_menu('przyklad', pozycje)
+#        self.obiekty['menu'].formatuj_menu(naglowek, pozycje)
 #
 #        self.wybor_menu(glowne_menu)
 
