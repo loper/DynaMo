@@ -49,8 +49,8 @@ class Moduly:
         #tego nie, bo jak dziedziczy, to nie musi sprawdzać
 
 #        '''czy wszystkie funkcje są?'''
-#        #obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
-#        #             'zapisz_obiekty')
+#        obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
+#                     'zapisz_obiekty')
 #        obowiazkowe = ('zapisz_obiekty')
 #        try:
 #            for atrybut in obowiazkowe:
