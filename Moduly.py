@@ -45,14 +45,36 @@ class Moduly:
 
     def __sprawdz_poprawnosc(self, obiekt):
         """sprawdzanie poprawności modułu"""
-        obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
-                     'zapisz_obiekty')
-        try:
-            for atrybut in obowiazkowe:
-                if not hasattr(obiekt, atrybut):
-                    return False
-        except AttributeError:
+
+        #tego nie, bo jak dziedziczy, to nie musi sprawdzać
+
+#        '''czy wszystkie funkcje są?'''
+#        obowiazkowe = ('podaj_zaleznosci', 'podaj_info', 'podaj_wersje',
+#                     'zapisz_obiekty')
+#        obowiazkowe = ('zapisz_obiekty')
+#        try:
+#            for atrybut in obowiazkowe:
+#                if not hasattr(obiekt, atrybut):
+#                    return False
+#        except AttributeError:
+#            return False
+
+        '''sprawdzanie zgodności typów atrybutów'''
+        if not isinstance(obiekt.info, str):
             return False
+        if not isinstance(obiekt.wersja, str):
+            return False
+        if not isinstance(obiekt.pozycja_w_menu, int):
+            return False
+        if not obiekt.pozycja_w_menu in range(1, 10):
+            return False
+
+        '''obcinanie do ustalonej długości'''
+        # ciekawe, czy w zakresie 1-20 czy 19 czy 21
+        obiekt.info = obiekt.info[:40]
+        obiekt.wersja = obiekt.wersja[:10]
+        obiekt.nazwa_w_menu = obiekt.nazwa_w_menu[:20]
+
         return True
 
 
@@ -62,11 +84,11 @@ class Moduly:
         pliki_py = re.compile("\.py$")
         znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
-
+	# tu musi byc gdzies obcinanie dlugosci
         for k in znalezione:
             i = nazwa_na_modul(k)
-            """wszystko, oprócz __init__ i Template"""
-            if i in('__init__', 'Template'):
+            """wszystko, oprócz __init__ i Wzor"""
+            if i in('__init__', 'Wzor'):
                 continue
 
             """pluginy"""
@@ -88,7 +110,7 @@ class Moduly:
 
             self.__zaladowane_obiekty.update({nazwa: obiekt})
             nazwa = nazwa + " (ver. {})\n     : {}".format(
-                obiekt.podaj_wersje(), obiekt.podaj_info()[:40 - 1])
+                obiekt.wersja, obiekt.info[:40 - 1])
             self.__zaladowane_pluginy.append(nazwa)
             logging.debug("[{}] plugin loaded".format(i))
 
@@ -135,11 +157,14 @@ class Moduly:
         i ewentualnie wyłącza "złe" moduły'''
         for i in copy.copy(obiekty):
             obiekt = obiekty[i]
-            zal = obiekt.podaj_zaleznosci()
+            #zal = obiekt.podaj_zaleznosci()
+            zal = obiekt.zaleznosci
             for zaleznosc in zal:
                 """pustych nie sprawdzaj"""
                 if zaleznosc == '':
                     continue
+                '''obetnij długość każdej do zakresu'''
+                zal = zal[:20]
                 if sys.modules.get(zaleznosc) == None:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
