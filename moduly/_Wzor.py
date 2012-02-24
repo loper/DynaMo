@@ -25,7 +25,7 @@ a odczyt wartości przy pomocy funkcji 'podaj_wartosc(klucz)'.
 import os
 
 """ UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
-class Wzor:
+class _Wzor:
     '''klasa Wzor'''
 
     '''----------------- SKOPIOWAĆ I USTAWIĆ WEDŁUG UZNANIA -----------------'''

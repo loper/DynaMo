@@ -70,7 +70,6 @@ class Moduly:
             return False
 
         '''obcinanie do ustalonej długości'''
-        # ciekawe, czy w zakresie 1-20 czy 19 czy 21
         obiekt.info = obiekt.info[:40]
         obiekt.wersja = obiekt.wersja[:10]
         obiekt.nazwa_w_menu = obiekt.nazwa_w_menu[:20]
@@ -84,7 +83,6 @@ class Moduly:
         pliki_py = re.compile("\.py$")
         znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
-	# tu musi byc gdzies obcinanie dlugosci
         for k in znalezione:
             i = nazwa_na_modul(k)
             """wszystko, oprócz __init__ i_Wzor"""
@@ -158,13 +156,21 @@ class Moduly:
         for i in copy.copy(obiekty):
             obiekt = obiekty[i]
             zal = obiekt.zaleznosci
+
+            '''sprawdź liczebność zależności'''
+            blad = False
+            if len(zal) > 10:
+                blad = True
+
             for zaleznosc in zal:
                 """pustych nie sprawdzaj"""
                 if zaleznosc == '':
                     continue
+
                 '''obetnij długość każdej do zakresu'''
                 zaleznosc = zaleznosc[:20]
-                if sys.modules.get(zaleznosc) == None:
+
+                if sys.modules.get(zaleznosc) == None or blad:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(
                     """[{}] dependency failure: \'{}\'. Module disabled""".
@@ -180,6 +186,7 @@ class Moduly:
                             self.__zaladowane_pluginy.pop(
                                             self.__zaladowane_pluginy.index(j))
                             break
+                    break
 
     def __przekaz_obiekty(self, obiekty, zaladowane):
         '''tworzy pakiet i przekazuje go do wszystkich obiektow'''

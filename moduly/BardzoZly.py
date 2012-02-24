@@ -1,11 +1,10 @@
 #-*- coding: utf-8 -*-
-
-from moduly.Wzor import Wzor
+from moduly._Wzor import _Wzor
 
 #TODO: za długa nazwa modułu?
 #tak się chyba nie da, bo system ogranicza długość nazw plików
 #class BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_(Wzor):
-class BardzoZly(Wzor):
+class BardzoZly(_Wzor):
 
     obiekty = {}
     wersja = 'xX'
@@ -17,13 +16,6 @@ class BardzoZly(Wzor):
     def __init__(self):
         super().__init__()
 
-        #TODO: za dużo elementów w zależnościach
-#        for i in range(1, 500):
-#            self.zaleznosci.append(str(i))
-
-        #TODO: za długie nazwy zależności
-        self.zaleznosci.append('xXx' * 500)
-
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
 
@@ -32,8 +24,8 @@ class BardzoZly(Wzor):
         '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 222))
         #TODO: za dużo pozycji w menu
-        #for i in range(1, 100):
-            #pozycje.append((i, 'dupl'))
+        for i in range(1, 100):
+            pozycje.append((i, 'dupl'))
         '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
         naglowek = "Bardzo, bardzo zly"
         naglowek *= 500
