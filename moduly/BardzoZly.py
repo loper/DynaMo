@@ -23,12 +23,9 @@ class BardzoZly(_Wzor):
         pozycje = []
         '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 222))
-        #TODO: za dużo pozycji w menu
-        for i in range(1, 100):
-            pozycje.append((i, 'dupl'))
+
         '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
         naglowek = "Bardzo, bardzo zly"
-        naglowek *= 500
         self.obiekty['menu'].formatuj_menu(naglowek, pozycje)
 
         self.wybor_menu(glowne_menu)

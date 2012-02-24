@@ -38,15 +38,14 @@ class _Wzor:
     nazwa_w_menu = 'nazwa w menu' # zakres 1-20
 
     ''' dla pustych zależności ustawić "[]" lub nie umieszczać zmiennej;
-     pamiętać o "moduly." 
-     np. zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']'''
-    zaleznosci = [] # każdy - zakres 1 - 20
+         pamiętać o "moduly.",
+         np. zaleznosci = ['moduly.NiezbednyModul', 'moduly.InnyWaznyModul']'''
+    zaleznosci = [] # każdy - zakres 1 - 20, max 10 zależności
 
     '''nie zmieniać, ale skopiować'''
     obiekty = {}
 
     '''----------------- NIE ZMIENIAĆ -----------------'''
-
 
     def __init__(self):
         self.obiekty = {}
@@ -86,10 +85,11 @@ class _Wzor:
 
         '''pusty słownik pozycji'''
         pozycje = []
-        '''do którego dodajemy krotki (nr, 'opis')'''
+        '''do którego dodajemy krotki (nr, 'opis');
+            maksymalna ich ilość to 10'''
         pozycje.append((0, 'POWRÓT'))
         '''ustawienie nagłówka'''
-        naglowek = 'przyklad'
+        naglowek = 'przyklad' # max 30 znaków
         '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
         self.obiekty['menu'].formatuj_menu(naglowek, pozycje)
 

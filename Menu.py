@@ -35,6 +35,23 @@ class Menu:
         '''i pyta o wybór opcji'''
         self.__wybor_menu(moduly)
 
+    def __sprawdz_poprawnosc(self, naglowek, pozycje):
+        '''sprawdzanie formatów'''
+        if not isinstance(naglowek, str):
+            return False
+        if not isinstance(pozycje, list):
+            return False
+
+        '''sprawdzanie długości nagłówka'''
+        if len(naglowek) > 30:
+            return False
+
+        '''sprawdzanie ilości pozycji w menu'''
+        if len(pozycje) > 10:
+            return False
+
+        return True
+
 
     def formatuj_menu(self, naglowek, pozycje):
         '''formatuje menu do pewnego standardu
@@ -42,11 +59,9 @@ class Menu:
           zamieniony na duże litery
         - pozycje to lista zawierająca krotki "(nr, "opis")" '''
 
-        '''sprawdzanie formatów'''
-        #if type(naglowek) != str or type(pozycje) != list:
-        if not isinstance(naglowek, str) or not isinstance(pozycje, list):
-            logging.error("[{}] Error: {}", 'Menu'.format(
-                'Niewłaściwy format wysłanych danych do formatowania'))
+        if not self.__sprawdz_poprawnosc(naglowek, pozycje):
+            logging.error("[{}] Error: {}".format('Menu',
+                'Data parsing error'))
             return
 
         '''tworzenie łańcucha, który wystarczy wyświetlić'''
@@ -54,7 +69,6 @@ class Menu:
         format_menu.append(naglowek.upper() + ":")
         for poz in pozycje:
             format_menu.append("  {}: {}".format(poz[0], poz[1]))
-        #return "\n".join(format_menu)
         os.system("clear")
         print(("\n".join(format_menu)))
 
