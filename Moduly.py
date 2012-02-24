@@ -87,8 +87,8 @@ class Moduly:
 	# tu musi byc gdzies obcinanie dlugosci
         for k in znalezione:
             i = nazwa_na_modul(k)
-            """wszystko, oprócz __init__ i Wzor"""
-            if i in('__init__', 'Wzor'):
+            """wszystko, oprócz __init__ i_Wzor"""
+            if i in('__init__', '_Wzor'):
                 continue
 
             """pluginy"""
