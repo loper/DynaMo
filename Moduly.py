@@ -84,11 +84,11 @@ class Moduly:
         pliki_py = re.compile("\.py$")
         znalezione = [k for k in lista_plikow if pliki_py.search(k)]
         nazwa_na_modul = lambda f: os.path.splitext(f)[0]
-
+	# tu musi byc gdzies obcinanie dlugosci
         for k in znalezione:
             i = nazwa_na_modul(k)
-            """wszystko, oprócz __init__ i Wzor"""
-            if i in('__init__', 'Wzor'):
+            """wszystko, oprócz __init__ i_Wzor"""
+            if i in('__init__', '_Wzor'):
                 continue
 
             """pluginy"""
