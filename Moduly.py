@@ -157,14 +157,13 @@ class Moduly:
         i ewentualnie wyłącza "złe" moduły'''
         for i in copy.copy(obiekty):
             obiekt = obiekty[i]
-            #zal = obiekt.podaj_zaleznosci()
             zal = obiekt.zaleznosci
             for zaleznosc in zal:
                 """pustych nie sprawdzaj"""
                 if zaleznosc == '':
                     continue
                 '''obetnij długość każdej do zakresu'''
-                zal = zal[:20]
+                zaleznosc = zaleznosc[:20]
                 if sys.modules.get(zaleznosc) == None:
                     wadliwy_modul = str(obiekt).split('.')[1]
                     logging.error(

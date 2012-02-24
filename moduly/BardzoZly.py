@@ -1,25 +1,28 @@
 #-*- coding: utf-8 -*-
 
-from moduly.Template import Template
+from moduly.Wzor import Wzor
 
-class BardzoZly(Template):
+#TODO: za długa nazwa modułu?
+#tak się chyba nie da, bo system ogranicza długość nazw plików
+#class BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_BardzoZly_(Wzor):
+class BardzoZly(Wzor):
 
     obiekty = {}
-    wersja = 'aa'
-    info = 'None'
-    pozycja_w_menu = 999
+    wersja = 'xX'
+    info = 'bbbb'
+    pozycja_w_menu = 9
     nazwa_w_menu = 'aaaa'
     zaleznosci = []
 
     def __init__(self):
         super().__init__()
+
+        #TODO: za dużo elementów w zależnościach
 #        for i in range(1, 500):
 #            self.zaleznosci.append(str(i))
 
-    '''----------- TĄ CZĘŚĆ NALEŻY SKOPIOWAĆ I PRZESŁONIĆ -----------'''
-
-    '''tego nie przysłaniam, bo jest takie samo, ale normalnie trzeba tu dodać 
-       własne funkcje'''
+        #TODO: za długie nazwy zależności
+        self.zaleznosci.append('xXx' * 500)
 
     def menu(self, glowne_menu):
         '''pokazuje pozycje z menu'''
@@ -28,12 +31,12 @@ class BardzoZly(Template):
         pozycje = []
         '''do którego dodajemy krotki (nr, 'opis')'''
         pozycje.append((0, 222))
+        #TODO: za dużo pozycji w menu
         #for i in range(1, 100):
             #pozycje.append((i, 'dupl'))
         '''i wywołanie menu.formatuj_menu(nagłowek, pozycje)'''
         naglowek = "Bardzo, bardzo zly"
-        #TODO: sprawdzenie tego
-#        naglowek *= 500
+        naglowek *= 500
         self.obiekty['menu'].formatuj_menu(naglowek, pozycje)
 
         self.wybor_menu(glowne_menu)

@@ -3,10 +3,10 @@
 """ Przykładowy moduł, który należy traktować jako wzór i skasować po napisaniu
 własnego """
 
-from moduly.Template import Template
+from moduly.Wzor import Wzor
 
 """ UWAGA! nazwa klasy musi być taka sama, jak nazwa pliku """
-class Przyklad(Template):
+class Przyklad(Wzor):
     '''klasa Przyklad'''
 
     obiekty = {}
